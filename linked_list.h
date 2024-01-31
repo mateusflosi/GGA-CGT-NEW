@@ -1,8 +1,7 @@
-#include <stdio>
+#include <stdio.h>
 #define TIPO long int
-#include <stdlib>
+#include <stdlib.h>
 #include <iostream>
-#include <conio>
 #include <math.h>
 #include <time.h>
 
