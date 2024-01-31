@@ -1,0 +1,309 @@
+Instance:	N2c1w1_b.txt
+Number of items:	100
+Bin capacity:	100
+L2:	48
+
+****************************GGA-CGT global best solution******************************
+Number of bins:
+49
+Fitness:
+0.942165
+Optimal order of the weights:
+50
+45
+5
+100
+83
+17
+62
+38
+51
+49
+50
+50
+93
+7
+11
+89
+78
+22
+37
+41
+22
+76
+24
+74
+26
+69
+31
+40
+12
+48
+36
+36
+28
+55
+45
+45
+14
+41
+81
+10
+9
+42
+48
+10
+67
+33
+83
+17
+42
+40
+18
+79
+21
+66
+34
+98
+2
+82
+18
+68
+32
+53
+47
+98
+2
+71
+29
+8
+12
+80
+22
+77
+99
+15
+84
+75
+24
+99
+96
+3
+96
+3
+67
+32
+71
+28
+70
+28
+56
+42
+84
+14
+39
+54
+7
+79
+79
+79
+69
+34
+
+Detailed solution:
+
+BIN 1
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 41, Weight: 50]	[Item: 49, Weight: 45]	[Item: 96, Weight: 5]	
+
+BIN 2
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 1, Weight: 100]	
+
+BIN 3
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 13, Weight: 83]	[Item: 83, Weight: 17]	
+
+BIN 4
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 35, Weight: 62]	[Item: 59, Weight: 38]	
+
+BIN 5
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 40, Weight: 51]	[Item: 44, Weight: 49]	
+
+BIN 6
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 43, Weight: 50]	[Item: 42, Weight: 50]	
+
+BIN 7
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 8, Weight: 93]	[Item: 95, Weight: 7]	
+
+BIN 8
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 89, Weight: 11]	[Item: 9, Weight: 89]	
+
+BIN 9
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 21, Weight: 78]	[Item: 76, Weight: 22]	
+
+BIN 10
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 60, Weight: 37]	[Item: 55, Weight: 41]	[Item: 77, Weight: 22]	
+
+BIN 11
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 23, Weight: 76]	[Item: 74, Weight: 24]	
+
+BIN 12
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 25, Weight: 74]	[Item: 73, Weight: 26]	
+
+BIN 13
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 29, Weight: 69]	[Item: 68, Weight: 31]	
+
+BIN 14
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 57, Weight: 40]	[Item: 88, Weight: 12]	[Item: 45, Weight: 48]	
+
+BIN 15
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 61, Weight: 36]	[Item: 62, Weight: 36]	[Item: 72, Weight: 28]	
+
+BIN 16
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 37, Weight: 55]	[Item: 48, Weight: 45]	
+
+BIN 17
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 50, Weight: 45]	[Item: 86, Weight: 14]	[Item: 54, Weight: 41]	
+
+BIN 18
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 15, Weight: 81]	[Item: 91, Weight: 10]	[Item: 92, Weight: 9]	
+
+BIN 19
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 51, Weight: 42]	[Item: 46, Weight: 48]	[Item: 90, Weight: 10]	
+
+BIN 20
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 32, Weight: 67]	[Item: 65, Weight: 33]	
+
+BIN 21
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 12, Weight: 83]	[Item: 82, Weight: 17]	
+
+BIN 22
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 52, Weight: 42]	[Item: 56, Weight: 40]	[Item: 80, Weight: 18]	
+
+BIN 23
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 19, Weight: 79]	[Item: 79, Weight: 21]	
+
+BIN 24
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 34, Weight: 66]	[Item: 64, Weight: 34]	
+
+BIN 25
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 5, Weight: 98]	[Item: 100, Weight: 2]	
+
+BIN 26
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 14, Weight: 82]	[Item: 81, Weight: 18]	
+
+BIN 27
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 31, Weight: 68]	[Item: 67, Weight: 32]	
+
+BIN 28
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 39, Weight: 53]	[Item: 47, Weight: 47]	
+
+BIN 29
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 4, Weight: 98]	[Item: 99, Weight: 2]	
+
+BIN 30
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 26, Weight: 71]	[Item: 69, Weight: 29]	
+
+BIN 31
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 93, Weight: 8]	[Item: 87, Weight: 12]	[Item: 16, Weight: 80]	
+
+BIN 32
+Fullness: 99 Gap: 1
+Stored items:	 [Item: 78, Weight: 22]	[Item: 22, Weight: 77]	
+
+BIN 33
+Fullness: 99 Gap: 1
+Stored items:	 [Item: 2, Weight: 99]	
+
+BIN 34
+Fullness: 99 Gap: 1
+Stored items:	 [Item: 84, Weight: 15]	[Item: 11, Weight: 84]	
+
+BIN 35
+Fullness: 99 Gap: 1
+Stored items:	 [Item: 24, Weight: 75]	[Item: 75, Weight: 24]	
+
+BIN 36
+Fullness: 99 Gap: 1
+Stored items:	 [Item: 3, Weight: 99]	
+
+BIN 37
+Fullness: 99 Gap: 1
+Stored items:	 [Item: 6, Weight: 96]	[Item: 98, Weight: 3]	
+
+BIN 38
+Fullness: 99 Gap: 1
+Stored items:	 [Item: 7, Weight: 96]	[Item: 97, Weight: 3]	
+
+BIN 39
+Fullness: 99 Gap: 1
+Stored items:	 [Item: 33, Weight: 67]	[Item: 66, Weight: 32]	
+
+BIN 40
+Fullness: 99 Gap: 1
+Stored items:	 [Item: 27, Weight: 71]	[Item: 71, Weight: 28]	
+
+BIN 41
+Fullness: 98 Gap: 2
+Stored items:	 [Item: 28, Weight: 70]	[Item: 70, Weight: 28]	
+
+BIN 42
+Fullness: 98 Gap: 2
+Stored items:	 [Item: 36, Weight: 56]	[Item: 53, Weight: 42]	
+
+BIN 43
+Fullness: 98 Gap: 2
+Stored items:	 [Item: 10, Weight: 84]	[Item: 85, Weight: 14]	
+
+BIN 44
+Fullness: 100 Gap: 0
+Stored items:	 [Item: 58, Weight: 39]	[Item: 38, Weight: 54]	[Item: 94, Weight: 7]	
+
+BIN 45
+Fullness: 79 Gap: 21
+Stored items:	 [Item: 20, Weight: 79]	
+
+BIN 46
+Fullness: 79 Gap: 21
+Stored items:	 [Item: 17, Weight: 79]	
+
+BIN 47
+Fullness: 79 Gap: 21
+Stored items:	 [Item: 18, Weight: 79]	
+
+BIN 48
+Fullness: 69 Gap: 31
+Stored items:	 [Item: 30, Weight: 69]	
+
+BIN 49
+Fullness: 34 Gap: 66
+Stored items:	 [Item: 63, Weight: 34]	
