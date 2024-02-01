@@ -157,10 +157,10 @@ int main ()
 	while(!feof(input_Configurations))
 	{
    	fscanf(input_Configurations,"%ld",&conf);
-      //strcpy(nameC, "Solutions_GGA-CGT/GGA-CGT_(");
+      strcpy(nameC, "Solutions_GGA-CGT/GGA-CGT_(");
       //itoa(conf, aux, 10);
-      //strcat(nameC, aux);
-      //strcat(nameC, ").txt");
+      strcat(nameC, aux);
+      strcat(nameC, ").txt");
       output = fopen(nameC,"w+");
       fscanf(input_Configurations,"%d",&P_size);
 		fscanf(input_Configurations,"%d",&max_gen);
@@ -179,45 +179,53 @@ int main ()
 
 		//READING FILE "instances.txt" CONTAINING THE NAME OF BPP INSTANCES TO PROCESS
       if((input_Instances = fopen("instances.txt","rt")) == NULL)
-	   {  printf("\n INVALID FILE");
-   	   //getch();
-      	exit(1);
+	   {  
+			printf("\n INVALID FILE");
+   	   		//getch();
+      		exit(1);
 	   }
  		while(!feof(input_Instances))
-	 	{	fscanf(input_Instances,"%s",file);
+	 	{	
+			fscanf(input_Instances,"%s",file);
 			LoadData();
 			for(i = 0; i < number_items; i ++)
 				ordered_weight[i] = i;
 			Sort_Descending_Weights(ordered_weight, number_items);
 			LowerBound();
-	      seed_permutation = seed;
-         seed_emptybin = seed;
-         for(i = 0; i < P_size; i++)
-         {	ordered_population[i] = i;
-         	random_individuals[i] = i;
-            best_individuals[i] = i;
-         }
+	      	seed_permutation = seed;
+         	seed_emptybin = seed;
+         	for(i = 0; i < P_size; i++)
+         	{
+				ordered_population[i] = i;
+         		random_individuals[i] = i;
+            	best_individuals[i] = i;
+			}
 			Clean_population();
 			is_optimal_solution = 0;
-         generation = 0;
-         for(i = 0, j = n_; j < number_items;i++)
-         	permutation[i] = ordered_weight[j++];
-         repeated_fitness = 0;
-         //procedure GGA-CGT
-         start = clock();
-         if(!Generate_Initial_Population())  //Generate_Initial_Population() returns 1 if an optimal solution was found
-	         for(generation = 0; generation < max_gen; generation++)
-				{  if(Generation()) //Generation() returns 1 if an optimal solution was found
-         	   	break;
+         	generation = 0;
+         	for(i = 0, j = n_; j < number_items;i++)
+         		permutation[i] = ordered_weight[j++];
+         	repeated_fitness = 0;
+         	//procedure GGA-CGT
+         	start = clock();
+         	if(!Generate_Initial_Population())
+		 	{  
+				//Generate_Initial_Population() returns 1 if an optimal solution was found
+	        	for(generation = 0; generation < max_gen; generation++)
+				{  
+					if(Generation()) //Generation() returns 1 if an optimal solution was found
+         	   			break;
 					Find_Best_Solution();
-               //printf("\n %d", (int)global_best_solution[number_items + 1].Bin_Fullness);
+               	//printf("\n %d", (int)global_best_solution[number_items + 1].Bin_Fullness);
 				}
-         if(!is_optimal_solution) //is_optimal_solution is 1 if an optimal solution was printed before
-			{	end = clock();
+			}
+         	if(!is_optimal_solution) //is_optimal_solution is 1 if an optimal solution was printed before
+			{	
+				end = clock();
 				TotalTime = (end - start);// / (CLK_TCK * 1.0);
-            Find_Best_Solution();
-            WriteOutput();
-         }
+            	Find_Best_Solution();
+            	WriteOutput();
+         	}
 		}
 		fclose(input_Instances);
 	}
@@ -246,12 +254,15 @@ int main ()
    (0) otherwise																																			*
 ************************************************************************************************************************/
 long int Generate_Initial_Population()
-{	for(i = 0; i < P_size; i++)
-	{	FF_n_(i);
-      population[i][number_items + 2].Bin_Fullness = generation;
+{	
+	for(i = 0; i < P_size; i++)
+	{	
+		FF_n_(i);
+      	population[i][number_items + 2].Bin_Fullness = generation;
 		population[i][number_items].Bin_Fullness /= population[i][number_items + 1].Bin_Fullness;
-      if(population[i][number_items + 1].Bin_Fullness == L2)
-	   {  end = clock();
+      	if(population[i][number_items + 1].Bin_Fullness == L2)
+	   	{  
+			end = clock();
   			Copy_Solution(global_best_solution, population[i], 0);
 	  		global_best_solution[number_items].Bin_Fullness = population[i][number_items].Bin_Fullness;;
 			global_best_solution[number_items + 2].Bin_Fullness = generation;
@@ -259,9 +270,9 @@ long int Generate_Initial_Population()
 	  		global_best_solution[number_items + 3].Bin_Fullness = population[i][number_items + 3].Bin_Fullness;
 			TotalTime = (end - start);// / (CLK_TCK * 1.0);
 			WriteOutput();
-	      is_optimal_solution = 1;
-	   	return (1);
-	   }
+	      	is_optimal_solution = 1;
+	   		return (1);
+	   	}
 	}
    return 0;
 }
@@ -1201,13 +1212,13 @@ long int LoadData()
   	FILE	*data_file;
 
    string[0] = '\0';
-  	//strcpy(string, file);
+  	strcpy(string, file);
 	if((data_file = fopen(string, "rt")) == NULL)
   	{
     	printf("\nThere is no data file ==> [%s]%c", string, 7);
     	return 0;
   	}
-   printf("\nThe file is %s", string);
+   printf("\nThe file is %s\n", string);
   	fgets(string, 300, data_file);
   	fscanf(data_file, "%ld\n", &number_items);
   	bin_capacity = 0;
@@ -1256,11 +1267,12 @@ long int LoadData()
 ************************************************************************************************************************/
 void WriteOutput()
 {
-   output = fopen(nameC, "a");
-   fprintf(output, "\n%s \t %d \t %d \t %f \t %ld \t %f", file, (int)L2, (int)global_best_solution[number_items + 1].Bin_Fullness, global_best_solution[number_items].Bin_Fullness,generation, TotalTime);
-	if(save_bestSolution == 1)
-   	sendtofile(global_best_solution);
-   fclose(output);
+   	output = fopen(nameC, "a");
+   	fprintf(output, "\n%s \t %d \t %d \t %f \t %ld \t %f", file, (int)L2, (int)global_best_solution[number_items + 1].Bin_Fullness, global_best_solution[number_items].Bin_Fullness,generation, TotalTime);
+	//TODO: ARRUMAR BUG DESSA FUNÇÃO
+	//if(save_bestSolution == 1)
+		//sendtofile(global_best_solution);
+   	fclose(output);
 }
 
 
@@ -1272,7 +1284,7 @@ void sendtofile(SOLUTION best[])
 {
 	char 	string1[30],
    		fil[30],
-         aux[10];
+        aux[10];
 
 	long double accumulated = 0;
 	long int   bin,
@@ -1291,12 +1303,12 @@ void sendtofile(SOLUTION best[])
 
   	FILE *output;
    node *p;
-  	//strcpy(fil, "Details_GGA-CGT/GGA-CGT_S_(");
-  	//strcpy(string1, file);
+  	strcpy(fil, "Details_GGA-CGT/GGA-CGT_S_(");
+  	strcpy(string1, file);
    //itoa(conf, aux, 10);
-   //strcat(fil,aux);
-   //strcat(fil,")_");
-	//strcat(fil,string1);
+   strcat(fil,aux);
+   strcat(fil,")_");
+	strcat(fil,string1);
 	if((output = fopen(fil, "w+")) == NULL)
   	{
     	//printf("\nThere is no data file ==> [%s]%c", file, 7);
@@ -1307,11 +1319,10 @@ void sendtofile(SOLUTION best[])
 	fprintf(output,"Number of items:\t%ld\n", number_items);
 	fprintf(output,"Bin capacity:\t%ld\n", bin_capacity);
 	fprintf(output,"L2:\t%ld\n", L2);
-   fprintf(output,"\n****************************GGA-CGT global best solution******************************\n");
+   	fprintf(output,"\n****************************GGA-CGT global best solution******************************\n");
 	fprintf(output,"Number of bins:\n%ld\n", n_bins);
   	fprintf(output,"Fitness:\n%f\n", best[number_items].Bin_Fullness);
 	fprintf(output,"Optimal order of the weights:\n");
-
 	for (bin = 0; bin < n_bins; bin++)
 	{  bins[bin] = 0;
 		p = best[bin].L.first;
@@ -1339,28 +1350,28 @@ void sendtofile(SOLUTION best[])
        getchar();
 
    }
-
 	fprintf(output,"\nDetailed solution:");
 	for (j=0; j < n_bins; j++)
 	{
-   	if(bins[j] > bin_capacity)
-      	fprintf(output, " \n ********************ERROR the capacity of the bin was exceeded******************");
+   		if(bins[j] > bin_capacity)
+      		fprintf(output, " \n ********************ERROR the capacity of the bin was exceeded******************");
+
 		fprintf(output, "\n\nBIN %ld\nFullness: %ld Gap: %ld\nStored items:\t ",j + 1, bins[j], bin_capacity-bins[j]);
-      p = best[j].L.first;
+      	p = best[j].L.first;
 		for (position=0; ; position++)
-		{  if(p == NULL)
-      		break;
+		{  
+			if(p == NULL)
+      			break;
 			item = p->data;
 			p = p->next;
 			fprintf(output, "[Item: %ld, Weight: %ld]\t", item + 1,weight[item]);
 		}
-
 	}
 
 	fclose(output);
 
-   if(banError)
-   	exit(1);
+   	if(banError)
+   		exit(1);
 }
 
 

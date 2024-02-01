@@ -4,6 +4,9 @@
 #include <iostream>
 #include <math.h>
 #include <time.h>
+#include <string.h>
+
+
 
 struct node
 {
