@@ -1269,9 +1269,8 @@ void WriteOutput()
 {
    	output = fopen(nameC, "a");
    	fprintf(output, "\n%s \t %d \t %d \t %f \t %ld \t %f", file, (int)L2, (int)global_best_solution[number_items + 1].Bin_Fullness, global_best_solution[number_items].Bin_Fullness,generation, TotalTime);
-	//TODO: ARRUMAR BUG DESSA FUNÇÃO
-	//if(save_bestSolution == 1)
-		//sendtofile(global_best_solution);
+	if(save_bestSolution == 1)
+		sendtofile(global_best_solution);
    	fclose(output);
 }
 
@@ -1282,8 +1281,8 @@ void WriteOutput()
 ************************************************************************************************************************/
 void sendtofile(SOLUTION best[])
 {
-	char 	string1[30],
-   		fil[30],
+	char 	string1[50],
+   		fil[50],
         aux[10];
 
 	long double accumulated = 0;
