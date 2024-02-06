@@ -1274,7 +1274,18 @@ void WriteOutput()
    	fclose(output);
 }
 
-
+char* getString1Clean(char* string1)
+{
+	int aux = -1;
+	for(i=0;i<50;i++)
+	{
+		if(string1[i] == '\0')
+			return &string1[aux+1];
+		if(string1[i] == '/')
+			aux = i;
+	}
+	return string1;
+}
 
 /************************************************************************************************************************
  To print the global best solution in a data file																								*
@@ -1307,7 +1318,7 @@ void sendtofile(SOLUTION best[])
    //itoa(conf, aux, 10);
    strcat(fil,aux);
    strcat(fil,")_");
-	strcat(fil,string1);
+	strcat(fil,getString1Clean(string1));
 	if((output = fopen(fil, "w+")) == NULL)
   	{
     	//printf("\nThere is no data file ==> [%s]%c", file, 7);
