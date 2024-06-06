@@ -239,6 +239,8 @@ int main()
 
 long int CheckOptimalSolution(SOLUTION solution[], int add)
 {
+	solution[number_items + 2].Bin_Fullness = generation + add;
+	solution[number_items].Bin_Fullness /= solution[number_items + 1].Bin_Fullness;
 	if (solution[number_items + 1].Bin_Fullness == L2)
 	{
 		end = clock();
@@ -276,8 +278,6 @@ long int Generate_Initial_Population()
 	for (i = 0; i < P_size; i++)
 	{
 		FF_n_(i);
-		population[i][number_items + 2].Bin_Fullness = generation;
-		population[i][number_items].Bin_Fullness /= population[i][number_items + 1].Bin_Fullness;
 		if (CheckOptimalSolution(population[i], 0))
 			return (1);
 	}
@@ -318,13 +318,9 @@ long int Generation()
 			f1 = best_individuals[h--];
 		}
 		Gene_Level_Crossover_FFD(ordered_population[f1], ordered_population[f2], j);
-		children[j][number_items + 2].Bin_Fullness = generation + 1;
-		children[j][number_items].Bin_Fullness /= children[j][number_items + 1].Bin_Fullness;
 		if (CheckOptimalSolution(children[j], 1))
 			return (1);
 		Gene_Level_Crossover_FFD(ordered_population[f2], ordered_population[f1], j + 1);
-		children[j + 1][number_items + 2].Bin_Fullness = generation + 1;
-		children[j + 1][number_items].Bin_Fullness /= children[j + 1][number_items + 1].Bin_Fullness;
 		if (CheckOptimalSolution(children[j + 1], 1))
 			return (1);
 	}
@@ -357,8 +353,6 @@ long int Generation()
 		  -----------------------------------------------------------------------------------------------------*/
 			Copy_Solution(population[ordered_population[j]], population[ordered_population[i]], 0);
 			Adaptive_Mutation_RP(ordered_population[j], k_cs, 1);
-			population[ordered_population[j]][number_items + 2].Bin_Fullness = generation + 1;
-			population[ordered_population[j]][number_items].Bin_Fullness /= population[ordered_population[j]][number_items + 1].Bin_Fullness;
 			if (CheckOptimalSolution(population[ordered_population[j]], 1))
 				return (1);
 			j++;
@@ -366,8 +360,6 @@ long int Generation()
 		else
 		{
 			Adaptive_Mutation_RP(ordered_population[i], k_ncs, 0);
-			population[ordered_population[i]][number_items + 2].Bin_Fullness = generation + 1;
-			population[ordered_population[i]][number_items].Bin_Fullness /= population[ordered_population[i]][number_items + 1].Bin_Fullness;
 			if (CheckOptimalSolution(population[ordered_population[i]], 1))
 				return (1);
 		}
