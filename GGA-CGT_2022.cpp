@@ -237,17 +237,23 @@ int main()
 	return 0;
 }
 
-void SetOptimalSolution(SOLUTION solution[], int add)
+long int CheckOptimalSolution(SOLUTION solution[], int add)
 {
-	end = clock();
-	Copy_Solution(global_best_solution, solution, 0);
-	global_best_solution[number_items].Bin_Fullness = solution[number_items].Bin_Fullness;
-	global_best_solution[number_items + 2].Bin_Fullness = generation + add;
-	global_best_solution[number_items + 1].Bin_Fullness = solution[number_items + 1].Bin_Fullness;
-	global_best_solution[number_items + 3].Bin_Fullness = solution[number_items + 3].Bin_Fullness;
-	TotalTime = (end - start); // / (CLK_TCK * 1.0);
-	WriteOutput();
-	is_optimal_solution = 1;
+	if (solution[number_items + 1].Bin_Fullness == L2)
+	{
+		end = clock();
+		Copy_Solution(global_best_solution, solution, 0);
+		global_best_solution[number_items].Bin_Fullness = solution[number_items].Bin_Fullness;
+		global_best_solution[number_items + 2].Bin_Fullness = generation + add;
+		global_best_solution[number_items + 1].Bin_Fullness = solution[number_items + 1].Bin_Fullness;
+		global_best_solution[number_items + 3].Bin_Fullness = solution[number_items + 3].Bin_Fullness;
+		TotalTime = (end - start); // / (CLK_TCK * 1.0);
+		WriteOutput();
+		is_optimal_solution = 1;
+		return (1);
+	}
+
+	return (0);
 }
 
 /************************************************************************************************************************
@@ -272,11 +278,8 @@ long int Generate_Initial_Population()
 		FF_n_(i);
 		population[i][number_items + 2].Bin_Fullness = generation;
 		population[i][number_items].Bin_Fullness /= population[i][number_items + 1].Bin_Fullness;
-		if (population[i][number_items + 1].Bin_Fullness == L2)
-		{
-			SetOptimalSolution(population[i], 0);
+		if (CheckOptimalSolution(population[i], 0))
 			return (1);
-		}
 	}
 	return 0;
 }
@@ -317,19 +320,13 @@ long int Generation()
 		Gene_Level_Crossover_FFD(ordered_population[f1], ordered_population[f2], j);
 		children[j][number_items + 2].Bin_Fullness = generation + 1;
 		children[j][number_items].Bin_Fullness /= children[j][number_items + 1].Bin_Fullness;
-		if (children[j][number_items + 1].Bin_Fullness == L2)
-		{
-			SetOptimalSolution(children[j], 1);
+		if (CheckOptimalSolution(children[j], 1))
 			return (1);
-		}
 		Gene_Level_Crossover_FFD(ordered_population[f2], ordered_population[f1], j + 1);
 		children[j + 1][number_items + 2].Bin_Fullness = generation + 1;
 		children[j + 1][number_items].Bin_Fullness /= children[j + 1][number_items + 1].Bin_Fullness;
-		if (children[j + 1][number_items + 1].Bin_Fullness == L2)
-		{
-			SetOptimalSolution(children[j + 1], 1);
+		if (CheckOptimalSolution(children[j + 1], 1))
 			return (1);
-		}
 	}
 
 	/*-----------------------------------------------------------------------------------------------------
@@ -362,11 +359,8 @@ long int Generation()
 			Adaptive_Mutation_RP(ordered_population[j], k_cs, 1);
 			population[ordered_population[j]][number_items + 2].Bin_Fullness = generation + 1;
 			population[ordered_population[j]][number_items].Bin_Fullness /= population[ordered_population[j]][number_items + 1].Bin_Fullness;
-			if (population[ordered_population[j]][number_items + 1].Bin_Fullness == L2)
-			{
-				SetOptimalSolution(population[ordered_population[j]], 1);
+			if (CheckOptimalSolution(population[ordered_population[j]], 1))
 				return (1);
-			}
 			j++;
 		}
 		else
@@ -374,11 +368,8 @@ long int Generation()
 			Adaptive_Mutation_RP(ordered_population[i], k_ncs, 0);
 			population[ordered_population[i]][number_items + 2].Bin_Fullness = generation + 1;
 			population[ordered_population[i]][number_items].Bin_Fullness /= population[ordered_population[i]][number_items + 1].Bin_Fullness;
-			if (population[ordered_population[i]][number_items + 1].Bin_Fullness == L2)
-			{
-				SetOptimalSolution(population[ordered_population[i]], 1);
+			if (CheckOptimalSolution(population[ordered_population[i]], 1))
 				return (1);
-			}
 		}
 	}
 	return 0;
