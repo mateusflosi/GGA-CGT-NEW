@@ -367,6 +367,14 @@ long int Generation()
 	return 0;
 }
 
+void CloneBinOfFather(long int child, long int *k2, long int father, long int random_order[], long int k)
+{
+	children[child][*k2].L.clone_linked_list(population[father][random_order[k]].L);
+	children[child][(*k2)++].Bin_Fullness = population[father][random_order[k]].Bin_Fullness;
+	if (children[child][(*k2) - 1].Bin_Fullness < children[child][number_items + 4].Bin_Fullness)
+		children[child][number_items + 4].Bin_Fullness = children[child][(*k2) - 1].Bin_Fullness;
+}
+
 /************************************************************************************************************************
  To recombine two parent solutions producing a child solution.          																*
  Input:                                                                                       									*
@@ -409,20 +417,14 @@ void Gene_Level_Crossover_FFD(long int father_1, long int father_2, long int chi
 			ban = Used_Items(father_1, random_order1[k], items);
 			if (ban == 1)
 			{
-				children[child][k2].L.clone_linked_list(population[father_1][random_order1[k]].L);
-				children[child][k2++].Bin_Fullness = population[father_1][random_order1[k]].Bin_Fullness;
-				if (children[child][k2 - 1].Bin_Fullness < children[child][number_items + 4].Bin_Fullness)
-					children[child][number_items + 4].Bin_Fullness = children[child][k2 - 1].Bin_Fullness;
+				CloneBinOfFather(child, &k2, father_1, random_order1, k);
 			}
 			if (population[father_2][random_order2[k]].Bin_Fullness > 0)
 			{
 				ban = Used_Items(father_2, random_order2[k], items);
 				if (ban == 1)
 				{
-					children[child][k2].L.clone_linked_list(population[father_2][random_order2[k]].L);
-					children[child][k2++].Bin_Fullness = population[father_2][random_order2[k]].Bin_Fullness;
-					if (children[child][k2 - 1].Bin_Fullness < children[child][number_items + 4].Bin_Fullness)
-						children[child][number_items + 4].Bin_Fullness = children[child][k2 - 1].Bin_Fullness;
+					CloneBinOfFather(child, &k2, father_2, random_order2, k);
 				}
 			}
 		}
@@ -433,19 +435,13 @@ void Gene_Level_Crossover_FFD(long int father_1, long int father_2, long int chi
 				ban = Used_Items(father_2, random_order2[k], items);
 				if (ban == 1)
 				{
-					children[child][k2].L.clone_linked_list(population[father_2][random_order2[k]].L);
-					children[child][k2++].Bin_Fullness = population[father_2][random_order2[k]].Bin_Fullness;
-					if (children[child][k2 - 1].Bin_Fullness < children[child][number_items + 4].Bin_Fullness)
-						children[child][number_items + 4].Bin_Fullness = children[child][k2 - 1].Bin_Fullness;
+					CloneBinOfFather(child, &k2, father_2, random_order2, k);
 				}
 			}
 			ban = Used_Items(father_1, random_order1[k], items);
 			if (ban == 1)
 			{
-				children[child][k2].L.clone_linked_list(population[father_1][random_order1[k]].L);
-				children[child][k2++].Bin_Fullness = population[father_1][random_order1[k]].Bin_Fullness;
-				if (children[child][k2 - 1].Bin_Fullness < children[child][number_items + 4].Bin_Fullness)
-					children[child][number_items + 4].Bin_Fullness = children[child][k2 - 1].Bin_Fullness;
+				CloneBinOfFather(child, &k2, father_1, random_order1, k);
 			}
 		}
 	}
