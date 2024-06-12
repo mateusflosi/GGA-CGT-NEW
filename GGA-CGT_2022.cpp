@@ -287,6 +287,21 @@ void SetNumberOfFullBins(SOLUTION dest[], SOLUTION origem[])
 	SetNumberOfFullBins(dest, GetNumberOfFullBins(origem));
 }
 
+double GetHighestAvaliableCapacity(SOLUTION solution[])
+{
+	return solution[number_items + 4].Bin_Fullness;
+}
+
+void SetHighestAvaliableCapacity(SOLUTION dest[], double value)
+{
+	dest[number_items + 4].Bin_Fullness = value;
+}
+
+void SetHighestAvaliableCapacity(SOLUTION dest[], SOLUTION origem[])
+{
+	SetHighestAvaliableCapacity(dest, GetHighestAvaliableCapacity(origem));
+}
+
 long int CheckOptimalSolution(SOLUTION solution[], int add)
 {
 	SetGeneration(solution, generation + add);
@@ -424,8 +439,8 @@ void CloneBinOfFather(long int child, long int *k2, long int father, long int ra
 	{
 		children[child][*k2].L.clone_linked_list(population[father][random_order[k]].L);
 		children[child][(*k2)++].Bin_Fullness = population[father][random_order[k]].Bin_Fullness;
-		if (children[child][(*k2) - 1].Bin_Fullness < children[child][number_items + 4].Bin_Fullness)
-			children[child][number_items + 4].Bin_Fullness = children[child][(*k2) - 1].Bin_Fullness;
+		if (children[child][(*k2) - 1].Bin_Fullness < GetHighestAvaliableCapacity(children[child]))
+			SetHighestAvaliableCapacity(children[child], children[child][(*k2) - 1].Bin_Fullness);
 	}
 }
 
@@ -442,7 +457,7 @@ void Gene_Level_Crossover_FFD(long int father_1, long int father_2, long int chi
 		k2 = 0,
 		items[ATTRIBUTES] = {0},
 		free_items[ATTRIBUTES] = {0};
-	children[child][number_items + 4].Bin_Fullness = bin_capacity;
+	SetHighestAvaliableCapacity(children[child], bin_capacity);
 
 	if (GetNumberOfBins(population[father_1]) > GetNumberOfBins(population[father_2]))
 		counter = GetNumberOfBins(population[father_1]);
@@ -563,7 +578,7 @@ void FF_n_(int individual)
 		total_bins = 0;
 	bin_i = 0;
 	SetNumberOfFullBins(population[individual], 0.0);
-	population[individual][number_items + 4].Bin_Fullness = bin_capacity;
+	SetHighestAvaliableCapacity(population[individual], bin_capacity);
 	if (n_ > 0)
 	{
 		for (i = 0; i < n_; i++)
@@ -571,8 +586,8 @@ void FF_n_(int individual)
 			population[individual][i].Bin_Fullness = weight[ordered_weight[i]];
 			population[individual][i].L.insert(ordered_weight[i]);
 			total_bins++;
-			if (population[individual][i].Bin_Fullness < population[individual][number_items + 4].Bin_Fullness)
-				population[individual][number_items + 4].Bin_Fullness = population[individual][i].Bin_Fullness;
+			if (population[individual][i].Bin_Fullness < GetHighestAvaliableCapacity(population[individual]))
+				SetHighestAvaliableCapacity(population[individual], population[individual][i].Bin_Fullness);
 		}
 		i = number_items - i;
 		Sort_Random(permutation, 0, i);
@@ -621,7 +636,7 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 	bin_i = b;
 	population[individual][number_items].Bin_Fullness = 0;
 	SetNumberOfFullBins(population[individual], 0.0);
-	population[individual][number_items + 4].Bin_Fullness = bin_capacity;
+	SetHighestAvaliableCapacity(population[individual], bin_capacity);
 
 	for (i = 0; i < b; i++)
 		ordered_BinFullness[i] = i;
@@ -711,8 +726,8 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 			p = p->next;
 		}
 		population[individual][ordered_BinFullness[i]].Bin_Fullness = sum;
-		if (population[individual][ordered_BinFullness[i]].Bin_Fullness < population[individual][number_items + 4].Bin_Fullness)
-			population[individual][number_items + 4].Bin_Fullness = population[individual][ordered_BinFullness[i]].Bin_Fullness;
+		if (population[individual][ordered_BinFullness[i]].Bin_Fullness < GetHighestAvaliableCapacity(population[individual]))
+			SetHighestAvaliableCapacity(population[individual], population[individual][ordered_BinFullness[i]].Bin_Fullness);
 		if ((unsigned long int)population[individual][ordered_BinFullness[i]].Bin_Fullness == bin_capacity)
 			AddNumberOfFullBins(population[individual]);
 		else if ((unsigned long int)population[individual][ordered_BinFullness[i]].Bin_Fullness + weight[ordered_weight[number_items - 1]] <= bin_capacity)
@@ -735,7 +750,7 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 		lighter_weight = weight[F[number_free_items - 1]];
 	}
 
-	if (lighter_weight > bin_capacity - (unsigned long int)population[individual][number_items + 4].Bin_Fullness)
+	if (lighter_weight > bin_capacity - (unsigned long int)GetHighestAvaliableCapacity(population[individual]))
 	{
 		for (i = bin_i; i < b; i++)
 			population[individual][number_items].Bin_Fullness += pow((population[individual][i].Bin_Fullness / bin_capacity), 2);
@@ -759,7 +774,7 @@ void FF(long int item, SOLUTION individual[], long int &total_bins, long int beg
 {
 	long int i;
 
-	if (!is_last && weight[item] > (bin_capacity - (unsigned long int)individual[number_items + 4].Bin_Fullness))
+	if (!is_last && weight[item] > (bin_capacity - (unsigned long int)GetHighestAvaliableCapacity(individual)))
 		i = total_bins;
 	else
 		for (i = beginning; i < total_bins; i++)
@@ -788,8 +803,8 @@ void FF(long int item, SOLUTION individual[], long int &total_bins, long int beg
 		}
 	individual[i].Bin_Fullness += weight[item];
 	individual[i].L.insert(item);
-	if (individual[i].Bin_Fullness < individual[number_items + 4].Bin_Fullness)
-		individual[number_items + 4].Bin_Fullness = individual[i].Bin_Fullness;
+	if (individual[i].Bin_Fullness < GetHighestAvaliableCapacity(individual))
+		SetHighestAvaliableCapacity(individual, individual[i].Bin_Fullness);
 	if (is_last)
 		individual[number_items].Bin_Fullness += pow((individual[i].Bin_Fullness / bin_capacity), 2);
 	total_bins++;
@@ -1092,14 +1107,14 @@ void Copy_Solution(SOLUTION solution[], SOLUTION solution2[], int delete_solutio
 	SetNumberOfBins(solution, solution2);
 	SetGeneration(solution, solution2);
 	SetNumberOfFullBins(solution, solution2);
-	solution[number_items + 4].Bin_Fullness = solution2[number_items + 4].Bin_Fullness;
+	SetHighestAvaliableCapacity(solution, solution2);
 	if (delete_solution2)
 	{
 		solution2[number_items].Bin_Fullness = 0;
 		SetNumberOfBins(solution2, 0.0);
 		SetGeneration(solution2, 0.0);
 		SetNumberOfBins(solution2, 0.0);
-		solution2[number_items + 4].Bin_Fullness = 0;
+		SetHighestAvaliableCapacity(solution2, 0.0);
 	}
 }
 
