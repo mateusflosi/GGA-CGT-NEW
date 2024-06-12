@@ -367,12 +367,16 @@ long int Generation()
 	return 0;
 }
 
-void CloneBinOfFather(long int child, long int *k2, long int father, long int random_order[], long int k)
+void CloneBinOfFather(long int child, long int *k2, long int father, long int random_order[], long int k, long int items[])
 {
-	children[child][*k2].L.clone_linked_list(population[father][random_order[k]].L);
-	children[child][(*k2)++].Bin_Fullness = population[father][random_order[k]].Bin_Fullness;
-	if (children[child][(*k2) - 1].Bin_Fullness < children[child][number_items + 4].Bin_Fullness)
-		children[child][number_items + 4].Bin_Fullness = children[child][(*k2) - 1].Bin_Fullness;
+	long int ban = Used_Items(father, random_order[k], items);
+	if (ban == 1)
+	{
+		children[child][*k2].L.clone_linked_list(population[father][random_order[k]].L);
+		children[child][(*k2)++].Bin_Fullness = population[father][random_order[k]].Bin_Fullness;
+		if (children[child][(*k2) - 1].Bin_Fullness < children[child][number_items + 4].Bin_Fullness)
+			children[child][number_items + 4].Bin_Fullness = children[child][(*k2) - 1].Bin_Fullness;
+	}
 }
 
 /************************************************************************************************************************
@@ -386,7 +390,6 @@ void Gene_Level_Crossover_FFD(long int father_1, long int father_2, long int chi
 	long int k,
 		counter,
 		k2 = 0,
-		ban = 1,
 		items[ATTRIBUTES] = {0},
 		free_items[ATTRIBUTES] = {0};
 	children[child][number_items + 4].Bin_Fullness = bin_capacity;
@@ -414,35 +417,19 @@ void Gene_Level_Crossover_FFD(long int father_1, long int father_2, long int chi
 	{
 		if (population[father_1][random_order1[k]].Bin_Fullness >= population[father_2][random_order2[k]].Bin_Fullness)
 		{
-			ban = Used_Items(father_1, random_order1[k], items);
-			if (ban == 1)
-			{
-				CloneBinOfFather(child, &k2, father_1, random_order1, k);
-			}
+			CloneBinOfFather(child, &k2, father_1, random_order1, k, items);
 			if (population[father_2][random_order2[k]].Bin_Fullness > 0)
 			{
-				ban = Used_Items(father_2, random_order2[k], items);
-				if (ban == 1)
-				{
-					CloneBinOfFather(child, &k2, father_2, random_order2, k);
-				}
+				CloneBinOfFather(child, &k2, father_2, random_order2, k, items);
 			}
 		}
 		else
 		{
 			if (population[father_2][random_order2[k]].Bin_Fullness > 0)
 			{
-				ban = Used_Items(father_2, random_order2[k], items);
-				if (ban == 1)
-				{
-					CloneBinOfFather(child, &k2, father_2, random_order2, k);
-				}
+				CloneBinOfFather(child, &k2, father_2, random_order2, k, items);
 			}
-			ban = Used_Items(father_1, random_order1[k], items);
-			if (ban == 1)
-			{
-				CloneBinOfFather(child, &k2, father_1, random_order1, k);
-			}
+			CloneBinOfFather(child, &k2, father_1, random_order1, k, items);
 		}
 	}
 	k = 0;
