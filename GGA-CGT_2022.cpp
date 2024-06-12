@@ -252,18 +252,53 @@ void SetNumberOfBins(SOLUTION dest[], SOLUTION origem[])
 	SetNumberOfBins(dest, GetNumberOfBins(origem));
 }
 
+double GetGeneration(SOLUTION solution[])
+{
+	return solution[number_items + 2].Bin_Fullness;
+}
+
+void SetGeneration(SOLUTION dest[], double value)
+{
+	dest[number_items + 2].Bin_Fullness = value;
+}
+
+void SetGeneration(SOLUTION dest[], SOLUTION origem[])
+{
+	SetGeneration(dest, GetGeneration(origem));
+}
+
+double GetNumberOfFullBins(SOLUTION solution[])
+{
+	return solution[number_items + 3].Bin_Fullness;
+}
+
+void AddNumberOfFullBins(SOLUTION dest[])
+{
+	dest[number_items + 3].Bin_Fullness++;
+}
+
+void SetNumberOfFullBins(SOLUTION dest[], double value)
+{
+	dest[number_items + 3].Bin_Fullness = value;
+}
+
+void SetNumberOfFullBins(SOLUTION dest[], SOLUTION origem[])
+{
+	SetNumberOfFullBins(dest, GetNumberOfFullBins(origem));
+}
+
 long int CheckOptimalSolution(SOLUTION solution[], int add)
 {
-	solution[number_items + 2].Bin_Fullness = generation + add;
+	SetGeneration(solution, generation + add);
 	solution[number_items].Bin_Fullness /= GetNumberOfBins(solution);
 	if (GetNumberOfBins(solution) == L2)
 	{
 		end = clock();
 		Copy_Solution(global_best_solution, solution, 0);
 		global_best_solution[number_items].Bin_Fullness = solution[number_items].Bin_Fullness;
-		global_best_solution[number_items + 2].Bin_Fullness = generation + add;
+		SetGeneration(global_best_solution, generation + add);
 		SetNumberOfBins(global_best_solution, solution);
-		global_best_solution[number_items + 3].Bin_Fullness = solution[number_items + 3].Bin_Fullness;
+		SetNumberOfFullBins(global_best_solution, solution);
 		TotalTime = (end - start); // / (CLK_TCK * 1.0);
 		WriteOutput();
 		is_optimal_solution = 1;
@@ -349,7 +384,7 @@ long int Generation()
 	k = 0;
 	for (i = P_size - 1; i > P_size - (p_c / 2 * P_size); i--, j++)
 	{
-		while (population[ordered_population[k]][number_items + 2].Bin_Fullness == generation + 1)
+		while (GetGeneration(population[ordered_population[k]]) == generation + 1)
 			k++;
 		Copy_Solution(population[ordered_population[k++]], children[j], 1);
 	}
@@ -362,7 +397,7 @@ long int Generation()
 	j = 0;
 	for (i = P_size - 1; i > P_size - (p_m * P_size); i--)
 	{
-		if (i != j && j < (int)(P_size * B_size) && generation + 1 - population[ordered_population[i]][number_items + 2].Bin_Fullness < life_span)
+		if (i != j && j < (int)(P_size * B_size) && generation + 1 - GetGeneration(population[ordered_population[i]]) < life_span)
 		{ /*-----------------------------------------------------------------------------------------------------
 			  ----------------------------------Controlled replacement for mutation----------------------------------
 		  -----------------------------------------------------------------------------------------------------*/
@@ -527,7 +562,7 @@ void FF_n_(int individual)
 		j = 0,
 		total_bins = 0;
 	bin_i = 0;
-	population[individual][number_items + 3].Bin_Fullness = 0;
+	SetNumberOfFullBins(population[individual], 0.0);
 	population[individual][number_items + 4].Bin_Fullness = bin_capacity;
 	if (n_ > 0)
 	{
@@ -585,7 +620,7 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 	lighter_weight = weight[F[0]];
 	bin_i = b;
 	population[individual][number_items].Bin_Fullness = 0;
-	population[individual][number_items + 3].Bin_Fullness = 0;
+	SetNumberOfFullBins(population[individual], 0.0);
 	population[individual][number_items + 4].Bin_Fullness = bin_capacity;
 
 	for (i = 0; i < b; i++)
@@ -679,7 +714,7 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 		if (population[individual][ordered_BinFullness[i]].Bin_Fullness < population[individual][number_items + 4].Bin_Fullness)
 			population[individual][number_items + 4].Bin_Fullness = population[individual][ordered_BinFullness[i]].Bin_Fullness;
 		if ((unsigned long int)population[individual][ordered_BinFullness[i]].Bin_Fullness == bin_capacity)
-			population[individual][number_items + 3].Bin_Fullness++;
+			AddNumberOfFullBins(population[individual]);
 		else if ((unsigned long int)population[individual][ordered_BinFullness[i]].Bin_Fullness + weight[ordered_weight[number_items - 1]] <= bin_capacity)
 		{
 			if (ordered_BinFullness[i] < bin_i)
@@ -734,7 +769,7 @@ void FF(long int item, SOLUTION individual[], long int &total_bins, long int beg
 				individual[i].Bin_Fullness += weight[item];
 				individual[i].L.insert(item);
 				if ((unsigned long int)individual[i].Bin_Fullness == bin_capacity)
-					individual[number_items + 3].Bin_Fullness++;
+					AddNumberOfFullBins(individual);
 				if (is_last)
 				{
 					for (i; i < total_bins; i++)
@@ -1055,15 +1090,15 @@ void Copy_Solution(SOLUTION solution[], SOLUTION solution2[], int delete_solutio
 	}
 	solution[number_items].Bin_Fullness = solution2[number_items].Bin_Fullness;
 	SetNumberOfBins(solution, solution2);
-	solution[number_items + 2].Bin_Fullness = solution2[number_items + 2].Bin_Fullness;
-	solution[number_items + 3].Bin_Fullness = solution2[number_items + 3].Bin_Fullness;
+	SetGeneration(solution, solution2);
+	SetNumberOfFullBins(solution, solution2);
 	solution[number_items + 4].Bin_Fullness = solution2[number_items + 4].Bin_Fullness;
 	if (delete_solution2)
 	{
 		solution2[number_items].Bin_Fullness = 0;
 		SetNumberOfBins(solution2, 0.0);
-		solution2[number_items + 2].Bin_Fullness = 0;
-		solution2[number_items + 3].Bin_Fullness = 0;
+		SetGeneration(solution2, 0.0);
+		SetNumberOfBins(solution2, 0.0);
 		solution2[number_items + 4].Bin_Fullness = 0;
 	}
 }
