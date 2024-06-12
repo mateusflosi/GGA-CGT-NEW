@@ -237,17 +237,32 @@ int main()
 	return 0;
 }
 
+double GetNumberOfBins(SOLUTION solution[])
+{
+	return solution[number_items + 1].Bin_Fullness;
+}
+
+void SetNumberOfBins(SOLUTION dest[], double value)
+{
+	dest[number_items + 1].Bin_Fullness = value;
+}
+
+void SetNumberOfBins(SOLUTION dest[], SOLUTION origem[])
+{
+	SetNumberOfBins(dest, GetNumberOfBins(origem));
+}
+
 long int CheckOptimalSolution(SOLUTION solution[], int add)
 {
 	solution[number_items + 2].Bin_Fullness = generation + add;
-	solution[number_items].Bin_Fullness /= solution[number_items + 1].Bin_Fullness;
-	if (solution[number_items + 1].Bin_Fullness == L2)
+	solution[number_items].Bin_Fullness /= GetNumberOfBins(solution);
+	if (GetNumberOfBins(solution) == L2)
 	{
 		end = clock();
 		Copy_Solution(global_best_solution, solution, 0);
 		global_best_solution[number_items].Bin_Fullness = solution[number_items].Bin_Fullness;
 		global_best_solution[number_items + 2].Bin_Fullness = generation + add;
-		global_best_solution[number_items + 1].Bin_Fullness = solution[number_items + 1].Bin_Fullness;
+		SetNumberOfBins(global_best_solution, solution);
 		global_best_solution[number_items + 3].Bin_Fullness = solution[number_items + 3].Bin_Fullness;
 		TotalTime = (end - start); // / (CLK_TCK * 1.0);
 		WriteOutput();
@@ -394,10 +409,10 @@ void Gene_Level_Crossover_FFD(long int father_1, long int father_2, long int chi
 		free_items[ATTRIBUTES] = {0};
 	children[child][number_items + 4].Bin_Fullness = bin_capacity;
 
-	if (population[father_1][number_items + 1].Bin_Fullness > population[father_2][number_items + 1].Bin_Fullness)
-		counter = population[father_1][number_items + 1].Bin_Fullness;
+	if (GetNumberOfBins(population[father_1]) > GetNumberOfBins(population[father_2]))
+		counter = GetNumberOfBins(population[father_1]);
 	else
-		counter = population[father_2][number_items + 1].Bin_Fullness;
+		counter = GetNumberOfBins(population[father_2]);
 
 	long int *random_order1 = new long int[counter];
 	long int *random_order2 = new long int[counter];
@@ -408,12 +423,12 @@ void Gene_Level_Crossover_FFD(long int father_1, long int father_2, long int chi
 		random_order2[k] = k;
 	}
 
-	Sort_Random(random_order1, 0, population[father_1][number_items + 1].Bin_Fullness);
-	Sort_Random(random_order2, 0, population[father_2][number_items + 1].Bin_Fullness);
+	Sort_Random(random_order1, 0, GetNumberOfBins(population[father_1]));
+	Sort_Random(random_order2, 0, GetNumberOfBins(population[father_2]));
 	Sort_Descending_BinFullness(random_order1, father_1);
 	Sort_Descending_BinFullness(random_order2, father_2);
 
-	for (k = 0; k < population[father_1][number_items + 1].Bin_Fullness; k++)
+	for (k = 0; k < GetNumberOfBins(population[father_1]); k++)
 	{
 		if (population[father_1][random_order1[k]].Bin_Fullness >= population[father_2][random_order2[k]].Bin_Fullness)
 		{
@@ -448,7 +463,7 @@ void Gene_Level_Crossover_FFD(long int father_1, long int father_2, long int chi
 	else
 		for (k = 0; k < k2; k++)
 			children[child][number_items].Bin_Fullness += pow((children[child][k].Bin_Fullness / bin_capacity), 2);
-	children[child][number_items + 1].Bin_Fullness = k2;
+	SetNumberOfBins(children[child], k2);
 	free(random_order1);
 	free(random_order2);
 }
@@ -470,16 +485,16 @@ void Adaptive_Mutation_RP(long int individual, float k, int is_cloned)
 		free_items[ATTRIBUTES] = {0},
 		ordered_BinFullness[ATTRIBUTES] = {0};
 	node *p;
-	for (i = 0; i < population[individual][number_items + 1].Bin_Fullness; i++)
+	for (i = 0; i < GetNumberOfBins(population[individual]); i++)
 		ordered_BinFullness[i] = i;
 	if (is_cloned)
-		Sort_Random(ordered_BinFullness, 0, population[individual][number_items + 1].Bin_Fullness);
+		Sort_Random(ordered_BinFullness, 0, GetNumberOfBins(population[individual]));
 	Sort_Ascending_BinFullness(ordered_BinFullness, individual);
 	i = 1;
-	while ((unsigned long int)population[individual][ordered_BinFullness[i]].Bin_Fullness < bin_capacity && i < population[individual][number_items + 1].Bin_Fullness)
+	while ((unsigned long int)population[individual][ordered_BinFullness[i]].Bin_Fullness < bin_capacity && i < GetNumberOfBins(population[individual]))
 		i++;
 	_p_ = 1 / (float)(k);
-	number_bins = (long int)ceil(i * ((2 - i / population[individual][number_items + 1].Bin_Fullness) / pow(i, _p_)) * (1 - ((double)get_rand(&seed_emptybin, (long int)ceil((1 / pow(i, _p_)) * 100)) / 100)));
+	number_bins = (long int)ceil(i * ((2 - i / GetNumberOfBins(population[individual])) / pow(i, _p_)) * (1 - ((double)get_rand(&seed_emptybin, (long int)ceil((1 / pow(i, _p_)) * 100)) / 100)));
 	for (i = 0; i < number_bins; i++)
 	{
 		p = population[individual][ordered_BinFullness[lightest_bin]].L.first;
@@ -492,11 +507,12 @@ void Adaptive_Mutation_RP(long int individual, float k, int is_cloned)
 		population[individual][ordered_BinFullness[lightest_bin]].Bin_Fullness = 0;
 		lightest_bin++;
 	}
-	population[individual][number_items + 1].Bin_Fullness -= number_bins;
-	number_bins = population[individual][number_items + 1].Bin_Fullness;
+
+	SetNumberOfBins(population[individual], GetNumberOfBins(population[individual]) - number_bins);
+	number_bins = GetNumberOfBins(population[individual]);
 	Adjust_Solution(individual);
 	RP(individual, number_bins, free_items, number_free_items);
-	population[individual][number_items + 1].Bin_Fullness = number_bins;
+	SetNumberOfBins(population[individual], number_bins);
 }
 
 /************************************************************************************************************************
@@ -536,7 +552,7 @@ void FF_n_(int individual)
 			FF(permutation[j], population[individual], total_bins, bin_i, 0);
 		FF(permutation[j], population[individual], total_bins, bin_i, 1);
 	}
-	population[individual][number_items + 1].Bin_Fullness = total_bins;
+	SetNumberOfBins(population[individual], total_bins);
 }
 
 /************************************************************************************************************************
@@ -905,7 +921,7 @@ void Sort_Ascending_BinFullness(long int ordered_BinFullness[], long int individ
 		temporary_variable,
 		ban = 1;
 
-	k = population[individual][number_items + 1].Bin_Fullness - 1;
+	k = GetNumberOfBins(population[individual]) - 1;
 	while (ban)
 	{
 		ban = 0;
@@ -936,7 +952,7 @@ void Sort_Descending_BinFullness(long int ordered_BinFullness[], long int indivi
 		temporary_variable,
 		ban = 1;
 
-	k = population[individual][number_items + 1].Bin_Fullness - 1;
+	k = GetNumberOfBins(population[individual]) - 1;
 	while (ban)
 	{
 		ban = 0;
@@ -1022,7 +1038,7 @@ void Copy_Solution(SOLUTION solution[], SOLUTION solution2[], int delete_solutio
 {
 	long int j;
 
-	for (j = 0; j < solution2[number_items + 1].Bin_Fullness; j++)
+	for (j = 0; j < GetNumberOfBins(solution2); j++)
 	{
 		solution[j].Bin_Fullness = solution2[j].Bin_Fullness;
 		solution[j].L.clone_linked_list(solution2[j].L);
@@ -1032,20 +1048,20 @@ void Copy_Solution(SOLUTION solution[], SOLUTION solution2[], int delete_solutio
 			solution2[j].L.free_linked_list();
 		}
 	}
-	while (j < solution[number_items + 1].Bin_Fullness)
+	while (j < GetNumberOfBins(solution))
 	{
 		solution[j].Bin_Fullness = 0;
 		solution[j++].L.free_linked_list();
 	}
 	solution[number_items].Bin_Fullness = solution2[number_items].Bin_Fullness;
-	solution[number_items + 1].Bin_Fullness = solution2[number_items + 1].Bin_Fullness;
+	SetNumberOfBins(solution, solution2);
 	solution[number_items + 2].Bin_Fullness = solution2[number_items + 2].Bin_Fullness;
 	solution[number_items + 3].Bin_Fullness = solution2[number_items + 3].Bin_Fullness;
 	solution[number_items + 4].Bin_Fullness = solution2[number_items + 4].Bin_Fullness;
 	if (delete_solution2)
 	{
 		solution2[number_items].Bin_Fullness = 0;
-		solution2[number_items + 1].Bin_Fullness = 0;
+		SetNumberOfBins(solution2, 0.0);
 		solution2[number_items + 2].Bin_Fullness = 0;
 		solution2[number_items + 3].Bin_Fullness = 0;
 		solution2[number_items + 4].Bin_Fullness = 0;
@@ -1123,7 +1139,7 @@ void Adjust_Solution(long int individual)
 		i++;
 	for (j = i, k = i; j < number_items; j++, k++)
 	{
-		if (j < population[individual][number_items + 1].Bin_Fullness)
+		if (j < GetNumberOfBins(population[individual]))
 		{
 			while (population[individual][k].Bin_Fullness == 0)
 				k++;
@@ -1215,7 +1231,7 @@ long int LoadData()
 void WriteOutput()
 {
 	output = fopen(nameC, "a");
-	fprintf(output, "\n%s \t %d \t %d \t %f \t %ld \t %f", file, (int)L2, (int)global_best_solution[number_items + 1].Bin_Fullness, global_best_solution[number_items].Bin_Fullness, generation, TotalTime);
+	fprintf(output, "\n%s \t %d \t %d \t %f \t %ld \t %f", file, (int)L2, (int)GetNumberOfBins(global_best_solution), global_best_solution[number_items].Bin_Fullness, generation, TotalTime);
 	if (save_bestSolution == 1)
 		sendtofile(global_best_solution);
 	fclose(output);
@@ -1250,7 +1266,7 @@ void sendtofile(SOLUTION best[])
 		position = 0;
 	unsigned long int
 		bins[ATTRIBUTES] = {0},
-		n_bins = best[number_items + 1].Bin_Fullness;
+		n_bins = GetNumberOfBins(best);
 
 	int binError = -1,
 		banError = 0;
