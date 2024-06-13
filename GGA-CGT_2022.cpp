@@ -237,6 +237,26 @@ int main()
 	return 0;
 }
 
+double GetFitness(SOLUTION solution[])
+{
+	return solution[number_items].Bin_Fullness;
+}
+
+void SetFitness(SOLUTION dest[], double value)
+{
+	dest[number_items].Bin_Fullness = value;
+}
+
+void SetFitness(SOLUTION dest[], SOLUTION origem[])
+{
+	SetFitness(dest, GetFitness(origem));
+}
+
+void IncrementFitness(SOLUTION solution[], long int individual)
+{
+	solution[number_items].Bin_Fullness += pow((solution[individual].Bin_Fullness / bin_capacity), 2);
+}
+
 double GetNumberOfBins(SOLUTION solution[])
 {
 	return solution[number_items + 1].Bin_Fullness;
@@ -305,12 +325,12 @@ void SetHighestAvaliableCapacity(SOLUTION dest[], SOLUTION origem[])
 long int CheckOptimalSolution(SOLUTION solution[], int add)
 {
 	SetGeneration(solution, generation + add);
-	solution[number_items].Bin_Fullness /= GetNumberOfBins(solution);
+	SetFitness(solution, GetFitness(solution) / GetNumberOfBins(solution));
 	if (GetNumberOfBins(solution) == L2)
 	{
 		end = clock();
 		Copy_Solution(global_best_solution, solution, 0);
-		global_best_solution[number_items].Bin_Fullness = solution[number_items].Bin_Fullness;
+		SetFitness(global_best_solution, solution);
 		SetGeneration(global_best_solution, generation + add);
 		SetNumberOfBins(global_best_solution, solution);
 		SetNumberOfFullBins(global_best_solution, solution);
@@ -512,7 +532,7 @@ void Gene_Level_Crossover_FFD(long int father_1, long int father_2, long int chi
 	}
 	else
 		for (k = 0; k < k2; k++)
-			children[child][number_items].Bin_Fullness += pow((children[child][k].Bin_Fullness / bin_capacity), 2);
+			IncrementFitness(children[child], k);
 	SetNumberOfBins(children[child], k2);
 	free(random_order1);
 	free(random_order2);
@@ -634,7 +654,7 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 	higher_weight = weight[F[0]];
 	lighter_weight = weight[F[0]];
 	bin_i = b;
-	population[individual][number_items].Bin_Fullness = 0;
+	SetFitness(population[individual], 0.0);
 	SetNumberOfFullBins(population[individual], 0.0);
 	SetHighestAvaliableCapacity(population[individual], bin_capacity);
 
@@ -737,7 +757,7 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 		}
 	}
 	for (i = 0; i < bin_i; i++)
-		population[individual][number_items].Bin_Fullness += pow((population[individual][i].Bin_Fullness / bin_capacity), 2);
+		IncrementFitness(population[individual], i);
 
 	free(new_free_items);
 	number_free_items += total_free;
@@ -753,7 +773,7 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 	if (lighter_weight > bin_capacity - (unsigned long int)GetHighestAvaliableCapacity(population[individual]))
 	{
 		for (i = bin_i; i < b; i++)
-			population[individual][number_items].Bin_Fullness += pow((population[individual][i].Bin_Fullness / bin_capacity), 2);
+			IncrementFitness(population[individual], i);
 		bin_i = b;
 	}
 	for (i = 0; i < number_free_items - 1; i++)
@@ -788,25 +808,25 @@ void FF(long int item, SOLUTION individual[], long int &total_bins, long int beg
 				if (is_last)
 				{
 					for (i; i < total_bins; i++)
-						individual[number_items].Bin_Fullness += pow((individual[i].Bin_Fullness / bin_capacity), 2);
+						IncrementFitness(individual, i);
 					return;
 				}
 				if ((unsigned long int)individual[i].Bin_Fullness + weight[ordered_weight[number_items - 1]] > bin_capacity && i == bin_i)
 				{
 					bin_i++;
-					individual[number_items].Bin_Fullness += pow((individual[i].Bin_Fullness / bin_capacity), 2);
+					IncrementFitness(individual, i);
 				}
 				return;
 			}
 			if (is_last)
-				individual[number_items].Bin_Fullness += pow((individual[i].Bin_Fullness / bin_capacity), 2);
+				IncrementFitness(individual, i);
 		}
 	individual[i].Bin_Fullness += weight[item];
 	individual[i].L.insert(item);
 	if (individual[i].Bin_Fullness < GetHighestAvaliableCapacity(individual))
 		SetHighestAvaliableCapacity(individual, individual[i].Bin_Fullness);
 	if (is_last)
-		individual[number_items].Bin_Fullness += pow((individual[i].Bin_Fullness / bin_capacity), 2);
+		IncrementFitness(individual, i);
 	total_bins++;
 }
 
@@ -906,12 +926,12 @@ void Find_Best_Solution()
 		best_individual = 0;
 	for (i = 0; i < P_size; i++)
 	{
-		if (population[i][number_items].Bin_Fullness > population[best_individual][number_items].Bin_Fullness)
+		if (GetFitness(population[i]) > GetFitness(population[best_individual]))
 			best_individual = i;
 	}
 	if (generation + 1 > 1)
 	{
-		if (population[best_individual][number_items].Bin_Fullness > global_best_solution[number_items].Bin_Fullness)
+		if (GetFitness(population[best_individual]) > GetFitness(global_best_solution))
 		{
 			Copy_Solution(global_best_solution, population[best_individual], 0);
 		}
@@ -938,14 +958,14 @@ void Sort_Ascending_IndividualsFitness()
 		ban = 0;
 		for (i = i2; i < k; i++)
 		{
-			if (population[ordered_population[i]][number_items].Bin_Fullness > population[ordered_population[i + 1]][number_items].Bin_Fullness)
+			if (GetFitness(population[ordered_population[i]]) > GetFitness(population[ordered_population[i + 1]]))
 			{
 				aux = ordered_population[i];
 				ordered_population[i] = ordered_population[i + 1];
 				ordered_population[i + 1] = aux;
 				ban = 1;
 			}
-			else if (population[ordered_population[i]][number_items].Bin_Fullness == population[ordered_population[i + 1]][number_items].Bin_Fullness)
+			else if (GetFitness(population[ordered_population[i]]) == GetFitness(population[ordered_population[i + 1]]))
 			{
 				aux = ordered_population[i + 1];
 				ordered_population[i + 1] = ordered_population[i2];
@@ -1103,14 +1123,14 @@ void Copy_Solution(SOLUTION solution[], SOLUTION solution2[], int delete_solutio
 		solution[j].Bin_Fullness = 0;
 		solution[j++].L.free_linked_list();
 	}
-	solution[number_items].Bin_Fullness = solution2[number_items].Bin_Fullness;
+	SetFitness(solution, solution2);
 	SetNumberOfBins(solution, solution2);
 	SetGeneration(solution, solution2);
 	SetNumberOfFullBins(solution, solution2);
 	SetHighestAvaliableCapacity(solution, solution2);
 	if (delete_solution2)
 	{
-		solution2[number_items].Bin_Fullness = 0;
+		SetFitness(solution2, 0.0);
 		SetNumberOfBins(solution2, 0.0);
 		SetGeneration(solution2, 0.0);
 		SetNumberOfBins(solution2, 0.0);
@@ -1281,7 +1301,7 @@ long int LoadData()
 void WriteOutput()
 {
 	output = fopen(nameC, "a");
-	fprintf(output, "\n%s \t %d \t %d \t %f \t %ld \t %f", file, (int)L2, (int)GetNumberOfBins(global_best_solution), global_best_solution[number_items].Bin_Fullness, generation, TotalTime);
+	fprintf(output, "\n%s \t %d \t %d \t %f \t %ld \t %f", file, (int)L2, (int)GetNumberOfBins(global_best_solution), GetFitness(global_best_solution), generation, TotalTime);
 	if (save_bestSolution == 1)
 		sendtofile(global_best_solution);
 	fclose(output);
