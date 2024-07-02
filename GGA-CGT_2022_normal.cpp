@@ -32,9 +32,6 @@ GROUPING GENETIC ALGORITHM WITH CONTROLLED GENE TRANSMISSION FOR THE BIN PACKING
    obtained solution for each instance, for each configuration i, stored in directory: Details_GGA-CGT;						*
 ************************************************************************************************************************/
 #include "linked_list.h"
-#include <iostream>
-#include <sstream>
-#include <vector>
 
 // CONSTANTS DEFINING THE SIZE OF THE PROBLEM
 #define ATTRIBUTES 5000
@@ -182,7 +179,7 @@ int main()
 		fclose(output);
 
 		// READING FILE "instances.txt" CONTAINING THE NAME OF BPP INSTANCES TO PROCESS
-		if ((input_Instances = fopen("instancesConflicts.txt", "rt")) == NULL)
+		if ((input_Instances = fopen("instances.txt", "rt")) == NULL)
 		{
 			printf("\n INVALID FILE");
 			// getch();
@@ -1231,34 +1228,12 @@ void Adjust_Solution(long int individual)
 	}
 }
 
-int splitLine(char line[])
-{
-	std::vector<int> numbers;
-	std::stringstream ss(line);
-	int num;
-
-	while (ss >> num)
-	{
-		numbers.push_back(num);
-	}
-
-	// Exibindo os números armazenados no vetor
-	// std::cout << "Array de inteiros:" << std::endl;
-	// for (size_t i = 0; i < numbers.size(); ++i)
-	//{
-	//	std::cout << numbers[i] << " ";
-	//}
-	// std::cout << std::endl;
-	return numbers[1];
-}
-
 /************************************************************************************************************************
  To read the data defining a BPP instance																											*
 ************************************************************************************************************************/
 long int LoadData()
 {
 	char string[300];
-	char line[3000];
 	long k;
 	long int ban = 0;
 	long double bin_capacity1;
@@ -1286,17 +1261,14 @@ long int LoadData()
 	total_accumulated_weight = 0;
 	for (k = 0; k < number_items; k++)
 	{
-		fscanf(data_file, "%3000[^\n]\n", &line);
-		weight1[k] = static_cast<long double>(splitLine(line));
+		fscanf(data_file, "%Lf", &weight1[k]);
 		weight[k] = (long int)weight1[k];
 		total_accumulated_weight = (total_accumulated_weight + weight[k]);
 		total_accumulated_aux += weight1[k];
 		if (ban == 0)
 		{
 			if (weight1[k] / weight[k] > 1)
-			{
 				ban = 1;
-			}
 		}
 	}
 	if (ban)
@@ -1315,6 +1287,7 @@ long int LoadData()
 	{
 		if ((long int)total_accumulated_weight != (long int)(ceil(total_accumulated_aux * sqrt(bin_capacity) - .5)))
 		{
+			printf("\t Error loading weights");
 			// getch();
 			exit(1);
 		}
