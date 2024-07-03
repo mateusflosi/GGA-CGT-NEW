@@ -1258,7 +1258,7 @@ int splitLine(char line[])
 long int LoadData()
 {
 	char string[300];
-	char line[3000];
+	char line[5000];
 	long k;
 	long int ban = 0;
 	long double bin_capacity1;
@@ -1286,7 +1286,7 @@ long int LoadData()
 	total_accumulated_weight = 0;
 	for (k = 0; k < number_items; k++)
 	{
-		fscanf(data_file, "%3000[^\n]\n", &line);
+		fscanf(data_file, "%5000[^\n]\n", &line);
 		weight1[k] = static_cast<long double>(splitLine(line));
 		weight[k] = (long int)weight1[k];
 		total_accumulated_weight = (total_accumulated_weight + weight[k]);
