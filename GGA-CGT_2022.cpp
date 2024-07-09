@@ -70,11 +70,18 @@ long int
 	best_individuals[P_size_MAX],
 	random_individuals[P_size_MAX];
 
+struct nodeData
+{
+	linked_list L;
+	TIPO weight;
+};
+
+nodeData data[ATTRIBUTES];
+
 unsigned long int
 	higher_weight,
 	lighter_weight,
-	bin_capacity,
-	weight[ATTRIBUTES];
+	bin_capacity;
 
 float
 	p_m,
@@ -323,6 +330,16 @@ void SetHighestAvaliableCapacity(SOLUTION dest[], double value)
 void SetHighestAvaliableCapacity(SOLUTION dest[], SOLUTION origem[])
 {
 	SetHighestAvaliableCapacity(dest, GetHighestAvaliableCapacity(origem));
+}
+
+long int GetWeight(nodeData data)
+{
+	return data.weight;
+}
+
+void SetWeight(nodeData *data, int value)
+{
+	data->weight = value;
 }
 
 long int CheckOptimalSolution(SOLUTION solution[], int add)
@@ -606,7 +623,7 @@ void FF_n_(int individual)
 	{
 		for (i = 0; i < n_; i++)
 		{
-			population[individual][i].Bin_Fullness = weight[ordered_weight[i]];
+			population[individual][i].Bin_Fullness = GetWeight(data[ordered_weight[i]]);
 			population[individual][i].L.insert(ordered_weight[i]);
 			total_bins++;
 			if (population[individual][i].Bin_Fullness < GetHighestAvaliableCapacity(population[individual]))
@@ -654,8 +671,8 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 		*s,
 		*aux;
 
-	higher_weight = weight[F[0]];
-	lighter_weight = weight[F[0]];
+	higher_weight = GetWeight(data[F[0]]);
+	lighter_weight = GetWeight(data[F[0]]);
 	bin_i = b;
 	SetFitness(population[individual], 0.0);
 	SetNumberOfFullBins(population[individual], 0.0);
@@ -680,13 +697,13 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 				for (k = 0; k < number_free_items - 1; k++)
 				{
 					if (i == b - 1)
-						if (weight[F[k]] > higher_weight)
-							higher_weight = weight[F[k]];
+						if (GetWeight(data[F[k]]) > higher_weight)
+							higher_weight = GetWeight(data[F[k]]);
 					for (k2 = k + 1; k2 < number_free_items; k2++)
 					{
-						if (weight[F[k]] >= weight[p->data] + weight[s->data] && ((sum - (weight[p->data] + weight[s->data]) + (weight[F[k]]) <= bin_capacity)))
+						if (GetWeight(data[F[k]]) >= GetWeight(data[p->data]) + GetWeight(data[s->data]) && ((sum - (GetWeight(data[p->data]) + GetWeight(data[s->data])) + (GetWeight(data[F[k]])) <= bin_capacity)))
 						{
-							sum = sum - (weight[p->data] + weight[s->data]) + (weight[F[k]]);
+							sum = sum - (GetWeight(data[p->data]) + GetWeight(data[s->data])) + (GetWeight(data[F[k]]));
 							new_free_items[0] = p->data;
 							new_free_items[1] = s->data;
 							p->data = F[k];
@@ -701,9 +718,9 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 							ban = 1;
 							break;
 						}
-						if (weight[F[k2]] >= weight[p->data] + weight[s->data] && ((sum - (weight[p->data] + weight[s->data]) + (weight[F[k2]]) <= bin_capacity)))
+						if (GetWeight(data[F[k2]]) >= GetWeight(data[p->data]) + GetWeight(data[s->data]) && ((sum - (GetWeight(data[p->data]) + GetWeight(data[s->data])) + (GetWeight(data[F[k2]])) <= bin_capacity)))
 						{
-							sum = sum - (weight[p->data] + weight[s->data]) + (weight[F[k2]]);
+							sum = sum - (GetWeight(data[p->data]) + GetWeight(data[s->data])) + (GetWeight(data[F[k2]]));
 							new_free_items[0] = p->data;
 							new_free_items[1] = s->data;
 							p->data = F[k2];
@@ -718,11 +735,11 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 							ban = 1;
 							break;
 						}
-						if ((weight[F[k]] + weight[F[k2]] > weight[p->data] + weight[s->data]) || ((weight[F[k]] + weight[F[k2]] == weight[p->data] + weight[s->data]) && !(weight[F[k]] == weight[p->data] || weight[F[k]] == weight[s->data])))
+						if ((GetWeight(data[F[k]]) + GetWeight(data[F[k2]]) > GetWeight(data[p->data]) + GetWeight(data[s->data])) || ((GetWeight(data[F[k]]) + GetWeight(data[F[k2]]) == GetWeight(data[p->data]) + GetWeight(data[s->data])) && !(GetWeight(data[F[k]]) == GetWeight(data[p->data]) || GetWeight(data[F[k]]) == GetWeight(data[s->data]))))
 						{
-							if (sum - (weight[p->data] + weight[s->data]) + (weight[F[k]] + weight[F[k2]]) > bin_capacity)
+							if (sum - (GetWeight(data[p->data]) + GetWeight(data[s->data])) + (GetWeight(data[F[k]]) + GetWeight(data[F[k2]])) > bin_capacity)
 								break;
-							sum = sum - (weight[p->data] + weight[s->data]) + (weight[F[k]] + weight[F[k2]]);
+							sum = sum - (GetWeight(data[p->data]) + GetWeight(data[s->data])) + (GetWeight(data[F[k]]) + GetWeight(data[F[k2]]));
 							new_free_items[0] = p->data;
 							new_free_items[1] = s->data;
 							p->data = F[k];
@@ -753,7 +770,7 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 			SetHighestAvaliableCapacity(population[individual], population[individual][ordered_BinFullness[i]].Bin_Fullness);
 		if ((unsigned long int)population[individual][ordered_BinFullness[i]].Bin_Fullness == bin_capacity)
 			AddNumberOfFullBins(population[individual]);
-		else if ((unsigned long int)population[individual][ordered_BinFullness[i]].Bin_Fullness + weight[ordered_weight[number_items - 1]] <= bin_capacity)
+		else if ((unsigned long int)population[individual][ordered_BinFullness[i]].Bin_Fullness + GetWeight(data[ordered_weight[number_items - 1]]) <= bin_capacity)
 		{
 			if (ordered_BinFullness[i] < bin_i)
 				bin_i = ordered_BinFullness[i];
@@ -770,7 +787,7 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 	else
 	{
 		Sort_Descending_Weights(F, number_free_items);
-		lighter_weight = weight[F[number_free_items - 1]];
+		lighter_weight = GetWeight(data[F[number_free_items - 1]]);
 	}
 
 	if (lighter_weight > bin_capacity - (unsigned long int)GetHighestAvaliableCapacity(population[individual]))
@@ -797,14 +814,14 @@ void FF(long int item, SOLUTION individual[], long int &total_bins, long int beg
 {
 	long int i;
 
-	if (!is_last && weight[item] > (bin_capacity - (unsigned long int)GetHighestAvaliableCapacity(individual)))
+	if (!is_last && GetWeight(data[item]) > (bin_capacity - (unsigned long int)GetHighestAvaliableCapacity(individual)))
 		i = total_bins;
 	else
 		for (i = beginning; i < total_bins; i++)
 		{
-			if ((unsigned long int)individual[i].Bin_Fullness + weight[item] <= bin_capacity)
+			if ((unsigned long int)individual[i].Bin_Fullness + GetWeight(data[item]) <= bin_capacity)
 			{
-				individual[i].Bin_Fullness += weight[item];
+				individual[i].Bin_Fullness += GetWeight(data[item]);
 				individual[i].L.insert(item);
 				if ((unsigned long int)individual[i].Bin_Fullness == bin_capacity)
 					AddNumberOfFullBins(individual);
@@ -814,7 +831,7 @@ void FF(long int item, SOLUTION individual[], long int &total_bins, long int beg
 						IncrementFitness(individual, i);
 					return;
 				}
-				if ((unsigned long int)individual[i].Bin_Fullness + weight[ordered_weight[number_items - 1]] > bin_capacity && i == bin_i)
+				if ((unsigned long int)individual[i].Bin_Fullness + GetWeight(data[ordered_weight[number_items - 1]]) > bin_capacity && i == bin_i)
 				{
 					bin_i++;
 					IncrementFitness(individual, i);
@@ -824,7 +841,7 @@ void FF(long int item, SOLUTION individual[], long int &total_bins, long int beg
 			if (is_last)
 				IncrementFitness(individual, i);
 		}
-	individual[i].Bin_Fullness += weight[item];
+	individual[i].Bin_Fullness += GetWeight(data[item]);
 	individual[i].L.insert(item);
 	if (individual[i].Bin_Fullness < GetHighestAvaliableCapacity(individual))
 		SetHighestAvaliableCapacity(individual, individual[i].Bin_Fullness);
@@ -842,7 +859,7 @@ void LowerBound()
 	long double sjx = 0, sj2 = 0, sj3 = 0;
 	long int jx = 0, cj12, jp = 0, jpp = 0, cj2;
 
-	while (weight[ordered_weight[jx]] > bin_capacity / 2 && jx < number_items)
+	while (GetWeight(data[ordered_weight[jx]]) > bin_capacity / 2 && jx < number_items)
 		jx++;
 	n_ = jx;
 	if (jx == number_items)
@@ -862,11 +879,11 @@ void LowerBound()
 	{
 		cj12 = jx;
 		for (i = jx; i < number_items; i++)
-			sjx += weight[ordered_weight[i]];
+			sjx += GetWeight(data[ordered_weight[i]]);
 		jp = jx;
 		for (i = 0; i < jx; i++)
 		{
-			if (weight[ordered_weight[i]] <= bin_capacity - weight[ordered_weight[jx]])
+			if (GetWeight(data[ordered_weight[i]]) <= bin_capacity - GetWeight(data[ordered_weight[jx]]))
 			{
 				jp = i;
 				break;
@@ -875,15 +892,15 @@ void LowerBound()
 
 		cj2 = jx - jp;
 		for (i = jp; i <= jx - 1; i++)
-			sj2 += weight[ordered_weight[i]];
+			sj2 += GetWeight(data[ordered_weight[i]]);
 		jpp = jx;
-		sj3 = weight[ordered_weight[jpp]];
+		sj3 = GetWeight(data[ordered_weight[jpp]]);
 		ordered_weight[number_items] = number_items;
-		weight[number_items] = 0;
-		while (weight[ordered_weight[jpp + 1]] == weight[ordered_weight[jpp]])
+		SetWeight(&data[number_items], 0);
+		while (GetWeight(data[ordered_weight[jpp + 1]]) == GetWeight(data[ordered_weight[jpp]]))
 		{
 			jpp++;
-			sj3 += weight[ordered_weight[jpp]];
+			sj3 += GetWeight(data[ordered_weight[jpp]]);
 		}
 		L2 = cj12;
 
@@ -899,17 +916,17 @@ void LowerBound()
 			jpp++;
 			if (jpp < number_items)
 			{
-				sj3 += weight[ordered_weight[jpp]];
-				while (weight[ordered_weight[jpp + 1]] == weight[ordered_weight[jpp]])
+				sj3 += GetWeight(data[ordered_weight[jpp]]);
+				while (GetWeight(data[ordered_weight[jpp + 1]]) == GetWeight(data[ordered_weight[jpp]]))
 				{
 					jpp++;
-					sj3 += weight[ordered_weight[jpp]];
+					sj3 += GetWeight(data[ordered_weight[jpp]]);
 				}
-				while (jp > 0 && weight[ordered_weight[jp - 1]] <= bin_capacity - weight[ordered_weight[jpp]])
+				while (jp > 0 && GetWeight(data[ordered_weight[jp - 1]]) <= bin_capacity - GetWeight(data[ordered_weight[jpp]]))
 				{
 					jp--;
 					cj2++;
-					sj2 += weight[ordered_weight[jp]];
+					sj2 += GetWeight(data[ordered_weight[jp]]);
 				}
 			}
 			if (fmod((sjx + sj2), bin_capacity) >= 1)
@@ -1062,10 +1079,10 @@ void Sort_Random(long int random_array[], long int k, int n)
 		aux = random_array[random_number];
 		random_array[random_number] = random_array[i];
 		random_array[i] = aux;
-		if (weight[random_array[i]] < lighter_weight)
-			lighter_weight = weight[random_array[i]];
-		if (weight[random_array[random_number]] < lighter_weight)
-			lighter_weight = weight[random_array[random_number]];
+		if (GetWeight(data[random_array[i]]) < lighter_weight)
+			lighter_weight = GetWeight(data[random_array[i]]);
+		if (GetWeight(data[random_array[random_number]]) < lighter_weight)
+			lighter_weight = GetWeight(data[random_array[random_number]]);
 	}
 }
 
@@ -1088,7 +1105,7 @@ void Sort_Descending_Weights(long int ordered_weight[], long int n)
 		ban = 0;
 		for (m = 0; m < k; m++)
 		{
-			if (weight[ordered_weight[m]] < weight[ordered_weight[m + 1]])
+			if (GetWeight(data[ordered_weight[m]]) < GetWeight(data[ordered_weight[m + 1]]))
 			{
 				temporary_variable = ordered_weight[m];
 				ordered_weight[m] = ordered_weight[m + 1];
@@ -1288,12 +1305,12 @@ long int LoadData()
 	{
 		fscanf(data_file, "%5000[^\n]\n", &line);
 		weight1[k] = static_cast<long double>(splitLine(line));
-		weight[k] = (long int)weight1[k];
-		total_accumulated_weight = (total_accumulated_weight + weight[k]);
+		SetWeight(&data[k], (long int)weight1[k]);
+		total_accumulated_weight = (total_accumulated_weight + GetWeight(data[k]));
 		total_accumulated_aux += weight1[k];
 		if (ban == 0)
 		{
-			if (weight1[k] / weight[k] > 1)
+			if (weight1[k] / GetWeight(data[k]) > 1)
 			{
 				ban = 1;
 			}
@@ -1304,8 +1321,8 @@ long int LoadData()
 		total_accumulated_weight = 0;
 		for (k = 0; k < number_items; k++)
 		{
-			weight[k] = (long int)(ceil(weight1[k] * bin_capacity1 - .5));
-			total_accumulated_weight = (total_accumulated_weight + weight[k]);
+			SetWeight(&data[k], (long int)(ceil(weight1[k] * bin_capacity1 - .5)));
+			total_accumulated_weight = (total_accumulated_weight + GetWeight(data[k]));
 		}
 		bin_capacity1 *= bin_capacity1;
 	}
@@ -1401,9 +1418,9 @@ void sendtofile(SOLUTION best[])
 				break;
 			item = p->data;
 			p = p->next;
-			bins[bin] += weight[item];
-			accumulated += weight[item];
-			fprintf(output, "%ld\n", weight[item]);
+			bins[bin] += GetWeight(data[item]);
+			accumulated += GetWeight(data[item]);
+			fprintf(output, "%ld\n", GetWeight(data[item]));
 			if (bins[bin] > bin_capacity)
 			{
 				printf("ERROR the capacity of bin %ld was exceeded", bin);
@@ -1433,7 +1450,7 @@ void sendtofile(SOLUTION best[])
 				break;
 			item = p->data;
 			p = p->next;
-			fprintf(output, "[Item: %ld, Weight: %ld]\t", item + 1, weight[item]);
+			fprintf(output, "[Item: %ld, Weight: %ld]\t", item + 1, GetWeight(data[item]));
 		}
 	}
 
