@@ -72,7 +72,7 @@ long int
 
 struct nodeData
 {
-	linked_list L;
+	std::vector<int> conflitos;
 	TIPO weight;
 };
 
@@ -340,6 +340,11 @@ long int GetWeight(nodeData data)
 void SetWeight(nodeData *data, int value)
 {
 	data->weight = value;
+}
+
+void SetConflitos(nodeData *data, std::vector<int> value)
+{
+	data->conflitos = value;
 }
 
 long int CheckOptimalSolution(SOLUTION solution[], int add)
@@ -1248,7 +1253,7 @@ void Adjust_Solution(long int individual)
 	}
 }
 
-int splitLine(char line[])
+std::vector<int> splitLine(char line[])
 {
 	std::vector<int> numbers;
 	std::stringstream ss(line);
@@ -1258,15 +1263,19 @@ int splitLine(char line[])
 	{
 		numbers.push_back(num);
 	}
+	return numbers;
+}
 
-	// Exibindo os números armazenados no vetor
-	// std::cout << "Array de inteiros:" << std::endl;
-	// for (size_t i = 0; i < numbers.size(); ++i)
-	//{
-	//	std::cout << numbers[i] << " ";
-	//}
-	// std::cout << std::endl;
-	return numbers[1];
+std::vector<int> getConflitos(std::vector<int> numbers)
+{
+	std::vector<int> conflitos;
+
+	for (i = 2; i < numbers.size(); i++)
+	{
+		conflitos.push_back(numbers[i] - 1);
+	}
+
+	return conflitos;
 }
 
 /************************************************************************************************************************
@@ -1304,8 +1313,10 @@ long int LoadData()
 	for (k = 0; k < number_items; k++)
 	{
 		fscanf(data_file, "%5000[^\n]\n", &line);
-		weight1[k] = static_cast<long double>(splitLine(line));
+		std::vector<int> array = splitLine(line);
+		weight1[k] = static_cast<long double>(array[1]);
 		SetWeight(&data[k], (long int)weight1[k]);
+		SetConflitos(&data[k], getConflitos(array));
 		total_accumulated_weight = (total_accumulated_weight + GetWeight(data[k]));
 		total_accumulated_aux += weight1[k];
 		if (ban == 0)
