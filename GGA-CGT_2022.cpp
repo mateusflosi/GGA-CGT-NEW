@@ -193,7 +193,6 @@ int main()
 		{
 			printf("\n INVALID FILE");
 			// getch();
-
 			exit(1);
 		}
 		while (!feof(input_Instances))
