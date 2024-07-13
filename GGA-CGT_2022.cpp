@@ -72,6 +72,7 @@ long int
 
 struct nodeData
 {
+	int index;
 	std::vector<int> conflitos;
 	TIPO weight;
 };
@@ -337,7 +338,22 @@ long int GetWeight(nodeData data)
 	return data.weight;
 }
 
-void SetWeight(nodeData *data, int value)
+int GetIndex(nodeData data)
+{
+	return data.index;
+}
+
+std::vector<int> GetConflitos(nodeData data)
+{
+	return data.conflitos;
+}
+
+void SetIndex(nodeData *data, int value)
+{
+	data->index = value;
+}
+
+void SetWeight(nodeData *data, long int value)
 {
 	data->weight = value;
 }
@@ -1272,7 +1288,7 @@ std::vector<int> getConflitos(std::vector<int> numbers)
 
 	for (i = 2; i < numbers.size(); i++)
 	{
-		conflitos.push_back(numbers[i] - 1);
+		conflitos.push_back(numbers[i]);
 	}
 
 	return conflitos;
@@ -1315,6 +1331,7 @@ long int LoadData()
 		fscanf(data_file, "%5000[^\n]\n", &line);
 		std::vector<int> array = splitLine(line);
 		weight1[k] = static_cast<long double>(array[1]);
+		SetIndex(&data[k], array[0]);
 		SetWeight(&data[k], (long int)weight1[k]);
 		SetConflitos(&data[k], getConflitos(array));
 		total_accumulated_weight = (total_accumulated_weight + GetWeight(data[k]));
@@ -1375,6 +1392,26 @@ char *getString1Clean(char *string1)
 	return string1;
 }
 
+bool BinInConflito(std::vector<int> conflitos, int bin)
+{
+	for (int i = 0; i < conflitos.size(); ++i)
+	{
+		if (conflitos[i] == bin)
+			return true;
+	}
+	return false;
+}
+
+bool HaConflitoNoBin(std::vector<int> conflitos, std::vector<int> bins)
+{
+	for (int i = 0; i < bins.size(); ++i)
+	{
+		if (BinInConflito(conflitos, bins[i]))
+			return true;
+	}
+	return false;
+}
+
 /************************************************************************************************************************
  To print the global best solution in a data file																								*
 ************************************************************************************************************************/
@@ -1389,6 +1426,8 @@ void sendtofile(SOLUTION best[])
 		ban = 1,
 		item = 0,
 		position = 0;
+	std::vector<std::vector<int>> conflitos;
+	std::vector<std::vector<int>> indexes;
 	unsigned long int
 		bins[ATTRIBUTES] = {0},
 		n_bins = GetNumberOfBins(best);
@@ -1421,14 +1460,21 @@ void sendtofile(SOLUTION best[])
 	fprintf(output, "Optimal order of the weights:\n");
 	for (bin = 0; bin < n_bins; bin++)
 	{
+		std::vector<int> conflitosBin;
+		std::vector<int> indexesBin;
 		bins[bin] = 0;
 		p = best[bin].L.first;
 		while (true)
 		{
 			if (p == NULL)
+			{
+				conflitos.push_back(conflitosBin);
+				indexes.push_back(indexesBin);
 				break;
+			}
 			item = p->data;
 			p = p->next;
+
 			bins[bin] += GetWeight(data[item]);
 			accumulated += GetWeight(data[item]);
 			fprintf(output, "%ld\n", GetWeight(data[item]));
@@ -1439,6 +1485,18 @@ void sendtofile(SOLUTION best[])
 				getchar();
 				banError = 1;
 			}
+
+			/*if (BinInConflito(conflitosBin, GetIndex(data[item])))
+			{
+				printf("ERROR there is a conflict in the bin %ld", bin);
+				binError = bin;
+				getchar();
+				banError = 1;
+			}*/
+
+			indexesBin.push_back(GetIndex(data[item]));
+			std::vector<int> conflitosItem = GetConflitos(data[item]);
+			conflitosBin.insert(conflitosBin.end(), conflitosItem.begin(), conflitosItem.end());
 		}
 	}
 
@@ -1452,6 +1510,8 @@ void sendtofile(SOLUTION best[])
 	{
 		if (bins[j] > bin_capacity)
 			fprintf(output, " \n ********************ERROR the capacity of the bin was exceeded******************");
+		if (HaConflitoNoBin(conflitos[j], indexes[j]))
+			fprintf(output, " \n ***********************ERROR there is a conflict in the bin*********************");
 
 		fprintf(output, "\n\nBIN %ld\nFullness: %ld Gap: %ld\nStored items:\t ", j + 1, bins[j], bin_capacity - bins[j]);
 		p = best[j].L.first;
