@@ -822,6 +822,30 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 	FF(F[i], population[individual], b, bin_i, 1);
 }
 
+bool BinInConflito(std::vector<int> conflitos, int bin)
+{
+	for (int i = 0; i < conflitos.size(); ++i)
+	{
+		if (conflitos[i] == bin)
+			return true;
+	}
+	return false;
+}
+
+bool ValidInsert(SOLUTION individual, long int item)
+{
+	std::vector<int> conflitosBin;
+	node *aux = individual.L.first;
+	while (aux != NULL)
+	{
+		std::vector<int> conflitosItem = GetConflitos(data[aux->data]);
+		conflitosBin.insert(conflitosBin.end(), conflitosItem.begin(), conflitosItem.end());
+		aux = aux->next;
+	}
+
+	return (unsigned long int)individual.Bin_Fullness + GetWeight(data[item]) <= bin_capacity && !BinInConflito(conflitosBin, GetIndex(data[item]));
+}
+
 /************************************************************************************************************************
  To insert an item into an incomplete BPP solution.																							*
  Input:                                                                                       									*
@@ -840,7 +864,7 @@ void FF(long int item, SOLUTION individual[], long int &total_bins, long int beg
 	else
 		for (i = beginning; i < total_bins; i++)
 		{
-			if ((unsigned long int)individual[i].Bin_Fullness + GetWeight(data[item]) <= bin_capacity)
+			if (ValidInsert(individual[i], item))
 			{
 				individual[i].Bin_Fullness += GetWeight(data[item]);
 				individual[i].L.insert(item);
@@ -1390,16 +1414,6 @@ char *getString1Clean(char *string1)
 			aux = i;
 	}
 	return string1;
-}
-
-bool BinInConflito(std::vector<int> conflitos, int bin)
-{
-	for (int i = 0; i < conflitos.size(); ++i)
-	{
-		if (conflitos[i] == bin)
-			return true;
-	}
-	return false;
 }
 
 bool HaConflitoNoBin(std::vector<int> conflitos, std::vector<int> bins)

@@ -698,7 +698,7 @@ instancesConflicts/BPPC_7_9_7.txt
 instancesConflicts/BPPC_7_9_8.txt
 instancesConflicts/BPPC_7_9_9.txt
 instancesConflicts/BPPC_7_9_10.txt
-7instancesConflicts/BPPC_8_0_1.txt
+instancesConflicts/BPPC_8_0_1.txt
 instancesConflicts/BPPC_8_0_2.txt
 instancesConflicts/BPPC_8_0_3.txt
 instancesConflicts/BPPC_8_0_4.txt
