@@ -832,18 +832,30 @@ bool BinInConflito(std::vector<int> conflitos, int bin)
 	return false;
 }
 
+bool HaConflitoNoBin(std::vector<int> conflitos, std::vector<int> bins)
+{
+	for (int i = 0; i < bins.size(); ++i)
+	{
+		if (BinInConflito(conflitos, bins[i]))
+			return true;
+	}
+	return false;
+}
+
 bool ValidInsert(SOLUTION individual, long int item)
 {
 	std::vector<int> conflitosBin;
+	std::vector<int> indexes;
 	node *aux = individual.L.first;
 	while (aux != NULL)
 	{
 		std::vector<int> conflitosItem = GetConflitos(data[aux->data]);
 		conflitosBin.insert(conflitosBin.end(), conflitosItem.begin(), conflitosItem.end());
+		indexes.push_back(GetIndex(data[aux->data]));
 		aux = aux->next;
 	}
 
-	return (unsigned long int)individual.Bin_Fullness + GetWeight(data[item]) <= bin_capacity && !BinInConflito(conflitosBin, GetIndex(data[item]));
+	return (unsigned long int)individual.Bin_Fullness + GetWeight(data[item]) <= bin_capacity && !BinInConflito(conflitosBin, GetIndex(data[item])) && !HaConflitoNoBin(GetConflitos(data[item]), indexes);
 }
 
 /************************************************************************************************************************
@@ -1416,16 +1428,6 @@ char *getString1Clean(char *string1)
 	return string1;
 }
 
-bool HaConflitoNoBin(std::vector<int> conflitos, std::vector<int> bins)
-{
-	for (int i = 0; i < bins.size(); ++i)
-	{
-		if (BinInConflito(conflitos, bins[i]))
-			return true;
-	}
-	return false;
-}
-
 /************************************************************************************************************************
  To print the global best solution in a data file																								*
 ************************************************************************************************************************/
@@ -1500,13 +1502,13 @@ void sendtofile(SOLUTION best[])
 				banError = 1;
 			}
 
-			/*if (BinInConflito(conflitosBin, GetIndex(data[item])))
+			if (BinInConflito(conflitosBin, GetIndex(data[item])) || HaConflitoNoBin(GetConflitos(data[item]), indexesBin))
 			{
 				printf("ERROR there is a conflict in the bin %ld", bin);
 				binError = bin;
 				getchar();
 				banError = 1;
-			}*/
+			}
 
 			indexesBin.push_back(GetIndex(data[item]));
 			std::vector<int> conflitosItem = GetConflitos(data[item]);
