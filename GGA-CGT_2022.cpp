@@ -666,6 +666,93 @@ void FF_n_(int individual)
 	SetNumberOfBins(population[individual], total_bins);
 }
 
+bool BinInConflito(std::vector<int> conflitos, int bin)
+{
+	for (int i = 0; i < conflitos.size(); ++i)
+	{
+		if (conflitos[i] == bin)
+			return true;
+	}
+	return false;
+}
+
+bool HaConflitoNoBin(std::vector<int> conflitos, std::vector<int> bins)
+{
+	for (int i = 0; i < bins.size(); ++i)
+	{
+		if (BinInConflito(conflitos, bins[i]))
+			return true;
+	}
+	return false;
+}
+
+bool ValidChange(long int F[], long int k, node *ori, node *p, node *s, unsigned long int sum)
+{
+	if (!(GetWeight(data[F[k]]) >= GetWeight(data[p->data]) + GetWeight(data[s->data]) && ((sum - (GetWeight(data[p->data]) + GetWeight(data[s->data])) + (GetWeight(data[F[k]])) <= bin_capacity))))
+		return false;
+
+	std::vector<int> conflitosBin;
+	std::vector<int> indexes;
+	node *aux = ori;
+
+	while (aux != NULL)
+	{
+		if (GetIndex(data[aux->data]) != GetIndex(data[p->data]) && GetIndex(data[aux->data]) != GetIndex(data[s->data]))
+		{
+			std::vector<int> conflitosItem = GetConflitos(data[aux->data]);
+			conflitosBin.insert(conflitosBin.end(), conflitosItem.begin(), conflitosItem.end());
+			indexes.push_back(GetIndex(data[aux->data]));
+		}
+		aux = aux->next;
+	}
+
+	// Verifica se o itens de fora não conflitam com os itens do bin
+	if (BinInConflito(conflitosBin, GetIndex(data[F[k]])))
+		return false;
+	// Verficiar se os itens do bin não conflitam com o de fora
+	if (HaConflitoNoBin(GetConflitos(data[F[k]]), indexes))
+		return false;
+
+	return true;
+}
+
+bool ValidDoubleChange(long int F[], long int k, long int k2, node *ori, node *p, node *s, unsigned long int sum)
+{
+	// Verifica se os dois por fora somados são maiores ou iguais que dois itens do bin
+	if (!((GetWeight(data[F[k]]) + GetWeight(data[F[k2]]) > GetWeight(data[p->data]) + GetWeight(data[s->data])) || ((GetWeight(data[F[k]]) + GetWeight(data[F[k2]]) == GetWeight(data[p->data]) + GetWeight(data[s->data])) && !(GetWeight(data[F[k]]) == GetWeight(data[p->data]) || GetWeight(data[F[k]]) == GetWeight(data[s->data])))))
+		return false;
+	// Verificar se a troca não irá estourar a cabacidade do bin
+	if (sum - (GetWeight(data[p->data]) + GetWeight(data[s->data])) + (GetWeight(data[F[k]]) + GetWeight(data[F[k2]])) > bin_capacity)
+		return false;
+	// Verifica se os dois itens não tem conflitos entre si
+	if (BinInConflito(GetConflitos(data[F[k]]), GetIndex(data[F[k2]])) || BinInConflito(GetConflitos(data[F[k2]]), GetIndex(data[F[k]])))
+		return false;
+
+	std::vector<int> conflitosBin;
+	std::vector<int> indexes;
+	node *aux = ori;
+
+	while (aux != NULL)
+	{
+		if (GetIndex(data[aux->data]) != GetIndex(data[p->data]) && GetIndex(data[aux->data]) != GetIndex(data[s->data]))
+		{
+			std::vector<int> conflitosItem = GetConflitos(data[aux->data]);
+			conflitosBin.insert(conflitosBin.end(), conflitosItem.begin(), conflitosItem.end());
+			indexes.push_back(GetIndex(data[aux->data]));
+		}
+		aux = aux->next;
+	}
+
+	// Verifica se os dois itens de fora não conflitam com os itens do bin
+	if (BinInConflito(conflitosBin, GetIndex(data[F[k]])) || BinInConflito(conflitosBin, GetIndex(data[F[k2]])))
+		return false;
+	// Verficiar se os itens do bin não conflitam com os dois de fora
+	if (HaConflitoNoBin(GetConflitos(data[F[k]]), indexes) || HaConflitoNoBin(GetConflitos(data[F[k2]]), indexes))
+		return false;
+
+	return true;
+}
+
 /************************************************************************************************************************
  To reinsert free items into an incomplete BPP solution.																						*
  Input:                                                                                                                	*
@@ -688,7 +775,8 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 	unsigned long int
 		sum = 0;
 
-	node *p,
+	node *ori,
+		*p,
 		*s,
 		*aux;
 
@@ -707,6 +795,7 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 	for (i = 0; i < b; i++)
 	{
 		sum = (long int)population[individual][ordered_BinFullness[i]].Bin_Fullness;
+		ori = population[individual][ordered_BinFullness[i]].L.first;
 		p = population[individual][ordered_BinFullness[i]].L.first;
 		while (p->next != NULL)
 		{
@@ -722,7 +811,7 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 							higher_weight = GetWeight(data[F[k]]);
 					for (k2 = k + 1; k2 < number_free_items; k2++)
 					{
-						if (GetWeight(data[F[k]]) >= GetWeight(data[p->data]) + GetWeight(data[s->data]) && ((sum - (GetWeight(data[p->data]) + GetWeight(data[s->data])) + (GetWeight(data[F[k]])) <= bin_capacity)))
+						if (ValidChange(F, k, ori, p, s, sum))
 						{
 							sum = sum - (GetWeight(data[p->data]) + GetWeight(data[s->data])) + (GetWeight(data[F[k]]));
 							new_free_items[0] = p->data;
@@ -739,7 +828,7 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 							ban = 1;
 							break;
 						}
-						if (GetWeight(data[F[k2]]) >= GetWeight(data[p->data]) + GetWeight(data[s->data]) && ((sum - (GetWeight(data[p->data]) + GetWeight(data[s->data])) + (GetWeight(data[F[k2]])) <= bin_capacity)))
+						if (ValidChange(F, k2, ori, p, s, sum))
 						{
 							sum = sum - (GetWeight(data[p->data]) + GetWeight(data[s->data])) + (GetWeight(data[F[k2]]));
 							new_free_items[0] = p->data;
@@ -756,10 +845,8 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 							ban = 1;
 							break;
 						}
-						if ((GetWeight(data[F[k]]) + GetWeight(data[F[k2]]) > GetWeight(data[p->data]) + GetWeight(data[s->data])) || ((GetWeight(data[F[k]]) + GetWeight(data[F[k2]]) == GetWeight(data[p->data]) + GetWeight(data[s->data])) && !(GetWeight(data[F[k]]) == GetWeight(data[p->data]) || GetWeight(data[F[k]]) == GetWeight(data[s->data]))))
+						if (ValidDoubleChange(F, k, k2, ori, p, s, sum))
 						{
-							if (sum - (GetWeight(data[p->data]) + GetWeight(data[s->data])) + (GetWeight(data[F[k]]) + GetWeight(data[F[k2]])) > bin_capacity)
-								break;
 							sum = sum - (GetWeight(data[p->data]) + GetWeight(data[s->data])) + (GetWeight(data[F[k]]) + GetWeight(data[F[k2]]));
 							new_free_items[0] = p->data;
 							new_free_items[1] = s->data;
@@ -820,26 +907,6 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 	for (i = 0; i < number_free_items - 1; i++)
 		FF(F[i], population[individual], b, bin_i, 0);
 	FF(F[i], population[individual], b, bin_i, 1);
-}
-
-bool BinInConflito(std::vector<int> conflitos, int bin)
-{
-	for (int i = 0; i < conflitos.size(); ++i)
-	{
-		if (conflitos[i] == bin)
-			return true;
-	}
-	return false;
-}
-
-bool HaConflitoNoBin(std::vector<int> conflitos, std::vector<int> bins)
-{
-	for (int i = 0; i < bins.size(); ++i)
-	{
-		if (BinInConflito(conflitos, bins[i]))
-			return true;
-	}
-	return false;
 }
 
 bool ValidInsert(SOLUTION individual, long int item)
@@ -1527,7 +1594,11 @@ void sendtofile(SOLUTION best[])
 		if (bins[j] > bin_capacity)
 			fprintf(output, " \n ********************ERROR the capacity of the bin was exceeded******************");
 		if (HaConflitoNoBin(conflitos[j], indexes[j]))
+		{
+			while (true)
+				printf("ERROR there is a conflict in the bin %ld", bin);
 			fprintf(output, " \n ***********************ERROR there is a conflict in the bin*********************");
+		}
 
 		fprintf(output, "\n\nBIN %ld\nFullness: %ld Gap: %ld\nStored items:\t ", j + 1, bins[j], bin_capacity - bins[j]);
 		p = best[j].L.first;
