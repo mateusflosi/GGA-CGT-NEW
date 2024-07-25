@@ -690,27 +690,19 @@ bool ValidChange(long int F[], long int k, node *ori, node *p, node *s, unsigned
 {
 	if (!(GetWeight(&data[F[k]]) >= GetWeight(&data[p->data]) + GetWeight(&data[s->data]) && ((sum - (GetWeight(&data[p->data]) + GetWeight(&data[s->data])) + (GetWeight(&data[F[k]])) <= bin_capacity))))
 		return false;
-	std::vector<int> conflitosBin;
-	std::vector<int> indexes;
 	node *aux = ori;
 
 	while (aux != NULL)
 	{
 		if (GetIndex(&data[aux->data]) != GetIndex(&data[p->data]) && GetIndex(&data[aux->data]) != GetIndex(&data[s->data]))
 		{
-			std::vector<int> conflitosItem = GetConflitos(&data[aux->data]);
-			conflitosBin.insert(conflitosBin.end(), conflitosItem.begin(), conflitosItem.end());
-			indexes.push_back(GetIndex(&data[aux->data]));
+			if (BinInConflito(GetConflitos(&data[aux->data]), GetIndex(&data[F[k]])))
+				return false;
+			if (BinInConflito(GetConflitos(&data[F[k]]), GetIndex(&data[aux->data])))
+				return false;
 		}
 		aux = aux->next;
 	}
-
-	// Verifica se o itens de fora não conflitam com os itens do bin
-	if (BinInConflito(conflitosBin, GetIndex(&data[F[k]])))
-		return false;
-	// Verficiar se os itens do bin não conflitam com o de fora
-	if (HaConflitoNoBin(GetConflitos(&data[F[k]]), indexes))
-		return false;
 
 	return true;
 }
@@ -727,27 +719,20 @@ bool ValidDoubleChange(long int F[], long int k, long int k2, node *ori, node *p
 	if (BinInConflito(GetConflitos(&data[F[k]]), GetIndex(&data[F[k2]])) || BinInConflito(GetConflitos(&data[F[k2]]), GetIndex(&data[F[k]])))
 		return false;
 
-	std::vector<int> conflitosBin;
-	std::vector<int> indexes;
 	node *aux = ori;
 
 	while (aux != NULL)
 	{
 		if (GetIndex(&data[aux->data]) != GetIndex(&data[p->data]) && GetIndex(&data[aux->data]) != GetIndex(&data[s->data]))
 		{
-			std::vector<int> conflitosItem = GetConflitos(&data[aux->data]);
-			conflitosBin.insert(conflitosBin.end(), conflitosItem.begin(), conflitosItem.end());
-			indexes.push_back(GetIndex(&data[aux->data]));
+			// Verifica se os dois itens de fora não conflitam com os itens do bin
+			if (BinInConflito(GetConflitos(&data[aux->data]), GetIndex(&data[F[k]])) || BinInConflito(GetConflitos(&data[aux->data]), GetIndex(&data[F[k2]])))
+				return false;
+			if (BinInConflito(GetConflitos(&data[F[k]]), GetIndex(&data[aux->data])) || BinInConflito(GetConflitos(&data[F[k2]]), GetIndex(&data[aux->data])))
+				return false;
 		}
 		aux = aux->next;
 	}
-
-	// Verifica se os dois itens de fora não conflitam com os itens do bin
-	if (BinInConflito(conflitosBin, GetIndex(&data[F[k]])) || BinInConflito(conflitosBin, GetIndex(&data[F[k2]])))
-		return false;
-	// Verficiar se os itens do bin não conflitam com os dois de fora
-	if (HaConflitoNoBin(GetConflitos(&data[F[k]]), indexes) || HaConflitoNoBin(GetConflitos(&data[F[k2]]), indexes))
-		return false;
 
 	return true;
 }
@@ -910,18 +895,20 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 
 bool ValidInsert(SOLUTION individual, long int item)
 {
-	std::vector<int> conflitosBin;
-	std::vector<int> indexes;
+	if ((unsigned long int)individual.Bin_Fullness + GetWeight(&data[item]) > bin_capacity)
+		return false;
+
 	node *aux = individual.L.first;
 	while (aux != NULL)
 	{
-		std::vector<int> conflitosItem = GetConflitos(&data[aux->data]);
-		conflitosBin.insert(conflitosBin.end(), conflitosItem.begin(), conflitosItem.end());
-		indexes.push_back(GetIndex(&data[aux->data]));
+		if (BinInConflito(GetConflitos(&data[aux->data]), GetIndex(&data[item])))
+			return false;
+		if (BinInConflito(GetConflitos(&data[item]), GetIndex(&data[aux->data])))
+			return false;
 		aux = aux->next;
 	}
 
-	return (unsigned long int)individual.Bin_Fullness + GetWeight(&data[item]) <= bin_capacity && !BinInConflito(conflitosBin, GetIndex(&data[item])) && !HaConflitoNoBin(GetConflitos(&data[item]), indexes);
+	return true;
 }
 
 /************************************************************************************************************************
