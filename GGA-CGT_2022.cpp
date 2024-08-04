@@ -676,6 +676,31 @@ bool BinInConflito(std::vector<int> conflitos, int bin)
 	return false;
 }
 
+bool BinInConflitoBuscaBinaria(std::vector<int> conflitos, int bin)
+{
+	int esquerda = 0;
+	int direita = conflitos.size() - 1;
+
+	while (esquerda <= direita)
+	{
+		int meio = esquerda + (direita - esquerda) / 2;
+
+		// Verifica se o valor está presente no meio
+		if (conflitos[meio] == bin)
+			return true;
+
+		// Se o valor é maior que o valor do meio, ignora a metade esquerda
+		if (conflitos[meio] < bin)
+			esquerda = meio + 1;
+		// Se o valor é menor que o valor do meio, ignora a metade direita
+		else
+			direita = meio - 1;
+	}
+
+	// Retorna -1 se o valor não for encontrado
+	return false;
+}
+
 bool HaConflitoNoBin(std::vector<int> conflitos, std::vector<int> bins)
 {
 	for (int i = 0; i < bins.size(); ++i)
@@ -696,9 +721,9 @@ bool ValidChange(long int F[], long int k, node *ori, node *p, node *s, unsigned
 	{
 		if (GetIndex(&data[aux->data]) != GetIndex(&data[p->data]) && GetIndex(&data[aux->data]) != GetIndex(&data[s->data]))
 		{
-			if (BinInConflito(GetConflitos(&data[aux->data]), GetIndex(&data[F[k]])))
+			if (BinInConflitoBuscaBinaria(GetConflitos(&data[aux->data]), GetIndex(&data[F[k]])))
 				return false;
-			if (BinInConflito(GetConflitos(&data[F[k]]), GetIndex(&data[aux->data])))
+			if (BinInConflitoBuscaBinaria(GetConflitos(&data[F[k]]), GetIndex(&data[aux->data])))
 				return false;
 		}
 		aux = aux->next;
@@ -716,7 +741,7 @@ bool ValidDoubleChange(long int F[], long int k, long int k2, node *ori, node *p
 	if (sum - (GetWeight(&data[p->data]) + GetWeight(&data[s->data])) + (GetWeight(&data[F[k]]) + GetWeight(&data[F[k2]])) > bin_capacity)
 		return false;
 	// Verifica se os dois itens não tem conflitos entre si
-	if (BinInConflito(GetConflitos(&data[F[k]]), GetIndex(&data[F[k2]])) || BinInConflito(GetConflitos(&data[F[k2]]), GetIndex(&data[F[k]])))
+	if (BinInConflitoBuscaBinaria(GetConflitos(&data[F[k]]), GetIndex(&data[F[k2]])) || BinInConflitoBuscaBinaria(GetConflitos(&data[F[k2]]), GetIndex(&data[F[k]])))
 		return false;
 
 	node *aux = ori;
@@ -726,9 +751,9 @@ bool ValidDoubleChange(long int F[], long int k, long int k2, node *ori, node *p
 		if (GetIndex(&data[aux->data]) != GetIndex(&data[p->data]) && GetIndex(&data[aux->data]) != GetIndex(&data[s->data]))
 		{
 			// Verifica se os dois itens de fora não conflitam com os itens do bin
-			if (BinInConflito(GetConflitos(&data[aux->data]), GetIndex(&data[F[k]])) || BinInConflito(GetConflitos(&data[aux->data]), GetIndex(&data[F[k2]])))
+			if (BinInConflitoBuscaBinaria(GetConflitos(&data[aux->data]), GetIndex(&data[F[k]])) || BinInConflitoBuscaBinaria(GetConflitos(&data[aux->data]), GetIndex(&data[F[k2]])))
 				return false;
-			if (BinInConflito(GetConflitos(&data[F[k]]), GetIndex(&data[aux->data])) || BinInConflito(GetConflitos(&data[F[k2]]), GetIndex(&data[aux->data])))
+			if (BinInConflitoBuscaBinaria(GetConflitos(&data[F[k]]), GetIndex(&data[aux->data])) || BinInConflitoBuscaBinaria(GetConflitos(&data[F[k2]]), GetIndex(&data[aux->data])))
 				return false;
 		}
 		aux = aux->next;
@@ -901,9 +926,9 @@ bool ValidInsert(SOLUTION individual, long int item)
 	node *aux = individual.L.first;
 	while (aux != NULL)
 	{
-		if (BinInConflito(GetConflitos(&data[aux->data]), GetIndex(&data[item])))
+		if (BinInConflitoBuscaBinaria(GetConflitos(&data[aux->data]), GetIndex(&data[item])))
 			return false;
-		if (BinInConflito(GetConflitos(&data[item]), GetIndex(&data[aux->data])))
+		if (BinInConflitoBuscaBinaria(GetConflitos(&data[item]), GetIndex(&data[aux->data])))
 			return false;
 		aux = aux->next;
 	}
