@@ -73,7 +73,8 @@ long int
 struct nodeData
 {
 	int index;
-	std::vector<int> conflitos;
+	int *conflitos;
+	int conflitosSize;
 	TIPO weight;
 };
 
@@ -343,9 +344,21 @@ int GetIndex(nodeData *data)
 	return data->index;
 }
 
-std::vector<int> GetConflitos(nodeData *data)
+int GetConflitosSize(nodeData *data)
+{
+	return data->conflitosSize;
+}
+
+int *GetConflitos(nodeData *data)
 {
 	return data->conflitos;
+}
+
+std::vector<int> GetConflitosVector(nodeData *data)
+{
+	int *ptr = GetConflitos(data);
+	std::vector<int> vec(ptr, ptr + GetConflitosSize(data));
+	return vec;
 }
 
 void SetIndex(nodeData *data, int value)
@@ -358,9 +371,14 @@ void SetWeight(nodeData *data, long int value)
 	data->weight = value;
 }
 
-void SetConflitos(nodeData *data, std::vector<int> value)
+void SetConflitos(nodeData *data, int *value)
 {
 	data->conflitos = value;
+}
+
+void SetConflitosSize(nodeData *data, int value)
+{
+	data->conflitosSize = value;
 }
 
 long int CheckOptimalSolution(SOLUTION solution[], int add)
@@ -676,10 +694,12 @@ bool BinInConflito(std::vector<int> conflitos, int bin)
 	return false;
 }
 
-bool BinInConflitoBuscaBinaria(std::vector<int> conflitos, int bin)
+bool BinInConflitoBuscaBinaria(int conflitosIndex, int binIndex)
 {
+	int *conflitos = GetConflitos(&data[conflitosIndex]);
+	int bin = GetIndex(&data[binIndex]);
 	int esquerda = 0;
-	int direita = conflitos.size() - 1;
+	int direita = GetConflitosSize(&data[conflitosIndex]) - 1;
 
 	while (esquerda <= direita)
 	{
@@ -721,9 +741,9 @@ bool ValidChange(long int F[], long int k, node *ori, node *p, node *s, unsigned
 	{
 		if (GetIndex(&data[aux->data]) != GetIndex(&data[p->data]) && GetIndex(&data[aux->data]) != GetIndex(&data[s->data]))
 		{
-			if (BinInConflitoBuscaBinaria(GetConflitos(&data[aux->data]), GetIndex(&data[F[k]])))
+			if (BinInConflitoBuscaBinaria(aux->data, F[k]))
 				return false;
-			if (BinInConflitoBuscaBinaria(GetConflitos(&data[F[k]]), GetIndex(&data[aux->data])))
+			if (BinInConflitoBuscaBinaria(F[k], aux->data))
 				return false;
 		}
 		aux = aux->next;
@@ -741,7 +761,7 @@ bool ValidDoubleChange(long int F[], long int k, long int k2, node *ori, node *p
 	if (sum - (GetWeight(&data[p->data]) + GetWeight(&data[s->data])) + (GetWeight(&data[F[k]]) + GetWeight(&data[F[k2]])) > bin_capacity)
 		return false;
 	// Verifica se os dois itens não tem conflitos entre si
-	if (BinInConflitoBuscaBinaria(GetConflitos(&data[F[k]]), GetIndex(&data[F[k2]])) || BinInConflitoBuscaBinaria(GetConflitos(&data[F[k2]]), GetIndex(&data[F[k]])))
+	if (BinInConflitoBuscaBinaria(F[k], F[k2]) || BinInConflitoBuscaBinaria(F[k2], F[k]))
 		return false;
 
 	node *aux = ori;
@@ -751,9 +771,9 @@ bool ValidDoubleChange(long int F[], long int k, long int k2, node *ori, node *p
 		if (GetIndex(&data[aux->data]) != GetIndex(&data[p->data]) && GetIndex(&data[aux->data]) != GetIndex(&data[s->data]))
 		{
 			// Verifica se os dois itens de fora não conflitam com os itens do bin
-			if (BinInConflitoBuscaBinaria(GetConflitos(&data[aux->data]), GetIndex(&data[F[k]])) || BinInConflitoBuscaBinaria(GetConflitos(&data[aux->data]), GetIndex(&data[F[k2]])))
+			if (BinInConflitoBuscaBinaria(aux->data, F[k]) || BinInConflitoBuscaBinaria(aux->data, F[k2]))
 				return false;
-			if (BinInConflitoBuscaBinaria(GetConflitos(&data[F[k]]), GetIndex(&data[aux->data])) || BinInConflitoBuscaBinaria(GetConflitos(&data[F[k2]]), GetIndex(&data[aux->data])))
+			if (BinInConflitoBuscaBinaria(F[k], aux->data) || BinInConflitoBuscaBinaria(F[k2], aux->data))
 				return false;
 		}
 		aux = aux->next;
@@ -926,9 +946,9 @@ bool ValidInsert(SOLUTION individual, long int item)
 	node *aux = individual.L.first;
 	while (aux != NULL)
 	{
-		if (BinInConflitoBuscaBinaria(GetConflitos(&data[aux->data]), GetIndex(&data[item])))
+		if (BinInConflitoBuscaBinaria(aux->data, item))
 			return false;
-		if (BinInConflitoBuscaBinaria(GetConflitos(&data[item]), GetIndex(&data[aux->data])))
+		if (BinInConflitoBuscaBinaria(item, aux->data))
 			return false;
 		aux = aux->next;
 	}
@@ -1396,16 +1416,16 @@ std::vector<int> splitLine(char line[])
 	return numbers;
 }
 
-std::vector<int> getConflitos(std::vector<int> numbers)
+int *getConflitos(std::vector<int> numbers)
 {
-	std::vector<int> conflitos;
+	int *array = (int *)malloc((numbers.size() - 2) * sizeof(int));
 
 	for (i = 2; i < numbers.size(); i++)
 	{
-		conflitos.push_back(numbers[i]);
+		array[i - 2] = numbers[i];
 	}
 
-	return conflitos;
+	return array;
 }
 
 /************************************************************************************************************************
@@ -1448,6 +1468,7 @@ long int LoadData()
 		SetIndex(&data[k], array[0]);
 		SetWeight(&data[k], (long int)weight1[k]);
 		SetConflitos(&data[k], getConflitos(array));
+		SetConflitosSize(&data[k], array.size() - 2);
 		total_accumulated_weight = (total_accumulated_weight + GetWeight(&data[k]));
 		total_accumulated_aux += weight1[k];
 		if (ban == 0)
@@ -1580,7 +1601,7 @@ void sendtofile(SOLUTION best[])
 				banError = 1;
 			}
 
-			if (BinInConflito(conflitosBin, GetIndex(&data[item])) || HaConflitoNoBin(GetConflitos(&data[item]), indexesBin))
+			if (BinInConflito(conflitosBin, GetIndex(&data[item])) || HaConflitoNoBin(GetConflitosVector(&data[item]), indexesBin))
 			{
 				printf("ERROR there is a conflict in the bin %ld", bin);
 				binError = bin;
@@ -1589,7 +1610,7 @@ void sendtofile(SOLUTION best[])
 			}
 
 			indexesBin.push_back(GetIndex(&data[item]));
-			std::vector<int> conflitosItem = GetConflitos(&data[item]);
+			std::vector<int> conflitosItem = GetConflitosVector(&data[item]);
 			conflitosBin.insert(conflitosBin.end(), conflitosItem.begin(), conflitosItem.end());
 		}
 	}
@@ -1605,11 +1626,7 @@ void sendtofile(SOLUTION best[])
 		if (bins[j] > bin_capacity)
 			fprintf(output, " \n ********************ERROR the capacity of the bin was exceeded******************");
 		if (HaConflitoNoBin(conflitos[j], indexes[j]))
-		{
-			while (true)
-				printf("ERROR there is a conflict in the bin %ld", bin);
 			fprintf(output, " \n ***********************ERROR there is a conflict in the bin*********************");
-		}
 
 		fprintf(output, "\n\nBIN %ld\nFullness: %ld Gap: %ld\nStored items:\t ", j + 1, bins[j], bin_capacity - bins[j]);
 		p = best[j].L.first;
