@@ -696,10 +696,10 @@ bool BinInConflito(std::vector<int> conflitos, int bin)
 
 bool BinInConflitoBuscaBinaria(int conflitosIndex, int binIndex)
 {
-	int *conflitos = GetConflitos(&data[conflitosIndex]);
-	int bin = GetIndex(&data[binIndex]);
+	int *conflitos = data[conflitosIndex].conflitos;
+	int bin = data[binIndex].index;
 	int esquerda = 0;
-	int direita = GetConflitosSize(&data[conflitosIndex]) - 1;
+	int direita = data[conflitosIndex].conflitosSize - 1;
 
 	while (esquerda <= direita)
 	{
@@ -733,13 +733,18 @@ bool HaConflitoNoBin(std::vector<int> conflitos, std::vector<int> bins)
 
 bool ValidChange(long int F[], long int k, node *ori, node *p, node *s, unsigned long int sum)
 {
-	if (!(GetWeight(&data[F[k]]) >= GetWeight(&data[p->data]) + GetWeight(&data[s->data]) && ((sum - (GetWeight(&data[p->data]) + GetWeight(&data[s->data])) + (GetWeight(&data[F[k]])) <= bin_capacity))))
+	long weightFk = data[F[k]].weight;
+	long weightPS = data[p->data].weight + data[s->data].weight;
+	if (sum - weightPS + weightFk > bin_capacity || weightFk < weightPS)
 		return false;
+	int pIndex = data[p->data].index;
+	int sIndex = data[s->data].index;
 	node *aux = ori;
 
 	while (aux != NULL)
 	{
-		if (GetIndex(&data[aux->data]) != GetIndex(&data[p->data]) && GetIndex(&data[aux->data]) != GetIndex(&data[s->data]))
+		int auxIndex = data[aux->data].index;
+		if (auxIndex != pIndex && auxIndex != sIndex)
 		{
 			if (BinInConflitoBuscaBinaria(aux->data, F[k]))
 				return false;
@@ -754,21 +759,28 @@ bool ValidChange(long int F[], long int k, node *ori, node *p, node *s, unsigned
 
 bool ValidDoubleChange(long int F[], long int k, long int k2, node *ori, node *p, node *s, unsigned long int sum)
 {
+	long weightFk = data[F[k]].weight;
+	long weighFk2 = data[F[k2]].weight;
+	long weightP = data[p->data].weight;
+	long weightS = data[s->data].weight;
 	// Verifica se os dois por fora somados são maiores ou iguais que dois itens do bin
-	if (!((GetWeight(&data[F[k]]) + GetWeight(&data[F[k2]]) > GetWeight(&data[p->data]) + GetWeight(&data[s->data])) || ((GetWeight(&data[F[k]]) + GetWeight(&data[F[k2]]) == GetWeight(&data[p->data]) + GetWeight(&data[s->data])) && !(GetWeight(&data[F[k]]) == GetWeight(&data[p->data]) || GetWeight(&data[F[k]]) == GetWeight(&data[s->data])))))
+	if (!((weightFk + weighFk2 > weightP + weightS) || ((weightFk + weighFk2 == weightP + weightS) && !(weightFk == weightP || weightFk == weightS))))
 		return false;
 	// Verificar se a troca não irá estourar a cabacidade do bin
-	if (sum - (GetWeight(&data[p->data]) + GetWeight(&data[s->data])) + (GetWeight(&data[F[k]]) + GetWeight(&data[F[k2]])) > bin_capacity)
+	if (sum - (weightP + weightS) + (weightFk + weighFk2) > bin_capacity)
 		return false;
 	// Verifica se os dois itens não tem conflitos entre si
 	if (BinInConflitoBuscaBinaria(F[k], F[k2]) || BinInConflitoBuscaBinaria(F[k2], F[k]))
 		return false;
 
 	node *aux = ori;
+	int pIndex = data[p->data].index;
+	int sIndex = data[s->data].index;
 
 	while (aux != NULL)
 	{
-		if (GetIndex(&data[aux->data]) != GetIndex(&data[p->data]) && GetIndex(&data[aux->data]) != GetIndex(&data[s->data]))
+		int auxIndex = data[aux->data].index;
+		if (auxIndex != pIndex && auxIndex != sIndex)
 		{
 			// Verifica se os dois itens de fora não conflitam com os itens do bin
 			if (BinInConflitoBuscaBinaria(aux->data, F[k]) || BinInConflitoBuscaBinaria(aux->data, F[k2]))
@@ -940,7 +952,7 @@ void RP(long int individual, long int &b, long int F[], long int number_free_ite
 
 bool ValidInsert(SOLUTION individual, long int item)
 {
-	if ((unsigned long int)individual.Bin_Fullness + GetWeight(&data[item]) > bin_capacity)
+	if ((unsigned long int)individual.Bin_Fullness + data[item].weight > bin_capacity)
 		return false;
 
 	node *aux = individual.L.first;
