@@ -153,6 +153,9 @@ int get_rand(int *, int);
 float randp(int *);
 int trand();
 
+double GetGeneration(SOLUTION solution[]);
+double GetNumberOfBins(SOLUTION solution[]);
+
 int main()
 {
 	char aux[10], nombreC[30], string[50];
@@ -226,9 +229,11 @@ int main()
 				// Generate_Initial_Population() returns 1 if an optimal solution was found
 				for (generation = 0; generation < max_gen; generation++)
 				{
-					if (Generation()) // Generation() returns 1 if an optimal solution was found
-						break;
+					Generation();
 					Find_Best_Solution();
+					if (generation - 10 > GetGeneration(global_best_solution))
+						break;
+
 					// printf("\n %d", (int)global_best_solution[number_items + 1].Bin_Fullness);
 				}
 			}
@@ -381,10 +386,14 @@ void SetConflitosSize(nodeData *data, int value)
 	data->conflitosSize = value;
 }
 
+void SetFitnessAndGeneration(SOLUTION solution[], int add)
+{
+	SetGeneration(solution, generation);
+	SetFitness(solution, GetFitness(solution) / GetNumberOfBins(solution));
+}
+
 long int CheckOptimalSolution(SOLUTION solution[], int add)
 {
-	SetGeneration(solution, generation + add);
-	SetFitness(solution, GetFitness(solution) / GetNumberOfBins(solution));
 	if (GetNumberOfBins(solution) == L2)
 	{
 		end = clock();
@@ -422,8 +431,9 @@ long int Generate_Initial_Population()
 	for (i = 0; i < P_size; i++)
 	{
 		FF_n_(i);
-		if (CheckOptimalSolution(population[i], 0))
-			return (1);
+		SetFitnessAndGeneration(population[i], 0);
+		// if (CheckOptimalSolution(population[i], 0))
+		//	return (1);
 	}
 	return 0;
 }
@@ -462,11 +472,13 @@ long int Generation()
 			f1 = best_individuals[h--];
 		}
 		Gene_Level_Crossover_FFD(ordered_population[f1], ordered_population[f2], j);
-		if (CheckOptimalSolution(children[j], 1))
-			return (1);
+		SetFitnessAndGeneration(children[j], 1);
+		// if (CheckOptimalSolution(children[j], 1))
+		//	return (1);
 		Gene_Level_Crossover_FFD(ordered_population[f2], ordered_population[f1], j + 1);
-		if (CheckOptimalSolution(children[j + 1], 1))
-			return (1);
+		SetFitnessAndGeneration(children[j + 1], 1);
+		// if (CheckOptimalSolution(children[j + 1], 1))
+		//	return (1);
 	}
 
 	/*-----------------------------------------------------------------------------------------------------
@@ -497,15 +509,17 @@ long int Generation()
 		  -----------------------------------------------------------------------------------------------------*/
 			Copy_Solution(population[ordered_population[j]], population[ordered_population[i]], 0);
 			Adaptive_Mutation_RP(ordered_population[j], k_cs, 1);
-			if (CheckOptimalSolution(population[ordered_population[j]], 1))
-				return (1);
+			SetFitnessAndGeneration(population[ordered_population[j]], 1);
+			// if (CheckOptimalSolution(population[ordered_population[j]], 1))
+			//	return (1);
 			j++;
 		}
 		else
 		{
 			Adaptive_Mutation_RP(ordered_population[i], k_ncs, 0);
-			if (CheckOptimalSolution(population[ordered_population[i]], 1))
-				return (1);
+			SetFitnessAndGeneration(population[ordered_population[i]], 1);
+			// if (CheckOptimalSolution(population[ordered_population[i]], 1))
+			//	return (1);
 		}
 	}
 	return 0;
@@ -1113,12 +1127,12 @@ void Find_Best_Solution()
 		best_individual = 0;
 	for (i = 0; i < P_size; i++)
 	{
-		if (GetFitness(population[i]) > GetFitness(population[best_individual]))
+		if (GetNumberOfBins(population[i]) < GetNumberOfBins(population[best_individual]))
 			best_individual = i;
 	}
 	if (generation + 1 > 1)
 	{
-		if (GetFitness(population[best_individual]) > GetFitness(global_best_solution))
+		if (GetNumberOfBins(population[best_individual]) < GetNumberOfBins(global_best_solution))
 		{
 			Copy_Solution(global_best_solution, population[best_individual], 0);
 		}
