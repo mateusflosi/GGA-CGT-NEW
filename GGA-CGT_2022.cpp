@@ -231,7 +231,7 @@ int main()
 				{
 					Generation();
 					Find_Best_Solution();
-					if (generation - 10 > GetGeneration(global_best_solution))
+					if (generation - 5 > GetGeneration(global_best_solution))
 						break;
 
 					// printf("\n %d", (int)global_best_solution[number_items + 1].Bin_Fullness);
