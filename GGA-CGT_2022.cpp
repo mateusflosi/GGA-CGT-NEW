@@ -271,8 +271,28 @@ void SetFitness(SOLUTION dest[], SOLUTION origem[])
 
 void IncrementFitness(SOLUTION solution[], long int individual)
 {
-	solution[number_items].Bin_Fullness += pow((solution[individual].Bin_Fullness / bin_capacity), 2);
+	int totalConflitos = 0;
+	node *node = solution[individual].L.first;
+
+	while (node != NULL)
+	{
+		totalConflitos += data[node->data].conflitosSize;
+		node = node->next;
+	}
+
+	double incrementFullness = pow((solution[individual].Bin_Fullness / bin_capacity), 2);
+	double incrementConflicts = pow((totalConflitos / number_items), 2);
+
+	if (incrementFullness > incrementConflicts)
+		solution[number_items].Bin_Fullness += incrementFullness;
+	else
+		solution[number_items].Bin_Fullness += incrementConflicts;
 }
+
+/*void IncrementFitness(SOLUTION solution[], long int individual)
+{
+	solution[number_items].Bin_Fullness += pow((solution[individual].Bin_Fullness / bin_capacity), 2);
+}*/
 
 double GetNumberOfBins(SOLUTION solution[])
 {
@@ -376,14 +396,31 @@ void SetWeight(nodeData *data, long int value)
 	data->weight = value;
 }
 
-void SetConflitos(nodeData *data, int *value)
+void AddConflitosSize(nodeData *data, int value)
 {
-	data->conflitos = value;
+	data->conflitosSize += value;
 }
 
-void SetConflitosSize(nodeData *data, int value)
+void AddConflitos(nodeData *data, int *value, int size)
 {
-	data->conflitosSize = value;
+	int l = 0;
+	int numberItensArray = data->conflitosSize + size;
+	int *array = (int *)malloc((numberItensArray) * sizeof(int));
+
+	for (l = 0; l < data->conflitosSize; l++)
+	{
+		array[l] = data->conflitos[l];
+	}
+
+	for (int m = 0; m < size; m++)
+	{
+		array[l + m] = value[m];
+	}
+
+	free(data->conflitos);
+	data->conflitos = array;
+
+	AddConflitosSize(data, size);
 }
 
 void SetFitnessAndGeneration(SOLUTION solution[], int add)
@@ -1491,10 +1528,18 @@ long int LoadData()
 		fscanf(data_file, "%5000[^\n]\n", &line);
 		std::vector<int> array = splitLine(line);
 		weight1[k] = static_cast<long double>(array[1]);
+
+		int *conflitos = getConflitos(array);
+
 		SetIndex(&data[k], array[0]);
 		SetWeight(&data[k], (long int)weight1[k]);
-		SetConflitos(&data[k], getConflitos(array));
-		SetConflitosSize(&data[k], array.size() - 2);
+		AddConflitos(&data[k], conflitos, array.size() - 2);
+
+		for (int l = 0; l < array.size() - 2; l++)
+		{
+			AddConflitos(&data[conflitos[l] - 1], &array[0], 1);
+		}
+
 		total_accumulated_weight = (total_accumulated_weight + GetWeight(&data[k]));
 		total_accumulated_aux += weight1[k];
 		if (ban == 0)
@@ -1667,6 +1712,13 @@ void sendtofile(SOLUTION best[])
 	}
 
 	fclose(output);
+
+	for (int l = 0; l < number_items; l++)
+	{
+		free(data[l].conflitos);
+		data[l].conflitos = NULL;
+		data[l].conflitosSize = 0;
+	}
 
 	if (banError)
 		exit(1);
