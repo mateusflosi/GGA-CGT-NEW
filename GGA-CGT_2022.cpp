@@ -271,6 +271,14 @@ void SetFitness(SOLUTION dest[], SOLUTION origem[])
 
 void IncrementFitness(SOLUTION solution[], long int individual)
 {
+	double incrementFullness = pow((solution[individual].Bin_Fullness / bin_capacity), 2);
+
+	if (incrementFullness >= 0.6)
+	{
+		solution[number_items].Bin_Fullness += incrementFullness;
+		return;
+	}
+
 	int conflitos[number_items] = {0};
 	double totalConflitos = 0;
 	int totalItens = 0;
@@ -294,7 +302,6 @@ void IncrementFitness(SOLUTION solution[], long int individual)
 			totalConflitos++;
 	}
 
-	double incrementFullness = pow((solution[individual].Bin_Fullness / bin_capacity), 2);
 	double incrementConflicts = pow((totalConflitos / (number_items - totalItens)), 2);
 
 	if (incrementFullness > incrementConflicts)
@@ -811,8 +818,8 @@ bool ValidChange(long int F[], long int k, node *ori, node *p, node *s, unsigned
 		int auxIndex = data[aux->data].index;
 		if (auxIndex != pIndex && auxIndex != sIndex)
 		{
-			if (BinInConflitoBuscaBinaria(aux->data, F[k]))
-				return false;
+			// if (BinInConflitoBuscaBinaria(aux->data, F[k]))
+			//	return false;
 			if (BinInConflitoBuscaBinaria(F[k], aux->data))
 				return false;
 		}
@@ -835,7 +842,7 @@ bool ValidDoubleChange(long int F[], long int k, long int k2, node *ori, node *p
 	if (sum - (weightP + weightS) + (weightFk + weighFk2) > bin_capacity)
 		return false;
 	// Verifica se os dois itens não tem conflitos entre si
-	if (BinInConflitoBuscaBinaria(F[k], F[k2]) || BinInConflitoBuscaBinaria(F[k2], F[k]))
+	if (BinInConflitoBuscaBinaria(F[k], F[k2]) /*|| BinInConflitoBuscaBinaria(F[k2], F[k])*/)
 		return false;
 
 	node *aux = ori;
@@ -848,8 +855,8 @@ bool ValidDoubleChange(long int F[], long int k, long int k2, node *ori, node *p
 		if (auxIndex != pIndex && auxIndex != sIndex)
 		{
 			// Verifica se os dois itens de fora não conflitam com os itens do bin
-			if (BinInConflitoBuscaBinaria(aux->data, F[k]) || BinInConflitoBuscaBinaria(aux->data, F[k2]))
-				return false;
+			// if (BinInConflitoBuscaBinaria(aux->data, F[k]) || BinInConflitoBuscaBinaria(aux->data, F[k2]))
+			//	return false;
 			if (BinInConflitoBuscaBinaria(F[k], aux->data) || BinInConflitoBuscaBinaria(F[k2], aux->data))
 				return false;
 		}
@@ -1023,8 +1030,8 @@ bool ValidInsert(SOLUTION individual, long int item)
 	node *aux = individual.L.first;
 	while (aux != NULL)
 	{
-		if (BinInConflitoBuscaBinaria(aux->data, item))
-			return false;
+		// if (BinInConflitoBuscaBinaria(aux->data, item))
+		//	return false;
 		if (BinInConflitoBuscaBinaria(item, aux->data))
 			return false;
 		aux = aux->next;
