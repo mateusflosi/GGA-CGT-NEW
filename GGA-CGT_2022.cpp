@@ -271,17 +271,31 @@ void SetFitness(SOLUTION dest[], SOLUTION origem[])
 
 void IncrementFitness(SOLUTION solution[], long int individual)
 {
-	int totalConflitos = 0;
+	int conflitos[number_items] = {0};
+	double totalConflitos = 0;
+	int totalItens = 0;
 	node *node = solution[individual].L.first;
 
 	while (node != NULL)
 	{
-		totalConflitos += data[node->data].conflitosSize;
+		totalItens++;
+
+		for (int l = 0; l < data[node->data].conflitosSize; l++)
+		{
+			conflitos[data[node->data].conflitos[l]]++;
+		}
+
 		node = node->next;
 	}
 
+	for (int l = 0; l < number_items; l++)
+	{
+		if (conflitos[l] > 0)
+			totalConflitos++;
+	}
+
 	double incrementFullness = pow((solution[individual].Bin_Fullness / bin_capacity), 2);
-	double incrementConflicts = pow((totalConflitos / number_items), 2);
+	double incrementConflicts = pow((totalConflitos / (number_items - totalItens)), 2);
 
 	if (incrementFullness > incrementConflicts)
 		solution[number_items].Bin_Fullness += incrementFullness;
