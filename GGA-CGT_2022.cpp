@@ -35,6 +35,9 @@ GROUPING GENETIC ALGORITHM WITH CONTROLLED GENE TRANSMISSION FOR THE BIN PACKING
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <cstdlib>
+#include <ctime>
+#include <chrono>
 
 // CONSTANTS DEFINING THE SIZE OF THE PROBLEM
 #define ATTRIBUTES 5000
@@ -231,7 +234,7 @@ int main()
 				{
 					Generation();
 					Find_Best_Solution();
-					if (generation - 5 > GetGeneration(global_best_solution))
+					if (generation - 25 > GetGeneration(global_best_solution))
 						break;
 
 					// printf("\n %d", (int)global_best_solution[number_items + 1].Bin_Fullness);
@@ -271,6 +274,18 @@ void SetFitness(SOLUTION dest[], SOLUTION origem[])
 
 void IncrementFitness(SOLUTION solution[], long int individual)
 {
+	// Definir a semente com o tempo atual
+	unsigned int seed = static_cast<unsigned int>(std::chrono::system_clock::now().time_since_epoch().count());
+	std::srand(seed);
+
+	// Gerar um número aleatório entre 0 e RAND_MAX
+	double numeroAleatorio = (std::rand() % 1000001) / 1000000.0;
+
+	solution[number_items].Bin_Fullness += numeroAleatorio;
+}
+
+/*void IncrementFitness(SOLUTION solution[], long int individual)
+{
 	double incrementFullness = pow((solution[individual].Bin_Fullness / bin_capacity), 2);
 
 	if (incrementFullness >= 0.6)
@@ -308,7 +323,7 @@ void IncrementFitness(SOLUTION solution[], long int individual)
 		solution[number_items].Bin_Fullness += incrementFullness;
 	else
 		solution[number_items].Bin_Fullness += incrementConflicts;
-}
+}*/
 
 /*void IncrementFitness(SOLUTION solution[], long int individual)
 {
