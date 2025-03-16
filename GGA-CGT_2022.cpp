@@ -38,6 +38,8 @@ GROUPING GENETIC ALGORITHM WITH CONTROLLED GENE TRANSMISSION FOR THE BIN PACKING
 #include <cstdlib>
 #include <ctime>
 #include <chrono>
+#include <algorithm>
+#include <random>
 
 // CONSTANTS DEFINING THE SIZE OF THE PROBLEM
 #define ATTRIBUTES 5000
@@ -245,6 +247,7 @@ int main()
 				// Generate_Initial_Population() returns 1 if an optimal solution was found
 				for (generation = 0; generation < max_gen; generation++)
 				{
+					// printf("%ld %f %f\n", generation, GetNumberOfBins(global_best_solution), generation - GetGeneration(global_best_solution));
 					Generation();
 					Find_Best_Solution();
 					if (generation - 25 > GetGeneration(global_best_solution))
@@ -744,6 +747,46 @@ void Adaptive_Mutation_RP(long int individual, float k, int is_cloned)
 	SetNumberOfBins(population[individual], number_bins);
 }
 
+std::vector<int> shuffleArray(int x, int y)
+{
+	std::vector<int> arr;
+	for (int i = x; i < y; ++i)
+	{
+		arr.push_back(i);
+	}
+	// Embaralha o vetor usando um gerador de números aleatórios
+	std::random_device rd;
+	std::mt19937 g(rd()); // Gerador de números aleatórios
+	std::shuffle(arr.begin(), arr.end(), g);
+	return arr;
+}
+
+std::vector<int> Sort_Group(int lentgh, long *array, int tamanhoGrupo)
+{
+	std::vector<int> shuffle;
+
+	// Definir a semente com o tempo atual
+	// unsigned int seed = static_cast<unsigned int>(std::chrono::system_clock::now().time_since_epoch().count());
+	// std::srand(seed);
+	// Gerar um número aleatório entre 0 e RAND_MAX
+	int numeroDeGrupos = lentgh / tamanhoGrupo;
+	int resto = lentgh - (tamanhoGrupo * numeroDeGrupos);
+	int inicio = 0;
+
+	for (int grupo = 0; grupo < numeroDeGrupos; grupo++)
+	{
+		int fim = inicio + tamanhoGrupo + (resto > grupo ? 1 : 0);
+		std::vector<int> shuffleAux = shuffleArray(inicio, fim);
+
+		for (int num : shuffleAux)
+			shuffle.push_back(array[num]);
+
+		inicio = fim;
+	}
+
+	return shuffle;
+}
+
 /************************************************************************************************************************
  To generate a random BPP solution with the � large items packed in separate bins.													*
  Input:                                                                                       									*
@@ -760,6 +803,7 @@ void FF_n_(int individual)
 	SetHighestAvaliableCapacity(population[individual], bin_capacity);
 	if (n_ > 0)
 	{
+		// std::vector<int> sortGroupN = Sort_Group(n_, ordered_conflitos_size_n, 1);
 		for (i = 0; i < n_; i++)
 		{
 			population[individual][i].Bin_Fullness = GetWeight(&data[ordered_conflitos_size_n[i]]);
@@ -769,17 +813,19 @@ void FF_n_(int individual)
 				SetHighestAvaliableCapacity(population[individual], population[individual][i].Bin_Fullness);
 		}
 		i = number_items - i;
-		Sort_Random(permutation, 0, i);
+		std::vector<int> sortGroupRestantes = Sort_Group(number_items - n_, ordered_conflitos_size_restante, 3);
+		// Sort_Random(permutation, 0, i);
 		for (j = 0; j < i - 1; j++)
-			FF(permutation[j], population[individual], total_bins, bin_i, 0);
-		FF(permutation[j], population[individual], total_bins, bin_i, 1);
+			FF(sortGroupRestantes[j], population[individual], total_bins, bin_i, 0);
+		FF(sortGroupRestantes[j], population[individual], total_bins, bin_i, 1);
 	}
 	else
 	{
-		Sort_Random(permutation, 0, number_items);
+		std::vector<int> sortGroupRestantes = Sort_Group(number_items - n_, ordered_conflitos_size_restante, 3);
+		// Sort_Random(permutation, 0, number_items);
 		for (j = 0; j < number_items - 1; j++)
-			FF(permutation[j], population[individual], total_bins, bin_i, 0);
-		FF(permutation[j], population[individual], total_bins, bin_i, 1);
+			FF(sortGroupRestantes[j], population[individual], total_bins, bin_i, 0);
+		FF(sortGroupRestantes[j], population[individual], total_bins, bin_i, 1);
 	}
 	SetNumberOfBins(population[individual], total_bins);
 }
