@@ -67,6 +67,8 @@ long int
 	L2,
 	bin_i,
 	ordered_weight[ATTRIBUTES],
+	ordered_conflitos_size_n[ATTRIBUTES],
+	ordered_conflitos_size_restante[ATTRIBUTES],
 	permutation[ATTRIBUTES],
 	items_auxiliary[ATTRIBUTES],
 	ordered_population[P_size_MAX],
@@ -139,6 +141,7 @@ void LowerBound();
 void Find_Best_Solution();
 void Sort_Ascending_IndividualsFitness();
 void Sort_Descending_Weights(long int[], long int);
+void Sort_Descending_Conflitos_size(long int[], long int);
 void Sort_Ascending_BinFullness(long int[], long int);
 void Sort_Descending_BinFullness(long int[], long int);
 void Sort_Random(long int[], long int, int);
@@ -211,6 +214,16 @@ int main()
 				ordered_weight[i] = i;
 			Sort_Descending_Weights(ordered_weight, number_items);
 			LowerBound();
+
+			for (i = 0; i < n_; i++)
+				ordered_conflitos_size_n[i] = ordered_weight[i];
+
+			for (i = n_; i < number_items; i++)
+				ordered_conflitos_size_restante[i - n_] = ordered_weight[i];
+
+			Sort_Descending_Conflitos_size(ordered_conflitos_size_n, n_);
+			Sort_Descending_Conflitos_size(ordered_conflitos_size_restante, number_items - n_);
+
 			seed_permutation = seed;
 			seed_emptybin = seed;
 			for (i = 0; i < P_size; i++)
@@ -272,7 +285,7 @@ void SetFitness(SOLUTION dest[], SOLUTION origem[])
 	SetFitness(dest, GetFitness(origem));
 }
 
-void IncrementFitness(SOLUTION solution[], long int individual)
+/*void IncrementFitness(SOLUTION solution[], long int individual)
 {
 	// Definir a semente com o tempo atual
 	unsigned int seed = static_cast<unsigned int>(std::chrono::system_clock::now().time_since_epoch().count());
@@ -282,7 +295,7 @@ void IncrementFitness(SOLUTION solution[], long int individual)
 	double numeroAleatorio = (std::rand() % 1000001) / 1000000.0;
 
 	solution[number_items].Bin_Fullness += numeroAleatorio;
-}
+}*/
 
 /*void IncrementFitness(SOLUTION solution[], long int individual)
 {
@@ -325,10 +338,10 @@ void IncrementFitness(SOLUTION solution[], long int individual)
 		solution[number_items].Bin_Fullness += incrementConflicts;
 }*/
 
-/*void IncrementFitness(SOLUTION solution[], long int individual)
+void IncrementFitness(SOLUTION solution[], long int individual)
 {
 	solution[number_items].Bin_Fullness += pow((solution[individual].Bin_Fullness / bin_capacity), 2);
-}*/
+}
 
 double GetNumberOfBins(SOLUTION solution[])
 {
@@ -749,8 +762,8 @@ void FF_n_(int individual)
 	{
 		for (i = 0; i < n_; i++)
 		{
-			population[individual][i].Bin_Fullness = GetWeight(&data[ordered_weight[i]]);
-			population[individual][i].L.insert(ordered_weight[i]);
+			population[individual][i].Bin_Fullness = GetWeight(&data[ordered_conflitos_size_n[i]]);
+			population[individual][i].L.insert(ordered_conflitos_size_n[i]);
 			total_bins++;
 			if (population[individual][i].Bin_Fullness < GetHighestAvaliableCapacity(population[individual]))
 				SetHighestAvaliableCapacity(population[individual], population[individual][i].Bin_Fullness);
@@ -1364,6 +1377,31 @@ void Sort_Descending_Weights(long int ordered_weight[], long int n)
 				temporary_variable = ordered_weight[m];
 				ordered_weight[m] = ordered_weight[m + 1];
 				ordered_weight[m + 1] = temporary_variable;
+				ban = 1;
+			}
+		}
+		k--;
+	}
+}
+
+void Sort_Descending_Conflitos_size(long int ordered_conflitos_size[], long int n)
+{
+	long int m,
+		k,
+		temporary_variable,
+		ban = 1;
+
+	k = n - 1;
+	while (ban)
+	{
+		ban = 0;
+		for (m = 0; m < k; m++)
+		{
+			if (GetConflitosSize(&data[ordered_conflitos_size[m]]) < GetConflitosSize(&data[ordered_conflitos_size[m + 1]]))
+			{
+				temporary_variable = ordered_conflitos_size[m];
+				ordered_conflitos_size[m] = ordered_conflitos_size[m + 1];
+				ordered_conflitos_size[m + 1] = temporary_variable;
 				ban = 1;
 			}
 		}
