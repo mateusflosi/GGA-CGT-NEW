@@ -300,11 +300,11 @@ void SetFitness(SOLUTION dest[], SOLUTION origem[])
 	solution[number_items].Bin_Fullness += numeroAleatorio;
 }*/
 
-/*void IncrementFitness(SOLUTION solution[], long int individual)
+void IncrementFitness(SOLUTION solution[], long int individual)
 {
 	double incrementFullness = pow((solution[individual].Bin_Fullness / bin_capacity), 2);
 
-	if (incrementFullness >= 0.6)
+	if (incrementFullness >= 0.8)
 	{
 		solution[number_items].Bin_Fullness += incrementFullness;
 		return;
@@ -339,12 +339,12 @@ void SetFitness(SOLUTION dest[], SOLUTION origem[])
 		solution[number_items].Bin_Fullness += incrementFullness;
 	else
 		solution[number_items].Bin_Fullness += incrementConflicts;
-}*/
+}
 
-void IncrementFitness(SOLUTION solution[], long int individual)
+/*void IncrementFitness(SOLUTION solution[], long int individual)
 {
 	solution[number_items].Bin_Fullness += pow((solution[individual].Bin_Fullness / bin_capacity), 2);
-}
+}*/
 
 double GetNumberOfBins(SOLUTION solution[])
 {
