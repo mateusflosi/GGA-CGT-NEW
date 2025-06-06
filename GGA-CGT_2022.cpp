@@ -125,7 +125,9 @@ SOLUTION global_best_solution[ATTRIBUTES],
 
 // Initial seeds for the random number generation
 int seed_emptybin,
-	seed_permutation;
+	seed_permutation,
+	binsFirstGeneration,
+	itensComTodosConflitos;
 
 // GA COMPONENTS
 long int Generate_Initial_Population();
@@ -198,7 +200,7 @@ int main()
 		fscanf(input_Configurations, "%d", &save_bestSolution);
 		fprintf(output, "CONF\t|P|\tmax_gen\tn_m\tn_c\tk1(non-cloned_solutions)\tk2(cloned_solutions)\t|B|\tlife_span\tseed");
 		fprintf(output, "\n%ld\t%d\t%d\t%f\t%f\t%f\t%f\t%f\t%d\t%d", conf, P_size, max_gen, p_m, p_c, k_ncs, k_cs, B_size, life_span, seed);
-		fprintf(output, "\nInstancias \t L2 \t Bins \t FBPP \t Gen \t Time");
+		fprintf(output, "\nInstancias \t L2 \t Bins \t FBPP \t Gen \t Time \t BinsFirstGeneration \t ItensCom100deConflito");
 		fclose(output);
 
 		// READING FILE "instances.txt" CONTAINING THE NAME OF BPP INSTANCES TO PROCESS
@@ -210,6 +212,7 @@ int main()
 		}
 		while (!feof(input_Instances))
 		{
+			itensComTodosConflitos = 0;
 			fscanf(input_Instances, "%s", file);
 			LoadData();
 			for (i = 0; i < number_items; i++)
@@ -235,6 +238,8 @@ int main()
 				best_individuals[i] = i;
 			}
 			Clean_population();
+
+			binsFirstGeneration = 0;
 			is_optimal_solution = 0;
 			generation = 0;
 			for (i = 0, j = n_; j < number_items; i++)
@@ -244,13 +249,15 @@ int main()
 			start = clock();
 			if (!Generate_Initial_Population())
 			{
+				Find_Best_Solution();
+				binsFirstGeneration = GetNumberOfBins(global_best_solution);
 				// Generate_Initial_Population() returns 1 if an optimal solution was found
 				for (generation = 0; generation < max_gen; generation++)
 				{
 					// printf("%ld %f %f\n", generation, GetNumberOfBins(global_best_solution), generation - GetGeneration(global_best_solution));
 					Generation();
 					Find_Best_Solution();
-					if (generation - 25 > GetGeneration(global_best_solution))
+					if (generation - 5 > GetGeneration(global_best_solution))
 						break;
 
 					// printf("\n %d", (int)global_best_solution[number_items + 1].Bin_Fullness);
@@ -259,7 +266,7 @@ int main()
 			if (!is_optimal_solution) // is_optimal_solution is 1 if an optimal solution was printed before
 			{
 				end = clock();
-				TotalTime = (end - start); // / (CLK_TCK * 1.0);
+				TotalTime = (end - start) * 1000.0 / CLOCKS_PER_SEC;
 				Find_Best_Solution();
 				WriteOutput();
 			}
@@ -300,7 +307,7 @@ void SetFitness(SOLUTION dest[], SOLUTION origem[])
 	solution[number_items].Bin_Fullness += numeroAleatorio;
 }*/
 
-void IncrementFitness(SOLUTION solution[], long int individual)
+/*void IncrementFitness(SOLUTION solution[], long int individual)
 {
 	double incrementFullness = pow((solution[individual].Bin_Fullness / bin_capacity), 2);
 
@@ -339,12 +346,12 @@ void IncrementFitness(SOLUTION solution[], long int individual)
 		solution[number_items].Bin_Fullness += incrementFullness;
 	else
 		solution[number_items].Bin_Fullness += incrementConflicts;
-}
+}*/
 
-/*void IncrementFitness(SOLUTION solution[], long int individual)
+void IncrementFitness(SOLUTION solution[], long int individual)
 {
 	solution[number_items].Bin_Fullness += pow((solution[individual].Bin_Fullness / bin_capacity), 2);
-}*/
+}
 
 double GetNumberOfBins(SOLUTION solution[])
 {
@@ -1655,6 +1662,11 @@ long int LoadData()
 		SetWeight(&data[k], (long int)weight1[k]);
 		AddConflitos(&data[k], conflitos, array.size() - 2);
 
+		if (GetConflitosSize(&data[k]) == (int)number_items - 1)
+		{
+			itensComTodosConflitos++;
+		}
+
 		for (int l = 0; l < array.size() - 2; l++)
 		{
 			AddConflitos(&data[conflitos[l] - 1], &array[0], 1);
@@ -1690,6 +1702,7 @@ long int LoadData()
 			exit(1);
 		}
 	}
+
 	return 1;
 }
 
@@ -1699,7 +1712,7 @@ long int LoadData()
 void WriteOutput()
 {
 	output = fopen(nameC, "a");
-	fprintf(output, "\n%s \t %d \t %d \t %f \t %ld \t %f", file, (int)L2, (int)GetNumberOfBins(global_best_solution), GetFitness(global_best_solution), generation, TotalTime);
+	fprintf(output, "\n%s \t %d \t %d \t %f \t %ld \t %f \t %d \t %d", file, (int)L2, (int)GetNumberOfBins(global_best_solution), GetFitness(global_best_solution), generation, TotalTime, binsFirstGeneration, itensComTodosConflitos);
 	if (save_bestSolution == 1)
 		sendtofile(global_best_solution);
 	fclose(output);
