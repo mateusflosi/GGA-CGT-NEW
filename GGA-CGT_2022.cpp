@@ -307,7 +307,7 @@ void SetFitness(SOLUTION dest[], SOLUTION origem[])
 	solution[number_items].Bin_Fullness += numeroAleatorio;
 }*/
 
-/*void IncrementFitness(SOLUTION solution[], long int individual)
+void IncrementFitness(SOLUTION solution[], long int individual)
 {
 	double incrementFullness = pow((solution[individual].Bin_Fullness / bin_capacity), 2);
 
@@ -346,12 +346,12 @@ void SetFitness(SOLUTION dest[], SOLUTION origem[])
 		solution[number_items].Bin_Fullness += incrementFullness;
 	else
 		solution[number_items].Bin_Fullness += incrementConflicts;
-}*/
-
-void IncrementFitness(SOLUTION solution[], long int individual)
-{
-	solution[number_items].Bin_Fullness += pow((solution[individual].Bin_Fullness / bin_capacity), 2);
 }
+
+// void IncrementFitness(SOLUTION solution[], long int individual)
+//{
+//	solution[number_items].Bin_Fullness += pow((solution[individual].Bin_Fullness / bin_capacity), 2);
+// }
 
 double GetNumberOfBins(SOLUTION solution[])
 {
@@ -799,6 +799,7 @@ std::vector<int> Sort_Group(int lentgh, long *array, int tamanhoGrupo)
  Input:                                                                                       									*
 	The position in the population of the new solution: individual 																		*
 ************************************************************************************************************************/
+// permutation
 void FF_n_(int individual)
 {
 	long int
@@ -836,6 +837,78 @@ void FF_n_(int individual)
 	}
 	SetNumberOfBins(population[individual], total_bins);
 }
+
+// n_ordenado
+/*void FF_n_(int individual)
+{
+	long int
+		i,
+		j = 0,
+		total_bins = 0;
+	bin_i = 0;
+	SetNumberOfFullBins(population[individual], 0.0);
+	SetHighestAvaliableCapacity(population[individual], bin_capacity);
+	if (n_ > 0)
+	{
+		for (i = 0; i < n_; i++)
+		{
+			population[individual][i].Bin_Fullness = GetWeight(&data[ordered_conflitos_size_n[i]]);
+			population[individual][i].L.insert(ordered_conflitos_size_n[i]);
+			total_bins++;
+			if (population[individual][i].Bin_Fullness < GetHighestAvaliableCapacity(population[individual]))
+				SetHighestAvaliableCapacity(population[individual], population[individual][i].Bin_Fullness);
+		}
+		i = number_items - i;
+		Sort_Random(permutation, 0, i);
+		for (j = 0; j < i - 1; j++)
+			FF(permutation[j], population[individual], total_bins, bin_i, 0);
+		FF(permutation[j], population[individual], total_bins, bin_i, 1);
+	}
+	else
+	{
+		Sort_Random(permutation, 0, number_items);
+		for (j = 0; j < number_items - 1; j++)
+			FF(permutation[j], population[individual], total_bins, bin_i, 0);
+		FF(permutation[j], population[individual], total_bins, bin_i, 1);
+	}
+	SetNumberOfBins(population[individual], total_bins);
+}*/
+
+// classic
+/*void FF_n_(int individual)
+{
+	long int
+		i,
+		j = 0,
+		total_bins = 0;
+	bin_i = 0;
+	SetNumberOfFullBins(population[individual], 0.0);
+	SetHighestAvaliableCapacity(population[individual], bin_capacity);
+	if (n_ > 0)
+	{
+		for (i = 0; i < n_; i++)
+		{
+			population[individual][i].Bin_Fullness = GetWeight(&data[ordered_weight[i]]);
+			population[individual][i].L.insert(ordered_weight[i]);
+			total_bins++;
+			if (population[individual][i].Bin_Fullness < GetHighestAvaliableCapacity(population[individual]))
+				SetHighestAvaliableCapacity(population[individual], population[individual][i].Bin_Fullness);
+		}
+		i = number_items - i;
+		Sort_Random(permutation, 0, i);
+		for (j = 0; j < i - 1; j++)
+			FF(permutation[j], population[individual], total_bins, bin_i, 0);
+		FF(permutation[j], population[individual], total_bins, bin_i, 1);
+	}
+	else
+	{
+		Sort_Random(permutation, 0, number_items);
+		for (j = 0; j < number_items - 1; j++)
+			FF(permutation[j], population[individual], total_bins, bin_i, 0);
+		FF(permutation[j], population[individual], total_bins, bin_i, 1);
+	}
+	SetNumberOfBins(population[individual], total_bins);
+}*/
 
 bool BinInConflito(std::vector<int> conflitos, int bin)
 {

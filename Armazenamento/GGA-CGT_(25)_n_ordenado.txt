@@ -1,803 +1,803 @@
 CONF	|P|	max_gen	n_m	n_c	k1(non-cloned_solutions)	k2(cloned_solutions)	|B|	life_span	seed
 1	100	500	0.830000	0.200000	1.300000	4.000000	0.100000	10	1
-Instancias 	 L2 	 Bins 	 FBPP 	 Gen 	 Time
-instancesConflicts/BPPC_1_0_1.txt 	 48 	 48 	 0.967706 	 26 	 157690.000000
-instancesConflicts/BPPC_1_0_2.txt 	 49 	 49 	 0.964068 	 26 	 140343.000000
-instancesConflicts/BPPC_1_0_3.txt 	 46 	 46 	 0.970632 	 26 	 149583.000000
-instancesConflicts/BPPC_1_0_4.txt 	 49 	 49 	 0.982662 	 26 	 164771.000000
-instancesConflicts/BPPC_1_0_5.txt 	 50 	 50 	 0.962190 	 26 	 163177.000000
-instancesConflicts/BPPC_1_0_6.txt 	 48 	 48 	 0.979031 	 26 	 155124.000000
-instancesConflicts/BPPC_1_0_7.txt 	 48 	 48 	 0.983195 	 27 	 164883.000000
-instancesConflicts/BPPC_1_0_8.txt 	 49 	 49 	 0.985458 	 26 	 154920.000000
-instancesConflicts/BPPC_1_0_9.txt 	 50 	 50 	 0.994174 	 30 	 188241.000000
-instancesConflicts/BPPC_1_0_10.txt 	 46 	 46 	 0.991414 	 27 	 176306.000000
-instancesConflicts/BPPC_1_1_1.txt 	 48 	 48 	 0.967480 	 26 	 169231.000000
-instancesConflicts/BPPC_1_1_2.txt 	 49 	 49 	 0.961639 	 26 	 144694.000000
-instancesConflicts/BPPC_1_1_3.txt 	 46 	 46 	 0.970786 	 26 	 153970.000000
-instancesConflicts/BPPC_1_1_4.txt 	 49 	 49 	 0.982996 	 26 	 163165.000000
-instancesConflicts/BPPC_1_1_5.txt 	 50 	 50 	 0.962215 	 26 	 158760.000000
-instancesConflicts/BPPC_1_1_6.txt 	 48 	 48 	 0.979396 	 26 	 145761.000000
-instancesConflicts/BPPC_1_1_7.txt 	 48 	 48 	 0.983268 	 27 	 166428.000000
-instancesConflicts/BPPC_1_1_8.txt 	 49 	 49 	 0.985583 	 27 	 162434.000000
-instancesConflicts/BPPC_1_1_9.txt 	 50 	 50 	 0.994171 	 30 	 191869.000000
-instancesConflicts/BPPC_1_1_10.txt 	 46 	 46 	 0.991496 	 27 	 162976.000000
-instancesConflicts/BPPC_1_2_1.txt 	 48 	 48 	 0.966819 	 27 	 172935.000000
-instancesConflicts/BPPC_1_2_2.txt 	 49 	 49 	 0.961775 	 27 	 159036.000000
-instancesConflicts/BPPC_1_2_3.txt 	 46 	 46 	 0.970427 	 28 	 152059.000000
-instancesConflicts/BPPC_1_2_4.txt 	 49 	 49 	 0.982764 	 27 	 168822.000000
-instancesConflicts/BPPC_1_2_5.txt 	 50 	 50 	 0.965012 	 26 	 162523.000000
-instancesConflicts/BPPC_1_2_6.txt 	 48 	 48 	 0.979120 	 27 	 161639.000000
-instancesConflicts/BPPC_1_2_7.txt 	 48 	 48 	 0.983125 	 28 	 150392.000000
-instancesConflicts/BPPC_1_2_8.txt 	 49 	 49 	 0.985338 	 37 	 187844.000000
-instancesConflicts/BPPC_1_2_9.txt 	 50 	 50 	 0.994188 	 33 	 200997.000000
-instancesConflicts/BPPC_1_2_10.txt 	 46 	 46 	 0.991440 	 35 	 194306.000000
-instancesConflicts/BPPC_1_3_1.txt 	 48 	 48 	 0.966978 	 31 	 187987.000000
-instancesConflicts/BPPC_1_3_2.txt 	 49 	 49 	 0.962024 	 40 	 233166.000000
-instancesConflicts/BPPC_1_3_3.txt 	 46 	 47 	 0.938270 	 55 	 283139.000000
-instancesConflicts/BPPC_1_3_4.txt 	 49 	 49 	 0.982731 	 37 	 209794.000000
-instancesConflicts/BPPC_1_3_5.txt 	 50 	 50 	 0.962028 	 27 	 165171.000000
-instancesConflicts/BPPC_1_3_6.txt 	 48 	 48 	 0.978861 	 35 	 181151.000000
-instancesConflicts/BPPC_1_3_7.txt 	 48 	 48 	 0.983068 	 51 	 256128.000000
-instancesConflicts/BPPC_1_3_8.txt 	 49 	 51 	 0.924771 	 40 	 216792.000000
-instancesConflicts/BPPC_1_3_9.txt 	 50 	 51 	 0.956404 	 30 	 172847.000000
-instancesConflicts/BPPC_1_3_10.txt 	 46 	 47 	 0.950710 	 36 	 194761.000000
-instancesConflicts/BPPC_1_4_1.txt 	 48 	 49 	 0.935657 	 58 	 343264.000000
-instancesConflicts/BPPC_1_4_2.txt 	 49 	 54 	 0.833278 	 43 	 265211.000000
-instancesConflicts/BPPC_1_4_3.txt 	 46 	 55 	 0.751856 	 30 	 179297.000000
-instancesConflicts/BPPC_1_4_4.txt 	 49 	 51 	 0.911811 	 32 	 185481.000000
-instancesConflicts/BPPC_1_4_5.txt 	 50 	 50 	 0.962844 	 51 	 295902.000000
-instancesConflicts/BPPC_1_4_6.txt 	 48 	 52 	 0.866135 	 33 	 201870.000000
-instancesConflicts/BPPC_1_4_7.txt 	 48 	 56 	 0.796366 	 45 	 256277.000000
-instancesConflicts/BPPC_1_4_8.txt 	 49 	 61 	 0.721408 	 30 	 179483.000000
-instancesConflicts/BPPC_1_4_9.txt 	 50 	 56 	 0.823832 	 26 	 177501.000000
-instancesConflicts/BPPC_1_4_10.txt 	 46 	 54 	 0.792584 	 42 	 253145.000000
-instancesConflicts/BPPC_1_5_1.txt 	 48 	 65 	 0.599737 	 26 	 162119.000000
-instancesConflicts/BPPC_1_5_2.txt 	 49 	 67 	 0.617147 	 27 	 173988.000000
-instancesConflicts/BPPC_1_5_3.txt 	 46 	 65 	 0.589752 	 31 	 205118.000000
-instancesConflicts/BPPC_1_5_4.txt 	 49 	 59 	 0.741766 	 29 	 191786.000000
-instancesConflicts/BPPC_1_5_5.txt 	 50 	 58 	 0.782058 	 43 	 267675.000000
-instancesConflicts/BPPC_1_5_6.txt 	 48 	 65 	 0.639374 	 29 	 182361.000000
-instancesConflicts/BPPC_1_5_7.txt 	 48 	 65 	 0.611220 	 26 	 163789.000000
-instancesConflicts/BPPC_1_5_8.txt 	 49 	 71 	 0.546766 	 26 	 175571.000000
-instancesConflicts/BPPC_1_5_9.txt 	 50 	 66 	 0.647162 	 26 	 169151.000000
-instancesConflicts/BPPC_1_5_10.txt 	 46 	 65 	 0.585374 	 26 	 174624.000000
-instancesConflicts/BPPC_1_6_1.txt 	 48 	 76 	 0.459433 	 26 	 198330.000000
-instancesConflicts/BPPC_1_6_2.txt 	 49 	 80 	 0.442734 	 26 	 202128.000000
-instancesConflicts/BPPC_1_6_3.txt 	 46 	 76 	 0.440954 	 26 	 206627.000000
-instancesConflicts/BPPC_1_6_4.txt 	 49 	 71 	 0.544839 	 26 	 188682.000000
-instancesConflicts/BPPC_1_6_5.txt 	 50 	 73 	 0.526854 	 26 	 184240.000000
-instancesConflicts/BPPC_1_6_6.txt 	 48 	 78 	 0.477409 	 34 	 249489.000000
-instancesConflicts/BPPC_1_6_7.txt 	 48 	 75 	 0.502375 	 26 	 193012.000000
-instancesConflicts/BPPC_1_6_8.txt 	 49 	 81 	 0.439990 	 26 	 199586.000000
-instancesConflicts/BPPC_1_6_9.txt 	 50 	 79 	 0.473862 	 26 	 195319.000000
-instancesConflicts/BPPC_1_6_10.txt 	 46 	 74 	 0.482436 	 26 	 209150.000000
-instancesConflicts/BPPC_1_7_1.txt 	 48 	 88 	 0.348433 	 26 	 225425.000000
-instancesConflicts/BPPC_1_7_2.txt 	 49 	 91 	 0.339744 	 26 	 220730.000000
-instancesConflicts/BPPC_1_7_3.txt 	 46 	 88 	 0.343756 	 26 	 224775.000000
-instancesConflicts/BPPC_1_7_4.txt 	 49 	 82 	 0.431691 	 29 	 233767.000000
-instancesConflicts/BPPC_1_7_5.txt 	 50 	 86 	 0.393737 	 26 	 215988.000000
-instancesConflicts/BPPC_1_7_6.txt 	 48 	 90 	 0.345912 	 26 	 223828.000000
-instancesConflicts/BPPC_1_7_7.txt 	 48 	 86 	 0.378290 	 26 	 216281.000000
-instancesConflicts/BPPC_1_7_8.txt 	 49 	 89 	 0.361472 	 26 	 215966.000000
-instancesConflicts/BPPC_1_7_9.txt 	 50 	 93 	 0.347246 	 26 	 217684.000000
-instancesConflicts/BPPC_1_7_10.txt 	 46 	 85 	 0.369533 	 26 	 222482.000000
-instancesConflicts/BPPC_1_8_1.txt 	 48 	 98 	 0.285726 	 26 	 241802.000000
-instancesConflicts/BPPC_1_8_2.txt 	 49 	 99 	 0.291121 	 26 	 241696.000000
-instancesConflicts/BPPC_1_8_3.txt 	 46 	 99 	 0.263095 	 26 	 248014.000000
-instancesConflicts/BPPC_1_8_4.txt 	 49 	 94 	 0.324432 	 26 	 233898.000000
-instancesConflicts/BPPC_1_8_5.txt 	 50 	 99 	 0.302098 	 26 	 234613.000000
-instancesConflicts/BPPC_1_8_6.txt 	 48 	 100 	 0.277095 	 26 	 249112.000000
-instancesConflicts/BPPC_1_8_7.txt 	 48 	 95 	 0.305453 	 26 	 236128.000000
-instancesConflicts/BPPC_1_8_8.txt 	 49 	 99 	 0.288961 	 26 	 246312.000000
-instancesConflicts/BPPC_1_8_9.txt 	 50 	 105 	 0.276179 	 26 	 233085.000000
-instancesConflicts/BPPC_1_8_10.txt 	 46 	 97 	 0.287201 	 26 	 235509.000000
-instancesConflicts/BPPC_1_9_1.txt 	 48 	 110 	 0.221385 	 26 	 245924.000000
-instancesConflicts/BPPC_1_9_2.txt 	 49 	 107 	 0.245763 	 26 	 252974.000000
-instancesConflicts/BPPC_1_9_3.txt 	 46 	 114 	 0.190379 	 26 	 252772.000000
-instancesConflicts/BPPC_1_9_4.txt 	 49 	 110 	 0.231274 	 26 	 250212.000000
-instancesConflicts/BPPC_1_9_5.txt 	 50 	 111 	 0.233679 	 26 	 246967.000000
-instancesConflicts/BPPC_1_9_6.txt 	 48 	 110 	 0.227044 	 26 	 247677.000000
-instancesConflicts/BPPC_1_9_7.txt 	 48 	 107 	 0.240159 	 26 	 247335.000000
-instancesConflicts/BPPC_1_9_8.txt 	 49 	 110 	 0.226234 	 26 	 256007.000000
-instancesConflicts/BPPC_1_9_9.txt 	 50 	 112 	 0.235508 	 26 	 246662.000000
-instancesConflicts/BPPC_1_9_10.txt 	 46 	 107 	 0.229119 	 26 	 250225.000000
-instancesConflicts/BPPC_2_0_1.txt 	 99 	 99 	 0.991111 	 27 	 414949.000000
-instancesConflicts/BPPC_2_0_2.txt 	 100 	 100 	 0.981212 	 26 	 350349.000000
-instancesConflicts/BPPC_2_0_3.txt 	 102 	 102 	 0.988927 	 26 	 390118.000000
-instancesConflicts/BPPC_2_0_4.txt 	 100 	 100 	 0.989099 	 26 	 381091.000000
-instancesConflicts/BPPC_2_0_5.txt 	 101 	 101 	 0.992583 	 27 	 405390.000000
-instancesConflicts/BPPC_2_0_6.txt 	 101 	 101 	 0.996614 	 31 	 421800.000000
-instancesConflicts/BPPC_2_0_7.txt 	 102 	 102 	 0.982058 	 26 	 344059.000000
-instancesConflicts/BPPC_2_0_8.txt 	 103 	 103 	 0.995901 	 39 	 683501.000000
-instancesConflicts/BPPC_2_0_9.txt 	 105 	 105 	 0.998361 	 36 	 475476.000000
-instancesConflicts/BPPC_2_0_10.txt 	 101 	 101 	 0.986293 	 27 	 399091.000000
-instancesConflicts/BPPC_2_1_1.txt 	 99 	 99 	 0.991481 	 27 	 429982.000000
-instancesConflicts/BPPC_2_1_2.txt 	 100 	 100 	 0.981236 	 26 	 394651.000000
-instancesConflicts/BPPC_2_1_3.txt 	 102 	 102 	 0.989032 	 27 	 458818.000000
-instancesConflicts/BPPC_2_1_4.txt 	 100 	 100 	 0.988858 	 27 	 408621.000000
-instancesConflicts/BPPC_2_1_5.txt 	 101 	 101 	 0.992560 	 27 	 406578.000000
-instancesConflicts/BPPC_2_1_6.txt 	 101 	 101 	 0.996632 	 33 	 466963.000000
-instancesConflicts/BPPC_2_1_7.txt 	 102 	 102 	 0.981836 	 26 	 360888.000000
-instancesConflicts/BPPC_2_1_8.txt 	 103 	 103 	 0.995897 	 38 	 681903.000000
-instancesConflicts/BPPC_2_1_9.txt 	 105 	 105 	 0.998358 	 38 	 526277.000000
-instancesConflicts/BPPC_2_1_10.txt 	 101 	 101 	 0.984751 	 27 	 462147.000000
-instancesConflicts/BPPC_2_2_1.txt 	 99 	 99 	 0.991231 	 28 	 477432.000000
-instancesConflicts/BPPC_2_2_2.txt 	 100 	 100 	 0.981099 	 29 	 440560.000000
-instancesConflicts/BPPC_2_2_3.txt 	 102 	 102 	 0.988993 	 30 	 488796.000000
-instancesConflicts/BPPC_2_2_4.txt 	 100 	 100 	 0.988778 	 31 	 422978.000000
-instancesConflicts/BPPC_2_2_5.txt 	 101 	 101 	 0.992462 	 29 	 449023.000000
-instancesConflicts/BPPC_2_2_6.txt 	 101 	 102 	 0.977617 	 30 	 458150.000000
-instancesConflicts/BPPC_2_2_7.txt 	 102 	 102 	 0.981743 	 29 	 401640.000000
-instancesConflicts/BPPC_2_2_8.txt 	 103 	 103 	 0.995895 	 41 	 800350.000000
-instancesConflicts/BPPC_2_2_9.txt 	 105 	 106 	 0.980486 	 33 	 508379.000000
-instancesConflicts/BPPC_2_2_10.txt 	 101 	 101 	 0.984637 	 28 	 525229.000000
-instancesConflicts/BPPC_2_3_1.txt 	 99 	 99 	 0.991180 	 53 	 891018.000000
-instancesConflicts/BPPC_2_3_2.txt 	 100 	 101 	 0.964712 	 49 	 817568.000000
-instancesConflicts/BPPC_2_3_3.txt 	 102 	 103 	 0.970265 	 29 	 527314.000000
-instancesConflicts/BPPC_2_3_4.txt 	 100 	 101 	 0.972535 	 35 	 539450.000000
-instancesConflicts/BPPC_2_3_5.txt 	 101 	 102 	 0.974749 	 37 	 546092.000000
-instancesConflicts/BPPC_2_3_6.txt 	 101 	 102 	 0.978454 	 67 	 1108895.000000
-instancesConflicts/BPPC_2_3_7.txt 	 102 	 102 	 0.981744 	 51 	 780816.000000
-instancesConflicts/BPPC_2_3_8.txt 	 103 	 104 	 0.978998 	 36 	 729268.000000
-instancesConflicts/BPPC_2_3_9.txt 	 105 	 107 	 0.966891 	 49 	 966370.000000
-instancesConflicts/BPPC_2_3_10.txt 	 101 	 102 	 0.966854 	 29 	 540655.000000
-instancesConflicts/BPPC_2_4_1.txt 	 99 	 100 	 0.977354 	 71 	 1317979.000000
-instancesConflicts/BPPC_2_4_2.txt 	 100 	 109 	 0.864466 	 50 	 1224831.000000
-instancesConflicts/BPPC_2_4_3.txt 	 102 	 104 	 0.957989 	 90 	 1759014.000000
-instancesConflicts/BPPC_2_4_4.txt 	 100 	 109 	 0.871236 	 52 	 1224474.000000
-instancesConflicts/BPPC_2_4_5.txt 	 101 	 106 	 0.927696 	 70 	 1469349.000000
-instancesConflicts/BPPC_2_4_6.txt 	 101 	 111 	 0.865043 	 49 	 1245696.000000
-instancesConflicts/BPPC_2_4_7.txt 	 102 	 106 	 0.928185 	 58 	 1186142.000000
-instancesConflicts/BPPC_2_4_8.txt 	 103 	 105 	 0.965169 	 73 	 1519389.000000
-instancesConflicts/BPPC_2_4_9.txt 	 105 	 121 	 0.806937 	 26 	 742222.000000
-instancesConflicts/BPPC_2_4_10.txt 	 101 	 106 	 0.915831 	 49 	 1146059.000000
-instancesConflicts/BPPC_2_5_1.txt 	 99 	 117 	 0.751817 	 26 	 781810.000000
-instancesConflicts/BPPC_2_5_2.txt 	 100 	 132 	 0.640632 	 26 	 748767.000000
-instancesConflicts/BPPC_2_5_3.txt 	 102 	 120 	 0.767863 	 26 	 816915.000000
-instancesConflicts/BPPC_2_5_4.txt 	 100 	 133 	 0.642421 	 26 	 758781.000000
-instancesConflicts/BPPC_2_5_5.txt 	 101 	 130 	 0.668330 	 26 	 755679.000000
-instancesConflicts/BPPC_2_5_6.txt 	 101 	 130 	 0.668846 	 26 	 758850.000000
-instancesConflicts/BPPC_2_5_7.txt 	 102 	 128 	 0.695821 	 26 	 730269.000000
-instancesConflicts/BPPC_2_5_8.txt 	 103 	 120 	 0.777087 	 26 	 770630.000000
-instancesConflicts/BPPC_2_5_9.txt 	 105 	 144 	 0.621589 	 26 	 764350.000000
-instancesConflicts/BPPC_2_5_10.txt 	 101 	 130 	 0.660836 	 26 	 766522.000000
-instancesConflicts/BPPC_2_6_1.txt 	 99 	 147 	 0.531946 	 26 	 837166.000000
-instancesConflicts/BPPC_2_6_2.txt 	 100 	 158 	 0.486401 	 26 	 884170.000000
-instancesConflicts/BPPC_2_6_3.txt 	 102 	 149 	 0.546711 	 26 	 808259.000000
-instancesConflicts/BPPC_2_6_4.txt 	 100 	 158 	 0.483693 	 26 	 882239.000000
-instancesConflicts/BPPC_2_6_5.txt 	 101 	 154 	 0.525223 	 46 	 1495487.000000
-instancesConflicts/BPPC_2_6_6.txt 	 101 	 155 	 0.518348 	 29 	 969915.000000
-instancesConflicts/BPPC_2_6_7.txt 	 102 	 151 	 0.527422 	 26 	 884897.000000
-instancesConflicts/BPPC_2_6_8.txt 	 103 	 144 	 0.589696 	 26 	 852547.000000
-instancesConflicts/BPPC_2_6_9.txt 	 105 	 168 	 0.469602 	 26 	 885205.000000
-instancesConflicts/BPPC_2_6_10.txt 	 101 	 156 	 0.493746 	 26 	 888596.000000
-instancesConflicts/BPPC_2_7_1.txt 	 99 	 176 	 0.396936 	 26 	 967113.000000
-instancesConflicts/BPPC_2_7_2.txt 	 100 	 181 	 0.387127 	 39 	 1430455.000000
-instancesConflicts/BPPC_2_7_3.txt 	 102 	 175 	 0.424997 	 28 	 983496.000000
-instancesConflicts/BPPC_2_7_4.txt 	 100 	 182 	 0.372097 	 26 	 987341.000000
-instancesConflicts/BPPC_2_7_5.txt 	 101 	 181 	 0.390497 	 35 	 1283498.000000
-instancesConflicts/BPPC_2_7_6.txt 	 101 	 178 	 0.408210 	 29 	 1081147.000000
-instancesConflicts/BPPC_2_7_7.txt 	 102 	 172 	 0.430420 	 32 	 1197904.000000
-instancesConflicts/BPPC_2_7_8.txt 	 103 	 166 	 0.473688 	 45 	 1591634.000000
-instancesConflicts/BPPC_2_7_9.txt 	 105 	 189 	 0.373312 	 26 	 956356.000000
-instancesConflicts/BPPC_2_7_10.txt 	 101 	 183 	 0.373270 	 26 	 998410.000000
-instancesConflicts/BPPC_2_8_1.txt 	 99 	 198 	 0.308231 	 26 	 1049220.000000
-instancesConflicts/BPPC_2_8_2.txt 	 100 	 208 	 0.286594 	 27 	 1070346.000000
-instancesConflicts/BPPC_2_8_3.txt 	 102 	 205 	 0.308935 	 26 	 977159.000000
-instancesConflicts/BPPC_2_8_4.txt 	 100 	 210 	 0.277128 	 26 	 1026530.000000
-instancesConflicts/BPPC_2_8_5.txt 	 101 	 206 	 0.292127 	 26 	 1082164.000000
-instancesConflicts/BPPC_2_8_6.txt 	 101 	 203 	 0.311069 	 26 	 1004125.000000
-instancesConflicts/BPPC_2_8_7.txt 	 102 	 195 	 0.339874 	 28 	 1089701.000000
-instancesConflicts/BPPC_2_8_8.txt 	 103 	 191 	 0.357495 	 26 	 1016289.000000
-instancesConflicts/BPPC_2_8_9.txt 	 105 	 209 	 0.302872 	 26 	 1045311.000000
-instancesConflicts/BPPC_2_8_10.txt 	 101 	 207 	 0.292077 	 26 	 1077981.000000
-instancesConflicts/BPPC_2_9_1.txt 	 99 	 218 	 0.256553 	 26 	 1057487.000000
-instancesConflicts/BPPC_2_9_2.txt 	 100 	 225 	 0.238121 	 31 	 1247584.000000
-instancesConflicts/BPPC_2_9_3.txt 	 102 	 226 	 0.246606 	 26 	 1032750.000000
-instancesConflicts/BPPC_2_9_4.txt 	 100 	 229 	 0.228679 	 26 	 1050467.000000
-instancesConflicts/BPPC_2_9_5.txt 	 101 	 233 	 0.217723 	 26 	 1067394.000000
-instancesConflicts/BPPC_2_9_6.txt 	 101 	 229 	 0.231327 	 26 	 1035724.000000
-instancesConflicts/BPPC_2_9_7.txt 	 102 	 226 	 0.241720 	 26 	 1037391.000000
-instancesConflicts/BPPC_2_9_8.txt 	 103 	 221 	 0.262863 	 35 	 1425728.000000
-instancesConflicts/BPPC_2_9_9.txt 	 105 	 234 	 0.232271 	 26 	 1033321.000000
-instancesConflicts/BPPC_2_9_10.txt 	 101 	 227 	 0.238282 	 34 	 1374846.000000
-instancesConflicts/BPPC_3_0_1.txt 	 198 	 198 	 0.995872 	 29 	 1153686.000000
-instancesConflicts/BPPC_3_0_2.txt 	 201 	 201 	 0.998510 	 30 	 1245062.000000
-instancesConflicts/BPPC_3_0_3.txt 	 202 	 202 	 0.994634 	 27 	 1147690.000000
-instancesConflicts/BPPC_3_0_4.txt 	 204 	 204 	 0.998185 	 29 	 1183453.000000
-instancesConflicts/BPPC_3_0_5.txt 	 206 	 206 	 0.991688 	 27 	 1108360.000000
-instancesConflicts/BPPC_3_0_6.txt 	 206 	 206 	 0.991523 	 27 	 1126378.000000
-instancesConflicts/BPPC_3_0_7.txt 	 207 	 207 	 0.998918 	 34 	 1190805.000000
-instancesConflicts/BPPC_3_0_8.txt 	 204 	 204 	 0.999805 	 42 	 1604838.000000
-instancesConflicts/BPPC_3_0_9.txt 	 196 	 196 	 0.996809 	 29 	 1234864.000000
-instancesConflicts/BPPC_3_0_10.txt 	 202 	 202 	 0.990990 	 27 	 1130650.000000
-instancesConflicts/BPPC_3_1_1.txt 	 198 	 198 	 0.995947 	 30 	 1256601.000000
-instancesConflicts/BPPC_3_1_2.txt 	 201 	 201 	 0.998512 	 29 	 1265495.000000
-instancesConflicts/BPPC_3_1_3.txt 	 202 	 202 	 0.994722 	 28 	 1169682.000000
-instancesConflicts/BPPC_3_1_4.txt 	 204 	 204 	 0.998184 	 33 	 1363317.000000
-instancesConflicts/BPPC_3_1_5.txt 	 206 	 206 	 0.992065 	 27 	 1116821.000000
-instancesConflicts/BPPC_3_1_6.txt 	 206 	 206 	 0.992134 	 28 	 1176734.000000
-instancesConflicts/BPPC_3_1_7.txt 	 207 	 207 	 0.998916 	 37 	 1380499.000000
-instancesConflicts/BPPC_3_1_8.txt 	 204 	 204 	 0.999805 	 42 	 1642145.000000
-instancesConflicts/BPPC_3_1_9.txt 	 196 	 196 	 0.996810 	 30 	 1295839.000000
-instancesConflicts/BPPC_3_1_10.txt 	 202 	 202 	 0.991332 	 27 	 1155066.000000
-instancesConflicts/BPPC_3_2_1.txt 	 198 	 199 	 0.986165 	 33 	 1632122.000000
-instancesConflicts/BPPC_3_2_2.txt 	 201 	 202 	 0.988971 	 31 	 1294805.000000
-instancesConflicts/BPPC_3_2_3.txt 	 202 	 202 	 0.994728 	 56 	 2552384.000000
-instancesConflicts/BPPC_3_2_4.txt 	 204 	 204 	 0.998190 	 39 	 1606182.000000
-instancesConflicts/BPPC_3_2_5.txt 	 206 	 206 	 0.991604 	 33 	 1476227.000000
-instancesConflicts/BPPC_3_2_6.txt 	 206 	 206 	 0.991448 	 40 	 1995251.000000
-instancesConflicts/BPPC_3_2_7.txt 	 207 	 207 	 0.998919 	 55 	 1921742.000000
-instancesConflicts/BPPC_3_2_8.txt 	 204 	 205 	 0.990318 	 30 	 1502696.000000
-instancesConflicts/BPPC_3_2_9.txt 	 196 	 196 	 0.996847 	 45 	 1610375.000000
-instancesConflicts/BPPC_3_2_10.txt 	 202 	 202 	 0.991556 	 31 	 1444135.000000
-instancesConflicts/BPPC_3_3_1.txt 	 198 	 202 	 0.958565 	 29 	 1774665.000000
-instancesConflicts/BPPC_3_3_2.txt 	 201 	 202 	 0.989116 	 87 	 3598936.000000
-instancesConflicts/BPPC_3_3_3.txt 	 202 	 205 	 0.972454 	 38 	 2042096.000000
-instancesConflicts/BPPC_3_3_4.txt 	 204 	 206 	 0.979468 	 34 	 1924012.000000
-instancesConflicts/BPPC_3_3_5.txt 	 206 	 208 	 0.973487 	 34 	 1793003.000000
-instancesConflicts/BPPC_3_3_6.txt 	 206 	 208 	 0.976116 	 45 	 2567181.000000
-instancesConflicts/BPPC_3_3_7.txt 	 207 	 209 	 0.980947 	 55 	 2805815.000000
-instancesConflicts/BPPC_3_3_8.txt 	 204 	 205 	 0.990362 	 68 	 3603402.000000
-instancesConflicts/BPPC_3_3_9.txt 	 196 	 198 	 0.981077 	 53 	 2455379.000000
-instancesConflicts/BPPC_3_3_10.txt 	 202 	 203 	 0.982464 	 78 	 4216918.000000
-instancesConflicts/BPPC_3_4_1.txt 	 198 	 220 	 0.861855 	 51 	 4384837.000000
-instancesConflicts/BPPC_3_4_2.txt 	 201 	 215 	 0.910021 	 116 	 8538051.000000
-instancesConflicts/BPPC_3_4_3.txt 	 202 	 220 	 0.884836 	 106 	 8068793.000000
-instancesConflicts/BPPC_3_4_4.txt 	 204 	 208 	 0.968213 	 124 	 8900222.000000
-instancesConflicts/BPPC_3_4_5.txt 	 206 	 210 	 0.963820 	 80 	 5451687.000000
-instancesConflicts/BPPC_3_4_6.txt 	 206 	 226 	 0.869804 	 52 	 4922666.000000
-instancesConflicts/BPPC_3_4_7.txt 	 207 	 214 	 0.951846 	 102 	 7346058.000000
-instancesConflicts/BPPC_3_4_8.txt 	 204 	 209 	 0.961908 	 72 	 4960255.000000
-instancesConflicts/BPPC_3_4_9.txt 	 196 	 206 	 0.926368 	 96 	 6950130.000000
-instancesConflicts/BPPC_3_4_10.txt 	 202 	 216 	 0.907577 	 128 	 10093821.000000
-instancesConflicts/BPPC_3_5_1.txt 	 198 	 260 	 0.655242 	 26 	 3318645.000000
-instancesConflicts/BPPC_3_5_2.txt 	 201 	 260 	 0.694774 	 45 	 5549737.000000
-instancesConflicts/BPPC_3_5_3.txt 	 202 	 263 	 0.688056 	 47 	 5536517.000000
-instancesConflicts/BPPC_3_5_4.txt 	 204 	 252 	 0.712939 	 26 	 3368006.000000
-instancesConflicts/BPPC_3_5_5.txt 	 206 	 246 	 0.777533 	 54 	 6145528.000000
-instancesConflicts/BPPC_3_5_6.txt 	 206 	 269 	 0.673827 	 28 	 3528485.000000
-instancesConflicts/BPPC_3_5_7.txt 	 207 	 258 	 0.723612 	 29 	 3638064.000000
-instancesConflicts/BPPC_3_5_8.txt 	 204 	 245 	 0.772746 	 56 	 6064492.000000
-instancesConflicts/BPPC_3_5_9.txt 	 196 	 247 	 0.725572 	 50 	 5857902.000000
-instancesConflicts/BPPC_3_5_10.txt 	 202 	 264 	 0.683648 	 47 	 5689103.000000
-instancesConflicts/BPPC_3_6_1.txt 	 198 	 303 	 0.510327 	 26 	 4086981.000000
-instancesConflicts/BPPC_3_6_2.txt 	 201 	 309 	 0.507396 	 26 	 4040698.000000
-instancesConflicts/BPPC_3_6_3.txt 	 202 	 314 	 0.494865 	 26 	 3881212.000000
-instancesConflicts/BPPC_3_6_4.txt 	 204 	 307 	 0.527202 	 26 	 3813707.000000
-instancesConflicts/BPPC_3_6_5.txt 	 206 	 295 	 0.583382 	 34 	 4733675.000000
-instancesConflicts/BPPC_3_6_6.txt 	 206 	 316 	 0.507293 	 26 	 3860461.000000
-instancesConflicts/BPPC_3_6_7.txt 	 207 	 312 	 0.523874 	 26 	 3771739.000000
-instancesConflicts/BPPC_3_6_8.txt 	 204 	 297 	 0.577419 	 44 	 6051976.000000
-instancesConflicts/BPPC_3_6_9.txt 	 196 	 299 	 0.515729 	 26 	 4032314.000000
-instancesConflicts/BPPC_3_6_10.txt 	 202 	 314 	 0.500068 	 26 	 3952899.000000
-instancesConflicts/BPPC_3_7_1.txt 	 198 	 344 	 0.418793 	 37 	 6296302.000000
-instancesConflicts/BPPC_3_7_2.txt 	 201 	 361 	 0.391399 	 26 	 4323919.000000
-instancesConflicts/BPPC_3_7_3.txt 	 202 	 356 	 0.407205 	 29 	 4684909.000000
-instancesConflicts/BPPC_3_7_4.txt 	 204 	 359 	 0.399011 	 26 	 4188778.000000
-instancesConflicts/BPPC_3_7_5.txt 	 206 	 347 	 0.429627 	 26 	 4189597.000000
-instancesConflicts/BPPC_3_7_6.txt 	 206 	 361 	 0.409027 	 46 	 7011065.000000
-instancesConflicts/BPPC_3_7_7.txt 	 207 	 359 	 0.418231 	 28 	 4418715.000000
-instancesConflicts/BPPC_3_7_8.txt 	 204 	 346 	 0.438210 	 40 	 6297166.000000
-instancesConflicts/BPPC_3_7_9.txt 	 196 	 341 	 0.423655 	 53 	 8318360.000000
-instancesConflicts/BPPC_3_7_10.txt 	 202 	 361 	 0.389933 	 26 	 4236286.000000
-instancesConflicts/BPPC_3_8_1.txt 	 198 	 391 	 0.325770 	 54 	 8915109.000000
-instancesConflicts/BPPC_3_8_2.txt 	 201 	 408 	 0.302529 	 26 	 4412006.000000
-instancesConflicts/BPPC_3_8_3.txt 	 202 	 401 	 0.321524 	 36 	 5672844.000000
-instancesConflicts/BPPC_3_8_4.txt 	 204 	 404 	 0.323110 	 43 	 6661841.000000
-instancesConflicts/BPPC_3_8_5.txt 	 206 	 398 	 0.330068 	 26 	 4268809.000000
-instancesConflicts/BPPC_3_8_6.txt 	 206 	 404 	 0.323045 	 37 	 5890739.000000
-instancesConflicts/BPPC_3_8_7.txt 	 207 	 410 	 0.312909 	 26 	 4149906.000000
-instancesConflicts/BPPC_3_8_8.txt 	 204 	 396 	 0.330498 	 26 	 4430469.000000
-instancesConflicts/BPPC_3_8_9.txt 	 196 	 395 	 0.313564 	 36 	 6018573.000000
-instancesConflicts/BPPC_3_8_10.txt 	 202 	 403 	 0.313934 	 26 	 4341937.000000
-instancesConflicts/BPPC_3_9_1.txt 	 198 	 445 	 0.244116 	 29 	 4719372.000000
-instancesConflicts/BPPC_3_9_2.txt 	 201 	 459 	 0.230882 	 26 	 4164593.000000
-instancesConflicts/BPPC_3_9_3.txt 	 202 	 451 	 0.243482 	 26 	 4209729.000000
-instancesConflicts/BPPC_3_9_4.txt 	 204 	 452 	 0.249027 	 27 	 4222946.000000
-instancesConflicts/BPPC_3_9_5.txt 	 206 	 446 	 0.254989 	 26 	 4415647.000000
-instancesConflicts/BPPC_3_9_6.txt 	 206 	 467 	 0.230833 	 26 	 4025166.000000
-instancesConflicts/BPPC_3_9_7.txt 	 207 	 458 	 0.243192 	 26 	 4112004.000000
-instancesConflicts/BPPC_3_9_8.txt 	 204 	 450 	 0.250039 	 26 	 4176150.000000
-instancesConflicts/BPPC_3_9_9.txt 	 196 	 454 	 0.225668 	 26 	 4243327.000000
-instancesConflicts/BPPC_3_9_10.txt 	 202 	 450 	 0.241771 	 26 	 4190720.000000
-instancesConflicts/BPPC_4_0_1.txt 	 399 	 399 	 0.997226 	 28 	 3250517.000000
-instancesConflicts/BPPC_4_0_2.txt 	 406 	 406 	 0.996516 	 28 	 3116469.000000
-instancesConflicts/BPPC_4_0_3.txt 	 411 	 411 	 0.996273 	 28 	 2991723.000000
-instancesConflicts/BPPC_4_0_4.txt 	 411 	 411 	 0.999357 	 35 	 3734139.000000
-instancesConflicts/BPPC_4_0_5.txt 	 397 	 397 	 0.998726 	 31 	 3632039.000000
-instancesConflicts/BPPC_4_0_6.txt 	 399 	 399 	 0.997559 	 30 	 3397520.000000
-instancesConflicts/BPPC_4_0_7.txt 	 395 	 395 	 0.996168 	 28 	 3304413.000000
-instancesConflicts/BPPC_4_0_8.txt 	 404 	 404 	 0.996005 	 29 	 3391215.000000
-instancesConflicts/BPPC_4_0_9.txt 	 399 	 399 	 0.997218 	 29 	 3588716.000000
-instancesConflicts/BPPC_4_0_10.txt 	 397 	 397 	 0.999634 	 33 	 3658390.000000
-instancesConflicts/BPPC_4_1_1.txt 	 399 	 399 	 0.997227 	 29 	 3323131.000000
-instancesConflicts/BPPC_4_1_2.txt 	 406 	 406 	 0.996442 	 28 	 3161797.000000
-instancesConflicts/BPPC_4_1_3.txt 	 411 	 411 	 0.996227 	 29 	 3111955.000000
-instancesConflicts/BPPC_4_1_4.txt 	 411 	 411 	 0.999359 	 36 	 3824186.000000
-instancesConflicts/BPPC_4_1_5.txt 	 397 	 397 	 0.998712 	 30 	 3590539.000000
-instancesConflicts/BPPC_4_1_6.txt 	 399 	 399 	 0.997538 	 30 	 3239244.000000
-instancesConflicts/BPPC_4_1_7.txt 	 395 	 395 	 0.996109 	 29 	 3097560.000000
-instancesConflicts/BPPC_4_1_8.txt 	 404 	 404 	 0.995978 	 29 	 3367237.000000
-instancesConflicts/BPPC_4_1_9.txt 	 399 	 399 	 0.997219 	 30 	 3595395.000000
-instancesConflicts/BPPC_4_1_10.txt 	 397 	 397 	 0.999642 	 35 	 3580830.000000
-instancesConflicts/BPPC_4_2_1.txt 	 399 	 399 	 0.997251 	 50 	 5612794.000000
-instancesConflicts/BPPC_4_2_2.txt 	 406 	 406 	 0.996449 	 39 	 4006021.000000
-instancesConflicts/BPPC_4_2_3.txt 	 411 	 411 	 0.996537 	 42 	 4883860.000000
-instancesConflicts/BPPC_4_2_4.txt 	 411 	 412 	 0.994701 	 36 	 4757732.000000
-instancesConflicts/BPPC_4_2_5.txt 	 397 	 397 	 0.998761 	 58 	 5675855.000000
-instancesConflicts/BPPC_4_2_6.txt 	 399 	 399 	 0.997644 	 54 	 5735265.000000
-instancesConflicts/BPPC_4_2_7.txt 	 395 	 396 	 0.991238 	 43 	 6725860.000000
-instancesConflicts/BPPC_4_2_8.txt 	 404 	 404 	 0.995955 	 37 	 4840430.000000
-instancesConflicts/BPPC_4_2_9.txt 	 399 	 399 	 0.997272 	 59 	 7934724.000000
-instancesConflicts/BPPC_4_2_10.txt 	 397 	 399 	 0.990062 	 31 	 3889558.000000
-instancesConflicts/BPPC_4_3_1.txt 	 399 	 402 	 0.983268 	 53 	 9248237.000000
-instancesConflicts/BPPC_4_3_2.txt 	 406 	 410 	 0.981098 	 39 	 6052078.000000
-instancesConflicts/BPPC_4_3_3.txt 	 411 	 417 	 0.975050 	 42 	 7182747.000000
-instancesConflicts/BPPC_4_3_4.txt 	 411 	 415 	 0.982508 	 67 	 13426275.000000
-instancesConflicts/BPPC_4_3_5.txt 	 397 	 401 	 0.982842 	 89 	 13044481.000000
-instancesConflicts/BPPC_4_3_6.txt 	 399 	 403 	 0.981450 	 51 	 7802217.000000
-instancesConflicts/BPPC_4_3_7.txt 	 395 	 402 	 0.970881 	 42 	 6128143.000000
-instancesConflicts/BPPC_4_3_8.txt 	 404 	 408 	 0.981807 	 62 	 11021885.000000
-instancesConflicts/BPPC_4_3_9.txt 	 399 	 405 	 0.973733 	 44 	 7562267.000000
-instancesConflicts/BPPC_4_3_10.txt 	 397 	 401 	 0.982828 	 87 	 14084837.000000
-instancesConflicts/BPPC_4_4_1.txt 	 399 	 429 	 0.907149 	 126 	 38250292.000000
-instancesConflicts/BPPC_4_4_2.txt 	 406 	 416 	 0.962308 	 88 	 22381344.000000
-instancesConflicts/BPPC_4_4_3.txt 	 411 	 430 	 0.937227 	 153 	 42098752.000000
-instancesConflicts/BPPC_4_4_4.txt 	 411 	 428 	 0.945184 	 147 	 39687500.000000
-instancesConflicts/BPPC_4_4_5.txt 	 397 	 422 	 0.924255 	 143 	 34871960.000000
-instancesConflicts/BPPC_4_4_6.txt 	 399 	 403 	 0.982154 	 210 	 45427996.000000
-instancesConflicts/BPPC_4_4_7.txt 	 395 	 425 	 0.907077 	 105 	 29716728.000000
-instancesConflicts/BPPC_4_4_8.txt 	 404 	 414 	 0.961525 	 163 	 46764788.000000
-instancesConflicts/BPPC_4_4_9.txt 	 399 	 429 	 0.910111 	 133 	 39397204.000000
-instancesConflicts/BPPC_4_4_10.txt 	 397 	 415 	 0.942317 	 157 	 44831204.000000
-instancesConflicts/BPPC_4_5_1.txt 	 399 	 530 	 0.668165 	 28 	 17515128.000000
-instancesConflicts/BPPC_4_5_2.txt 	 406 	 494 	 0.736573 	 26 	 15579326.000000
-instancesConflicts/BPPC_4_5_3.txt 	 411 	 515 	 0.695537 	 26 	 16110396.000000
-instancesConflicts/BPPC_4_5_4.txt 	 411 	 522 	 0.688401 	 26 	 15803102.000000
-instancesConflicts/BPPC_4_5_5.txt 	 397 	 513 	 0.674348 	 26 	 15746164.000000
-instancesConflicts/BPPC_4_5_6.txt 	 399 	 489 	 0.729419 	 26 	 15155991.000000
-instancesConflicts/BPPC_4_5_7.txt 	 395 	 515 	 0.684049 	 28 	 17494964.000000
-instancesConflicts/BPPC_4_5_8.txt 	 404 	 511 	 0.688278 	 26 	 15976112.000000
-instancesConflicts/BPPC_4_5_9.txt 	 399 	 517 	 0.695930 	 48 	 28748448.000000
-instancesConflicts/BPPC_4_5_10.txt 	 397 	 506 	 0.717381 	 51 	 29727352.000000
-instancesConflicts/BPPC_4_6_1.txt 	 399 	 637 	 0.481173 	 26 	 19503912.000000
-instancesConflicts/BPPC_4_6_2.txt 	 406 	 587 	 0.580239 	 63 	 42766956.000000
-instancesConflicts/BPPC_4_6_3.txt 	 411 	 614 	 0.529447 	 26 	 19297948.000000
-instancesConflicts/BPPC_4_6_4.txt 	 411 	 618 	 0.526927 	 26 	 19216260.000000
-instancesConflicts/BPPC_4_6_5.txt 	 397 	 610 	 0.514539 	 26 	 19437636.000000
-instancesConflicts/BPPC_4_6_6.txt 	 399 	 588 	 0.549136 	 26 	 18776322.000000
-instancesConflicts/BPPC_4_6_7.txt 	 395 	 615 	 0.505624 	 26 	 19522884.000000
-instancesConflicts/BPPC_4_6_8.txt 	 404 	 620 	 0.524777 	 29 	 20779820.000000
-instancesConflicts/BPPC_4_6_9.txt 	 399 	 629 	 0.487728 	 26 	 19664148.000000
-instancesConflicts/BPPC_4_6_10.txt 	 397 	 610 	 0.516692 	 26 	 19665368.000000
-instancesConflicts/BPPC_4_7_1.txt 	 399 	 731 	 0.385638 	 52 	 38574712.000000
-instancesConflicts/BPPC_4_7_2.txt 	 406 	 685 	 0.445729 	 73 	 53054336.000000
-instancesConflicts/BPPC_4_7_3.txt 	 411 	 717 	 0.404174 	 26 	 20421674.000000
-instancesConflicts/BPPC_4_7_4.txt 	 411 	 710 	 0.415726 	 26 	 20526728.000000
-instancesConflicts/BPPC_4_7_5.txt 	 397 	 702 	 0.414987 	 81 	 59066760.000000
-instancesConflicts/BPPC_4_7_6.txt 	 399 	 699 	 0.408888 	 26 	 20471698.000000
-instancesConflicts/BPPC_4_7_7.txt 	 395 	 707 	 0.392552 	 26 	 21241040.000000
-instancesConflicts/BPPC_4_7_8.txt 	 404 	 714 	 0.398991 	 26 	 20279372.000000
-instancesConflicts/BPPC_4_7_9.txt 	 399 	 733 	 0.371547 	 26 	 20382256.000000
-instancesConflicts/BPPC_4_7_10.txt 	 397 	 713 	 0.391615 	 26 	 20940344.000000
-instancesConflicts/BPPC_4_8_1.txt 	 399 	 821 	 0.301272 	 32 	 23938900.000000
-instancesConflicts/BPPC_4_8_2.txt 	 406 	 794 	 0.324195 	 26 	 20229296.000000
-instancesConflicts/BPPC_4_8_3.txt 	 411 	 813 	 0.315427 	 26 	 19551766.000000
-instancesConflicts/BPPC_4_8_4.txt 	 411 	 805 	 0.324221 	 26 	 19651872.000000
-instancesConflicts/BPPC_4_8_5.txt 	 397 	 802 	 0.316250 	 66 	 46573972.000000
-instancesConflicts/BPPC_4_8_6.txt 	 399 	 810 	 0.305956 	 26 	 19384288.000000
-instancesConflicts/BPPC_4_8_7.txt 	 395 	 807 	 0.302524 	 26 	 20869812.000000
-instancesConflicts/BPPC_4_8_8.txt 	 404 	 811 	 0.315146 	 37 	 26957438.000000
-instancesConflicts/BPPC_4_8_9.txt 	 399 	 823 	 0.300528 	 28 	 21055478.000000
-instancesConflicts/BPPC_4_8_10.txt 	 397 	 811 	 0.307593 	 42 	 31641148.000000
-instancesConflicts/BPPC_4_9_1.txt 	 399 	 916 	 0.231742 	 32 	 21275838.000000
-instancesConflicts/BPPC_4_9_2.txt 	 406 	 900 	 0.246867 	 26 	 18330718.000000
-instancesConflicts/BPPC_4_9_3.txt 	 411 	 904 	 0.251734 	 38 	 24560708.000000
-instancesConflicts/BPPC_4_9_4.txt 	 411 	 899 	 0.255548 	 46 	 29347264.000000
-instancesConflicts/BPPC_4_9_5.txt 	 397 	 909 	 0.233182 	 26 	 17766352.000000
-instancesConflicts/BPPC_4_9_6.txt 	 399 	 908 	 0.238559 	 31 	 20650332.000000
-instancesConflicts/BPPC_4_9_7.txt 	 395 	 900 	 0.236368 	 26 	 18743774.000000
-instancesConflicts/BPPC_4_9_8.txt 	 404 	 904 	 0.241718 	 26 	 18215288.000000
-instancesConflicts/BPPC_4_9_9.txt 	 399 	 920 	 0.228584 	 26 	 17619538.000000
-instancesConflicts/BPPC_4_9_10.txt 	 397 	 912 	 0.230494 	 26 	 18514404.000000
-instancesConflicts/BPPC_5_0_1.txt 	 20 	 20 	 1.000000 	 35 	 87570.000000
-instancesConflicts/BPPC_5_0_2.txt 	 20 	 20 	 1.000000 	 42 	 101585.000000
-instancesConflicts/BPPC_5_0_3.txt 	 20 	 20 	 1.000000 	 40 	 116040.000000
-instancesConflicts/BPPC_5_0_4.txt 	 20 	 20 	 1.000000 	 42 	 103691.000000
-instancesConflicts/BPPC_5_0_5.txt 	 20 	 20 	 1.000000 	 35 	 90320.000000
-instancesConflicts/BPPC_5_0_6.txt 	 20 	 20 	 1.000000 	 49 	 119529.000000
-instancesConflicts/BPPC_5_0_7.txt 	 20 	 20 	 1.000000 	 35 	 92278.000000
-instancesConflicts/BPPC_5_0_8.txt 	 20 	 20 	 1.000000 	 42 	 102933.000000
-instancesConflicts/BPPC_5_0_9.txt 	 20 	 20 	 1.000000 	 41 	 103461.000000
-instancesConflicts/BPPC_5_0_10.txt 	 20 	 20 	 1.000000 	 40 	 100637.000000
-instancesConflicts/BPPC_5_1_1.txt 	 20 	 20 	 1.000000 	 36 	 94536.000000
-instancesConflicts/BPPC_5_1_2.txt 	 20 	 20 	 1.000000 	 41 	 107650.000000
-instancesConflicts/BPPC_5_1_3.txt 	 20 	 20 	 1.000000 	 37 	 101434.000000
-instancesConflicts/BPPC_5_1_4.txt 	 20 	 20 	 1.000000 	 39 	 101710.000000
-instancesConflicts/BPPC_5_1_5.txt 	 20 	 20 	 1.000000 	 36 	 95369.000000
-instancesConflicts/BPPC_5_1_6.txt 	 20 	 20 	 1.000000 	 45 	 114702.000000
-instancesConflicts/BPPC_5_1_7.txt 	 20 	 20 	 1.000000 	 48 	 115704.000000
-instancesConflicts/BPPC_5_1_8.txt 	 20 	 20 	 1.000000 	 38 	 95463.000000
-instancesConflicts/BPPC_5_1_9.txt 	 20 	 21 	 0.911960 	 26 	 81034.000000
-instancesConflicts/BPPC_5_1_10.txt 	 20 	 21 	 0.911237 	 26 	 74364.000000
-instancesConflicts/BPPC_5_2_1.txt 	 20 	 21 	 0.918656 	 26 	 87744.000000
-instancesConflicts/BPPC_5_2_2.txt 	 20 	 21 	 0.912202 	 26 	 84735.000000
-instancesConflicts/BPPC_5_2_3.txt 	 20 	 21 	 0.911802 	 26 	 94962.000000
-instancesConflicts/BPPC_5_2_4.txt 	 20 	 21 	 0.914015 	 26 	 79662.000000
-instancesConflicts/BPPC_5_2_5.txt 	 20 	 20 	 1.000000 	 40 	 102515.000000
-instancesConflicts/BPPC_5_2_6.txt 	 20 	 21 	 0.910579 	 29 	 84148.000000
-instancesConflicts/BPPC_5_2_7.txt 	 20 	 21 	 0.911298 	 26 	 80630.000000
-instancesConflicts/BPPC_5_2_8.txt 	 20 	 21 	 0.912438 	 26 	 88715.000000
-instancesConflicts/BPPC_5_2_9.txt 	 20 	 21 	 0.911648 	 26 	 84187.000000
-instancesConflicts/BPPC_5_2_10.txt 	 20 	 21 	 0.911062 	 26 	 89715.000000
-instancesConflicts/BPPC_5_3_1.txt 	 20 	 21 	 0.910115 	 26 	 82162.000000
-instancesConflicts/BPPC_5_3_2.txt 	 20 	 23 	 0.806975 	 30 	 83394.000000
-instancesConflicts/BPPC_5_3_3.txt 	 20 	 21 	 0.910897 	 28 	 86950.000000
-instancesConflicts/BPPC_5_3_4.txt 	 20 	 21 	 0.910858 	 27 	 85328.000000
-instancesConflicts/BPPC_5_3_5.txt 	 20 	 21 	 0.909699 	 27 	 83682.000000
-instancesConflicts/BPPC_5_3_6.txt 	 20 	 25 	 0.680485 	 26 	 72327.000000
-instancesConflicts/BPPC_5_3_7.txt 	 20 	 21 	 0.911233 	 26 	 81381.000000
-instancesConflicts/BPPC_5_3_8.txt 	 20 	 21 	 0.910596 	 30 	 84648.000000
-instancesConflicts/BPPC_5_3_9.txt 	 20 	 22 	 0.838090 	 26 	 74358.000000
-instancesConflicts/BPPC_5_3_10.txt 	 20 	 21 	 0.909624 	 27 	 85005.000000
-instancesConflicts/BPPC_5_4_1.txt 	 20 	 21 	 0.911774 	 37 	 102476.000000
-instancesConflicts/BPPC_5_4_2.txt 	 20 	 30 	 0.538011 	 26 	 68737.000000
-instancesConflicts/BPPC_5_4_3.txt 	 20 	 23 	 0.763079 	 26 	 73230.000000
-instancesConflicts/BPPC_5_4_4.txt 	 20 	 23 	 0.763226 	 26 	 72173.000000
-instancesConflicts/BPPC_5_4_5.txt 	 20 	 22 	 0.838414 	 27 	 84456.000000
-instancesConflicts/BPPC_5_4_6.txt 	 20 	 32 	 0.479151 	 26 	 69070.000000
-instancesConflicts/BPPC_5_4_7.txt 	 20 	 22 	 0.851814 	 27 	 81133.000000
-instancesConflicts/BPPC_5_4_8.txt 	 20 	 28 	 0.572964 	 26 	 64129.000000
-instancesConflicts/BPPC_5_4_9.txt 	 20 	 24 	 0.742734 	 29 	 81395.000000
-instancesConflicts/BPPC_5_4_10.txt 	 20 	 25 	 0.680464 	 26 	 75866.000000
-instancesConflicts/BPPC_5_5_1.txt 	 20 	 26 	 0.674197 	 28 	 74674.000000
-instancesConflicts/BPPC_5_5_2.txt 	 20 	 36 	 0.390743 	 26 	 76699.000000
-instancesConflicts/BPPC_5_5_3.txt 	 20 	 28 	 0.582093 	 26 	 70838.000000
-instancesConflicts/BPPC_5_5_4.txt 	 20 	 27 	 0.629911 	 27 	 72103.000000
-instancesConflicts/BPPC_5_5_5.txt 	 20 	 29 	 0.538889 	 26 	 65552.000000
-instancesConflicts/BPPC_5_5_6.txt 	 20 	 40 	 0.320074 	 26 	 77251.000000
-instancesConflicts/BPPC_5_5_7.txt 	 20 	 27 	 0.619065 	 26 	 69010.000000
-instancesConflicts/BPPC_5_5_8.txt 	 20 	 35 	 0.396442 	 26 	 72243.000000
-instancesConflicts/BPPC_5_5_9.txt 	 20 	 29 	 0.584027 	 32 	 79584.000000
-instancesConflicts/BPPC_5_5_10.txt 	 20 	 32 	 0.467225 	 26 	 75744.000000
-instancesConflicts/BPPC_5_6_1.txt 	 20 	 33 	 0.438442 	 26 	 76111.000000
-instancesConflicts/BPPC_5_6_2.txt 	 20 	 39 	 0.329090 	 26 	 84782.000000
-instancesConflicts/BPPC_5_6_3.txt 	 20 	 33 	 0.437528 	 26 	 82213.000000
-instancesConflicts/BPPC_5_6_4.txt 	 20 	 34 	 0.418250 	 26 	 78627.000000
-instancesConflicts/BPPC_5_6_5.txt 	 20 	 35 	 0.407436 	 26 	 76450.000000
-instancesConflicts/BPPC_5_6_6.txt 	 20 	 43 	 0.274041 	 26 	 85718.000000
-instancesConflicts/BPPC_5_6_7.txt 	 20 	 34 	 0.430095 	 26 	 77563.000000
-instancesConflicts/BPPC_5_6_8.txt 	 20 	 40 	 0.314153 	 26 	 81036.000000
-instancesConflicts/BPPC_5_6_9.txt 	 20 	 35 	 0.414300 	 26 	 75915.000000
-instancesConflicts/BPPC_5_6_10.txt 	 20 	 39 	 0.332223 	 26 	 83347.000000
-instancesConflicts/BPPC_5_7_1.txt 	 20 	 41 	 0.303101 	 26 	 83722.000000
-instancesConflicts/BPPC_5_7_2.txt 	 20 	 44 	 0.256102 	 26 	 87651.000000
-instancesConflicts/BPPC_5_7_3.txt 	 20 	 41 	 0.300304 	 26 	 82857.000000
-instancesConflicts/BPPC_5_7_4.txt 	 20 	 40 	 0.321529 	 27 	 86294.000000
-instancesConflicts/BPPC_5_7_5.txt 	 20 	 40 	 0.308864 	 26 	 80295.000000
-instancesConflicts/BPPC_5_7_6.txt 	 20 	 47 	 0.226751 	 26 	 89811.000000
-instancesConflicts/BPPC_5_7_7.txt 	 20 	 43 	 0.276715 	 26 	 83882.000000
-instancesConflicts/BPPC_5_7_8.txt 	 20 	 45 	 0.244661 	 26 	 88818.000000
-instancesConflicts/BPPC_5_7_9.txt 	 20 	 41 	 0.315788 	 26 	 81040.000000
-instancesConflicts/BPPC_5_7_10.txt 	 20 	 44 	 0.253477 	 26 	 87725.000000
-instancesConflicts/BPPC_5_8_1.txt 	 20 	 45 	 0.251955 	 26 	 88837.000000
-instancesConflicts/BPPC_5_8_2.txt 	 20 	 51 	 0.188310 	 26 	 91489.000000
-instancesConflicts/BPPC_5_8_3.txt 	 20 	 48 	 0.218219 	 26 	 89039.000000
-instancesConflicts/BPPC_5_8_4.txt 	 20 	 47 	 0.233742 	 26 	 87985.000000
-instancesConflicts/BPPC_5_8_5.txt 	 20 	 46 	 0.240190 	 26 	 86790.000000
-instancesConflicts/BPPC_5_8_6.txt 	 20 	 52 	 0.178147 	 26 	 93077.000000
-instancesConflicts/BPPC_5_8_7.txt 	 20 	 49 	 0.206820 	 26 	 89515.000000
-instancesConflicts/BPPC_5_8_8.txt 	 20 	 53 	 0.168413 	 26 	 94418.000000
-instancesConflicts/BPPC_5_8_9.txt 	 20 	 49 	 0.210003 	 26 	 88899.000000
-instancesConflicts/BPPC_5_8_10.txt 	 20 	 51 	 0.183721 	 26 	 92661.000000
-instancesConflicts/BPPC_5_9_1.txt 	 20 	 50 	 0.190604 	 26 	 95900.000000
-instancesConflicts/BPPC_5_9_2.txt 	 20 	 56 	 0.145068 	 26 	 93329.000000
-instancesConflicts/BPPC_5_9_3.txt 	 20 	 54 	 0.166238 	 26 	 97465.000000
-instancesConflicts/BPPC_5_9_4.txt 	 20 	 54 	 0.163096 	 26 	 96028.000000
-instancesConflicts/BPPC_5_9_5.txt 	 20 	 52 	 0.175646 	 26 	 93015.000000
-instancesConflicts/BPPC_5_9_6.txt 	 20 	 56 	 0.141946 	 26 	 95311.000000
-instancesConflicts/BPPC_5_9_7.txt 	 20 	 54 	 0.156507 	 26 	 95111.000000
-instancesConflicts/BPPC_5_9_8.txt 	 20 	 57 	 0.133813 	 26 	 96781.000000
-instancesConflicts/BPPC_5_9_9.txt 	 20 	 55 	 0.151766 	 26 	 96448.000000
-instancesConflicts/BPPC_5_9_10.txt 	 20 	 56 	 0.143526 	 26 	 93639.000000
-instancesConflicts/BPPC_6_0_1.txt 	 40 	 41 	 0.955372 	 27 	 175408.000000
-instancesConflicts/BPPC_6_0_2.txt 	 40 	 40 	 1.000000 	 51 	 271240.000000
-instancesConflicts/BPPC_6_0_3.txt 	 40 	 41 	 0.954562 	 27 	 178694.000000
-instancesConflicts/BPPC_6_0_4.txt 	 40 	 41 	 0.958235 	 27 	 176903.000000
-instancesConflicts/BPPC_6_0_5.txt 	 40 	 40 	 1.000000 	 52 	 292527.000000
-instancesConflicts/BPPC_6_0_6.txt 	 40 	 40 	 1.000000 	 52 	 273778.000000
-instancesConflicts/BPPC_6_0_7.txt 	 40 	 40 	 1.000000 	 45 	 234562.000000
-instancesConflicts/BPPC_6_0_8.txt 	 40 	 40 	 1.000000 	 40 	 226759.000000
-instancesConflicts/BPPC_6_0_9.txt 	 40 	 41 	 0.955776 	 27 	 177052.000000
-instancesConflicts/BPPC_6_0_10.txt 	 40 	 41 	 0.954227 	 26 	 178393.000000
-instancesConflicts/BPPC_6_1_1.txt 	 40 	 40 	 1.000000 	 52 	 286275.000000
-instancesConflicts/BPPC_6_1_2.txt 	 40 	 40 	 1.000000 	 51 	 283343.000000
-instancesConflicts/BPPC_6_1_3.txt 	 40 	 40 	 1.000000 	 51 	 279691.000000
-instancesConflicts/BPPC_6_1_4.txt 	 40 	 41 	 0.955045 	 27 	 178301.000000
-instancesConflicts/BPPC_6_1_5.txt 	 40 	 40 	 1.000000 	 49 	 280563.000000
-instancesConflicts/BPPC_6_1_6.txt 	 40 	 41 	 0.955704 	 27 	 181353.000000
-instancesConflicts/BPPC_6_1_7.txt 	 40 	 40 	 1.000000 	 40 	 225383.000000
-instancesConflicts/BPPC_6_1_8.txt 	 40 	 41 	 0.954639 	 27 	 179247.000000
-instancesConflicts/BPPC_6_1_9.txt 	 40 	 40 	 1.000000 	 48 	 272720.000000
-instancesConflicts/BPPC_6_1_10.txt 	 40 	 40 	 1.000000 	 46 	 271293.000000
-instancesConflicts/BPPC_6_2_1.txt 	 40 	 41 	 0.954677 	 31 	 215401.000000
-instancesConflicts/BPPC_6_2_2.txt 	 40 	 41 	 0.955047 	 26 	 174767.000000
-instancesConflicts/BPPC_6_2_3.txt 	 40 	 41 	 0.955675 	 27 	 205340.000000
-instancesConflicts/BPPC_6_2_4.txt 	 40 	 41 	 0.965275 	 28 	 196465.000000
-instancesConflicts/BPPC_6_2_5.txt 	 40 	 41 	 0.953994 	 27 	 182155.000000
-instancesConflicts/BPPC_6_2_6.txt 	 40 	 41 	 0.955153 	 27 	 178854.000000
-instancesConflicts/BPPC_6_2_7.txt 	 40 	 41 	 0.959171 	 27 	 194036.000000
-instancesConflicts/BPPC_6_2_8.txt 	 40 	 41 	 0.956979 	 27 	 178231.000000
-instancesConflicts/BPPC_6_2_9.txt 	 40 	 40 	 1.000000 	 52 	 291868.000000
-instancesConflicts/BPPC_6_2_10.txt 	 40 	 41 	 0.954183 	 26 	 188313.000000
-instancesConflicts/BPPC_6_3_1.txt 	 40 	 44 	 0.858637 	 37 	 282336.000000
-instancesConflicts/BPPC_6_3_2.txt 	 40 	 41 	 0.955639 	 52 	 362514.000000
-instancesConflicts/BPPC_6_3_3.txt 	 40 	 41 	 0.954238 	 36 	 305518.000000
-instancesConflicts/BPPC_6_3_4.txt 	 40 	 41 	 0.954784 	 53 	 385979.000000
-instancesConflicts/BPPC_6_3_5.txt 	 40 	 41 	 0.955603 	 40 	 275549.000000
-instancesConflicts/BPPC_6_3_6.txt 	 40 	 41 	 0.955490 	 52 	 349588.000000
-instancesConflicts/BPPC_6_3_7.txt 	 40 	 41 	 0.953872 	 60 	 445105.000000
-instancesConflicts/BPPC_6_3_8.txt 	 40 	 42 	 0.920367 	 32 	 234048.000000
-instancesConflicts/BPPC_6_3_9.txt 	 40 	 41 	 0.955164 	 48 	 317805.000000
-instancesConflicts/BPPC_6_3_10.txt 	 40 	 41 	 0.958018 	 36 	 238936.000000
-instancesConflicts/BPPC_6_4_1.txt 	 40 	 54 	 0.618190 	 26 	 186438.000000
-instancesConflicts/BPPC_6_4_2.txt 	 40 	 51 	 0.685616 	 26 	 199089.000000
-instancesConflicts/BPPC_6_4_3.txt 	 40 	 49 	 0.730166 	 26 	 228042.000000
-instancesConflicts/BPPC_6_4_4.txt 	 40 	 51 	 0.688715 	 26 	 189049.000000
-instancesConflicts/BPPC_6_4_5.txt 	 40 	 46 	 0.805626 	 28 	 234184.000000
-instancesConflicts/BPPC_6_4_6.txt 	 40 	 46 	 0.804795 	 36 	 304225.000000
-instancesConflicts/BPPC_6_4_7.txt 	 40 	 50 	 0.706489 	 34 	 267955.000000
-instancesConflicts/BPPC_6_4_8.txt 	 40 	 48 	 0.770695 	 42 	 304777.000000
-instancesConflicts/BPPC_6_4_9.txt 	 40 	 50 	 0.725152 	 41 	 293212.000000
-instancesConflicts/BPPC_6_4_10.txt 	 40 	 45 	 0.825827 	 30 	 260729.000000
-instancesConflicts/BPPC_6_5_1.txt 	 40 	 64 	 0.490425 	 27 	 212237.000000
-instancesConflicts/BPPC_6_5_2.txt 	 40 	 66 	 0.457260 	 26 	 199734.000000
-instancesConflicts/BPPC_6_5_3.txt 	 40 	 64 	 0.486722 	 30 	 234180.000000
-instancesConflicts/BPPC_6_5_4.txt 	 40 	 60 	 0.547952 	 34 	 249923.000000
-instancesConflicts/BPPC_6_5_5.txt 	 40 	 59 	 0.560488 	 29 	 207599.000000
-instancesConflicts/BPPC_6_5_6.txt 	 40 	 59 	 0.532531 	 26 	 192750.000000
-instancesConflicts/BPPC_6_5_7.txt 	 40 	 64 	 0.467778 	 26 	 206162.000000
-instancesConflicts/BPPC_6_5_8.txt 	 40 	 59 	 0.554677 	 26 	 195251.000000
-instancesConflicts/BPPC_6_5_9.txt 	 40 	 64 	 0.470466 	 26 	 201713.000000
-instancesConflicts/BPPC_6_5_10.txt 	 40 	 56 	 0.592328 	 27 	 195910.000000
-instancesConflicts/BPPC_6_6_1.txt 	 40 	 74 	 0.378411 	 26 	 223342.000000
-instancesConflicts/BPPC_6_6_2.txt 	 40 	 74 	 0.374077 	 26 	 220978.000000
-instancesConflicts/BPPC_6_6_3.txt 	 40 	 80 	 0.320092 	 26 	 247750.000000
-instancesConflicts/BPPC_6_6_4.txt 	 40 	 73 	 0.369681 	 26 	 228138.000000
-instancesConflicts/BPPC_6_6_5.txt 	 40 	 73 	 0.377608 	 26 	 232340.000000
-instancesConflicts/BPPC_6_6_6.txt 	 40 	 73 	 0.390907 	 27 	 231014.000000
-instancesConflicts/BPPC_6_6_7.txt 	 40 	 74 	 0.383056 	 37 	 308792.000000
-instancesConflicts/BPPC_6_6_8.txt 	 40 	 76 	 0.343957 	 26 	 233331.000000
-instancesConflicts/BPPC_6_6_9.txt 	 40 	 77 	 0.353155 	 26 	 243885.000000
-instancesConflicts/BPPC_6_6_10.txt 	 40 	 71 	 0.395415 	 26 	 220501.000000
-instancesConflicts/BPPC_6_7_1.txt 	 40 	 83 	 0.307970 	 33 	 298297.000000
-instancesConflicts/BPPC_6_7_2.txt 	 40 	 83 	 0.301623 	 26 	 242547.000000
-instancesConflicts/BPPC_6_7_3.txt 	 40 	 90 	 0.245547 	 26 	 268747.000000
-instancesConflicts/BPPC_6_7_4.txt 	 40 	 83 	 0.293313 	 26 	 248601.000000
-instancesConflicts/BPPC_6_7_5.txt 	 40 	 84 	 0.293047 	 26 	 246687.000000
-instancesConflicts/BPPC_6_7_6.txt 	 40 	 85 	 0.289087 	 26 	 246744.000000
-instancesConflicts/BPPC_6_7_7.txt 	 40 	 90 	 0.254529 	 26 	 256195.000000
-instancesConflicts/BPPC_6_7_8.txt 	 40 	 84 	 0.285069 	 26 	 247385.000000
-instancesConflicts/BPPC_6_7_9.txt 	 40 	 87 	 0.278424 	 26 	 253014.000000
-instancesConflicts/BPPC_6_7_10.txt 	 40 	 83 	 0.297351 	 26 	 242014.000000
-instancesConflicts/BPPC_6_8_1.txt 	 40 	 96 	 0.216414 	 26 	 258165.000000
-instancesConflicts/BPPC_6_8_2.txt 	 40 	 95 	 0.224681 	 26 	 252465.000000
-instancesConflicts/BPPC_6_8_3.txt 	 40 	 102 	 0.184926 	 26 	 280716.000000
-instancesConflicts/BPPC_6_8_4.txt 	 40 	 94 	 0.225430 	 26 	 273622.000000
-instancesConflicts/BPPC_6_8_5.txt 	 40 	 97 	 0.214893 	 26 	 258945.000000
-instancesConflicts/BPPC_6_8_6.txt 	 40 	 95 	 0.223918 	 32 	 323991.000000
-instancesConflicts/BPPC_6_8_7.txt 	 40 	 102 	 0.185539 	 26 	 267520.000000
-instancesConflicts/BPPC_6_8_8.txt 	 40 	 94 	 0.232784 	 26 	 265709.000000
-instancesConflicts/BPPC_6_8_9.txt 	 40 	 97 	 0.215705 	 26 	 268436.000000
-instancesConflicts/BPPC_6_8_10.txt 	 40 	 95 	 0.222454 	 26 	 263551.000000
-instancesConflicts/BPPC_6_9_1.txt 	 40 	 105 	 0.176403 	 26 	 266922.000000
-instancesConflicts/BPPC_6_9_2.txt 	 40 	 109 	 0.157202 	 26 	 270461.000000
-instancesConflicts/BPPC_6_9_3.txt 	 40 	 110 	 0.150527 	 26 	 285217.000000
-instancesConflicts/BPPC_6_9_4.txt 	 40 	 110 	 0.154927 	 26 	 274294.000000
-instancesConflicts/BPPC_6_9_5.txt 	 40 	 109 	 0.158535 	 26 	 268078.000000
-instancesConflicts/BPPC_6_9_6.txt 	 40 	 111 	 0.149186 	 26 	 271980.000000
-instancesConflicts/BPPC_6_9_7.txt 	 40 	 111 	 0.148959 	 26 	 274061.000000
-instancesConflicts/BPPC_6_9_8.txt 	 40 	 109 	 0.156427 	 26 	 275753.000000
-instancesConflicts/BPPC_6_9_9.txt 	 40 	 108 	 0.162774 	 26 	 274224.000000
-instancesConflicts/BPPC_6_9_10.txt 	 40 	 108 	 0.161642 	 26 	 270594.000000
-instancesConflicts/BPPC_7_0_1.txt 	 83 	 83 	 1.000000 	 47 	 682173.000000
-instancesConflicts/BPPC_7_0_2.txt 	 83 	 83 	 1.000000 	 50 	 674049.000000
-instancesConflicts/BPPC_7_0_3.txt 	 83 	 83 	 1.000000 	 42 	 553858.000000
-instancesConflicts/BPPC_7_0_4.txt 	 83 	 83 	 1.000000 	 54 	 739504.000000
-instancesConflicts/BPPC_7_0_5.txt 	 83 	 83 	 1.000000 	 45 	 647284.000000
-instancesConflicts/BPPC_7_0_6.txt 	 83 	 83 	 1.000000 	 40 	 592592.000000
-instancesConflicts/BPPC_7_0_7.txt 	 83 	 83 	 1.000000 	 49 	 667460.000000
-instancesConflicts/BPPC_7_0_8.txt 	 83 	 83 	 1.000000 	 55 	 753259.000000
-instancesConflicts/BPPC_7_0_9.txt 	 83 	 83 	 1.000000 	 44 	 623393.000000
-instancesConflicts/BPPC_7_0_10.txt 	 83 	 83 	 1.000000 	 42 	 573226.000000
-instancesConflicts/BPPC_7_1_1.txt 	 83 	 84 	 0.977396 	 30 	 560758.000000
-instancesConflicts/BPPC_7_1_2.txt 	 83 	 83 	 1.000000 	 45 	 622453.000000
-instancesConflicts/BPPC_7_1_3.txt 	 83 	 83 	 1.000000 	 44 	 589283.000000
-instancesConflicts/BPPC_7_1_4.txt 	 83 	 84 	 0.977721 	 30 	 539380.000000
-instancesConflicts/BPPC_7_1_5.txt 	 83 	 83 	 1.000000 	 52 	 762611.000000
-instancesConflicts/BPPC_7_1_6.txt 	 83 	 83 	 1.000000 	 50 	 667549.000000
-instancesConflicts/BPPC_7_1_7.txt 	 83 	 84 	 0.977606 	 30 	 533122.000000
-instancesConflicts/BPPC_7_1_8.txt 	 83 	 84 	 0.977780 	 30 	 543090.000000
-instancesConflicts/BPPC_7_1_9.txt 	 83 	 83 	 1.000000 	 56 	 734116.000000
-instancesConflicts/BPPC_7_1_10.txt 	 83 	 83 	 1.000000 	 55 	 710114.000000
-instancesConflicts/BPPC_7_2_1.txt 	 83 	 84 	 0.979361 	 38 	 663508.000000
-instancesConflicts/BPPC_7_2_2.txt 	 83 	 84 	 0.979180 	 39 	 688329.000000
-instancesConflicts/BPPC_7_2_3.txt 	 83 	 84 	 0.978210 	 29 	 469864.000000
-instancesConflicts/BPPC_7_2_4.txt 	 83 	 84 	 0.977774 	 38 	 710372.000000
-instancesConflicts/BPPC_7_2_5.txt 	 83 	 84 	 0.978169 	 33 	 624180.000000
-instancesConflicts/BPPC_7_2_6.txt 	 83 	 84 	 0.977829 	 28 	 540083.000000
-instancesConflicts/BPPC_7_2_7.txt 	 83 	 84 	 0.978226 	 30 	 496555.000000
-instancesConflicts/BPPC_7_2_8.txt 	 83 	 84 	 0.977881 	 29 	 550084.000000
-instancesConflicts/BPPC_7_2_9.txt 	 83 	 84 	 0.978821 	 32 	 512631.000000
-instancesConflicts/BPPC_7_2_10.txt 	 83 	 84 	 0.979109 	 34 	 692348.000000
-instancesConflicts/BPPC_7_3_1.txt 	 83 	 87 	 0.925433 	 50 	 1200643.000000
-instancesConflicts/BPPC_7_3_2.txt 	 83 	 85 	 0.956508 	 64 	 1429757.000000
-instancesConflicts/BPPC_7_3_3.txt 	 83 	 86 	 0.937031 	 38 	 836740.000000
-instancesConflicts/BPPC_7_3_4.txt 	 83 	 85 	 0.956288 	 75 	 1636330.000000
-instancesConflicts/BPPC_7_3_5.txt 	 83 	 86 	 0.937252 	 39 	 943429.000000
-instancesConflicts/BPPC_7_3_6.txt 	 83 	 86 	 0.936263 	 53 	 1178751.000000
-instancesConflicts/BPPC_7_3_7.txt 	 83 	 85 	 0.956532 	 56 	 1292426.000000
-instancesConflicts/BPPC_7_3_8.txt 	 83 	 86 	 0.936437 	 35 	 746065.000000
-instancesConflicts/BPPC_7_3_9.txt 	 83 	 85 	 0.956865 	 66 	 1446138.000000
-instancesConflicts/BPPC_7_3_10.txt 	 83 	 87 	 0.925450 	 66 	 1583349.000000
-instancesConflicts/BPPC_7_4_1.txt 	 83 	 114 	 0.598396 	 26 	 743392.000000
-instancesConflicts/BPPC_7_4_2.txt 	 83 	 101 	 0.746754 	 37 	 1173323.000000
-instancesConflicts/BPPC_7_4_3.txt 	 83 	 101 	 0.747490 	 33 	 1045856.000000
-instancesConflicts/BPPC_7_4_4.txt 	 83 	 101 	 0.731778 	 29 	 944684.000000
-instancesConflicts/BPPC_7_4_5.txt 	 83 	 97 	 0.789416 	 34 	 1185452.000000
-instancesConflicts/BPPC_7_4_6.txt 	 83 	 100 	 0.750809 	 28 	 916864.000000
-instancesConflicts/BPPC_7_4_7.txt 	 83 	 91 	 0.860813 	 39 	 1238427.000000
-instancesConflicts/BPPC_7_4_8.txt 	 83 	 92 	 0.857945 	 56 	 1779046.000000
-instancesConflicts/BPPC_7_4_9.txt 	 83 	 100 	 0.761681 	 42 	 1217130.000000
-instancesConflicts/BPPC_7_4_10.txt 	 83 	 108 	 0.667705 	 27 	 792067.000000
-instancesConflicts/BPPC_7_5_1.txt 	 83 	 138 	 0.443524 	 26 	 883123.000000
-instancesConflicts/BPPC_7_5_2.txt 	 83 	 128 	 0.518825 	 26 	 823338.000000
-instancesConflicts/BPPC_7_5_3.txt 	 83 	 128 	 0.506440 	 26 	 842337.000000
-instancesConflicts/BPPC_7_5_4.txt 	 83 	 122 	 0.561932 	 32 	 1021280.000000
-instancesConflicts/BPPC_7_5_5.txt 	 83 	 123 	 0.555484 	 27 	 836176.000000
-instancesConflicts/BPPC_7_5_6.txt 	 83 	 127 	 0.532944 	 33 	 994681.000000
-instancesConflicts/BPPC_7_5_7.txt 	 83 	 118 	 0.592002 	 32 	 960707.000000
-instancesConflicts/BPPC_7_5_8.txt 	 83 	 115 	 0.616454 	 29 	 888186.000000
-instancesConflicts/BPPC_7_5_9.txt 	 83 	 124 	 0.545276 	 30 	 939388.000000
-instancesConflicts/BPPC_7_5_10.txt 	 83 	 134 	 0.479024 	 28 	 945722.000000
-instancesConflicts/BPPC_7_6_1.txt 	 83 	 158 	 0.366106 	 30 	 1132513.000000
-instancesConflicts/BPPC_7_6_2.txt 	 83 	 150 	 0.380076 	 26 	 959708.000000
-instancesConflicts/BPPC_7_6_3.txt 	 83 	 155 	 0.379409 	 35 	 1277094.000000
-instancesConflicts/BPPC_7_6_4.txt 	 83 	 146 	 0.411687 	 29 	 1105877.000000
-instancesConflicts/BPPC_7_6_5.txt 	 83 	 150 	 0.397321 	 30 	 1099975.000000
-instancesConflicts/BPPC_7_6_6.txt 	 83 	 150 	 0.380741 	 26 	 951196.000000
-instancesConflicts/BPPC_7_6_7.txt 	 83 	 152 	 0.386896 	 26 	 996462.000000
-instancesConflicts/BPPC_7_6_8.txt 	 83 	 140 	 0.450492 	 34 	 1241984.000000
-instancesConflicts/BPPC_7_6_9.txt 	 83 	 155 	 0.359040 	 26 	 981213.000000
-instancesConflicts/BPPC_7_6_10.txt 	 83 	 154 	 0.378350 	 29 	 1111222.000000
-instancesConflicts/BPPC_7_7_1.txt 	 83 	 179 	 0.281658 	 26 	 1067121.000000
-instancesConflicts/BPPC_7_7_2.txt 	 83 	 169 	 0.318781 	 30 	 1197530.000000
-instancesConflicts/BPPC_7_7_3.txt 	 83 	 187 	 0.252445 	 26 	 1072600.000000
-instancesConflicts/BPPC_7_7_4.txt 	 83 	 170 	 0.309819 	 26 	 1086839.000000
-instancesConflicts/BPPC_7_7_5.txt 	 83 	 174 	 0.300917 	 27 	 1104424.000000
-instancesConflicts/BPPC_7_7_6.txt 	 83 	 173 	 0.308211 	 34 	 1324176.000000
-instancesConflicts/BPPC_7_7_7.txt 	 83 	 174 	 0.301862 	 33 	 1346124.000000
-instancesConflicts/BPPC_7_7_8.txt 	 83 	 178 	 0.285268 	 26 	 1061089.000000
-instancesConflicts/BPPC_7_7_9.txt 	 83 	 174 	 0.304867 	 41 	 1573347.000000
-instancesConflicts/BPPC_7_7_10.txt 	 83 	 177 	 0.288469 	 28 	 1160423.000000
-instancesConflicts/BPPC_7_8_1.txt 	 83 	 198 	 0.227348 	 30 	 1251474.000000
-instancesConflicts/BPPC_7_8_2.txt 	 83 	 194 	 0.232538 	 26 	 1107251.000000
-instancesConflicts/BPPC_7_8_3.txt 	 83 	 212 	 0.187826 	 26 	 1093268.000000
-instancesConflicts/BPPC_7_8_4.txt 	 83 	 196 	 0.227178 	 26 	 1122062.000000
-instancesConflicts/BPPC_7_8_5.txt 	 83 	 202 	 0.213006 	 26 	 1099343.000000
-instancesConflicts/BPPC_7_8_6.txt 	 83 	 200 	 0.215697 	 26 	 1107462.000000
-instancesConflicts/BPPC_7_8_7.txt 	 83 	 203 	 0.205206 	 26 	 1123943.000000
-instancesConflicts/BPPC_7_8_8.txt 	 83 	 197 	 0.227776 	 31 	 1317701.000000
-instancesConflicts/BPPC_7_8_9.txt 	 83 	 201 	 0.214559 	 26 	 1099224.000000
-instancesConflicts/BPPC_7_8_10.txt 	 83 	 202 	 0.212322 	 26 	 1144315.000000
-instancesConflicts/BPPC_7_9_1.txt 	 83 	 221 	 0.170516 	 26 	 1128949.000000
-instancesConflicts/BPPC_7_9_2.txt 	 83 	 224 	 0.161292 	 26 	 1125187.000000
-instancesConflicts/BPPC_7_9_3.txt 	 83 	 232 	 0.146013 	 26 	 1061515.000000
-instancesConflicts/BPPC_7_9_4.txt 	 83 	 227 	 0.154416 	 26 	 1097757.000000
-instancesConflicts/BPPC_7_9_5.txt 	 83 	 219 	 0.174782 	 41 	 1640747.000000
-instancesConflicts/BPPC_7_9_6.txt 	 83 	 228 	 0.153721 	 26 	 1072079.000000
-instancesConflicts/BPPC_7_9_7.txt 	 83 	 224 	 0.160573 	 26 	 1128037.000000
-instancesConflicts/BPPC_7_9_8.txt 	 83 	 223 	 0.162035 	 26 	 1116177.000000
-instancesConflicts/BPPC_7_9_9.txt 	 83 	 228 	 0.154019 	 26 	 1098692.000000
-instancesConflicts/BPPC_7_9_10.txt 	 83 	 226 	 0.156921 	 26 	 1107028.000000
-instancesConflicts/BPPC_8_0_1.txt 	 167 	 167 	 1.000000 	 52 	 2339469.000000
-instancesConflicts/BPPC_8_0_2.txt 	 167 	 167 	 1.000000 	 54 	 2273082.000000
-instancesConflicts/BPPC_8_0_3.txt 	 167 	 167 	 1.000000 	 49 	 1743745.000000
-instancesConflicts/BPPC_8_0_4.txt 	 167 	 167 	 1.000000 	 56 	 2198137.000000
-instancesConflicts/BPPC_8_0_5.txt 	 167 	 168 	 0.988894 	 32 	 1684795.000000
-instancesConflicts/BPPC_8_0_6.txt 	 167 	 168 	 0.988790 	 34 	 1901935.000000
-instancesConflicts/BPPC_8_0_7.txt 	 167 	 167 	 1.000000 	 52 	 2060857.000000
-instancesConflicts/BPPC_8_0_8.txt 	 167 	 167 	 1.000000 	 48 	 2065474.000000
-instancesConflicts/BPPC_8_0_9.txt 	 167 	 167 	 1.000000 	 53 	 2074041.000000
-instancesConflicts/BPPC_8_0_10.txt 	 167 	 167 	 1.000000 	 55 	 2120997.000000
-instancesConflicts/BPPC_8_1_1.txt 	 167 	 168 	 0.988942 	 35 	 1955095.000000
-instancesConflicts/BPPC_8_1_2.txt 	 167 	 168 	 0.989483 	 33 	 1798033.000000
-instancesConflicts/BPPC_8_1_3.txt 	 167 	 167 	 1.000000 	 49 	 1892971.000000
-instancesConflicts/BPPC_8_1_4.txt 	 167 	 168 	 0.988810 	 32 	 1606884.000000
-instancesConflicts/BPPC_8_1_5.txt 	 167 	 168 	 0.989147 	 35 	 1876564.000000
-instancesConflicts/BPPC_8_1_6.txt 	 167 	 168 	 0.988936 	 37 	 2021488.000000
-instancesConflicts/BPPC_8_1_7.txt 	 167 	 167 	 1.000000 	 57 	 2132035.000000
-instancesConflicts/BPPC_8_1_8.txt 	 167 	 168 	 0.988868 	 33 	 1627467.000000
-instancesConflicts/BPPC_8_1_9.txt 	 167 	 168 	 0.989699 	 34 	 1707728.000000
-instancesConflicts/BPPC_8_1_10.txt 	 167 	 167 	 1.000000 	 54 	 2092523.000000
-instancesConflicts/BPPC_8_2_1.txt 	 167 	 168 	 0.989189 	 51 	 3001023.000000
-instancesConflicts/BPPC_8_2_2.txt 	 167 	 171 	 0.957305 	 44 	 4177515.000000
-instancesConflicts/BPPC_8_2_3.txt 	 167 	 168 	 0.989057 	 35 	 1585422.000000
-instancesConflicts/BPPC_8_2_4.txt 	 167 	 168 	 0.989312 	 40 	 1942449.000000
-instancesConflicts/BPPC_8_2_5.txt 	 167 	 168 	 0.989050 	 46 	 2407408.000000
-instancesConflicts/BPPC_8_2_6.txt 	 167 	 168 	 0.989502 	 43 	 2339573.000000
-instancesConflicts/BPPC_8_2_7.txt 	 167 	 168 	 0.989327 	 41 	 1988685.000000
-instancesConflicts/BPPC_8_2_8.txt 	 167 	 168 	 0.989043 	 37 	 2040352.000000
-instancesConflicts/BPPC_8_2_9.txt 	 167 	 168 	 0.989982 	 50 	 2260688.000000
-instancesConflicts/BPPC_8_2_10.txt 	 167 	 168 	 0.989012 	 40 	 1771319.000000
-instancesConflicts/BPPC_8_3_1.txt 	 167 	 174 	 0.928507 	 47 	 3535860.000000
-instancesConflicts/BPPC_8_3_2.txt 	 167 	 178 	 0.907935 	 70 	 6181098.000000
-instancesConflicts/BPPC_8_3_3.txt 	 167 	 173 	 0.936798 	 51 	 3611917.000000
-instancesConflicts/BPPC_8_3_4.txt 	 167 	 169 	 0.978161 	 161 	 10895043.000000
-instancesConflicts/BPPC_8_3_5.txt 	 167 	 171 	 0.957879 	 89 	 5958875.000000
-instancesConflicts/BPPC_8_3_6.txt 	 167 	 171 	 0.960400 	 101 	 6951365.000000
-instancesConflicts/BPPC_8_3_7.txt 	 167 	 172 	 0.946672 	 70 	 4922428.000000
-instancesConflicts/BPPC_8_3_8.txt 	 167 	 172 	 0.946520 	 76 	 5845809.000000
-instancesConflicts/BPPC_8_3_9.txt 	 167 	 174 	 0.926328 	 42 	 3198709.000000
-instancesConflicts/BPPC_8_3_10.txt 	 167 	 171 	 0.958002 	 87 	 5629991.000000
-instancesConflicts/BPPC_8_4_1.txt 	 167 	 208 	 0.730481 	 51 	 6033799.000000
-instancesConflicts/BPPC_8_4_2.txt 	 167 	 228 	 0.637797 	 38 	 4960129.000000
-instancesConflicts/BPPC_8_4_3.txt 	 167 	 191 	 0.817249 	 51 	 7065755.000000
-instancesConflicts/BPPC_8_4_4.txt 	 167 	 211 	 0.712054 	 33 	 4152721.000000
-instancesConflicts/BPPC_8_4_5.txt 	 167 	 202 	 0.763974 	 40 	 5432230.000000
-instancesConflicts/BPPC_8_4_6.txt 	 167 	 212 	 0.671064 	 26 	 3437285.000000
-instancesConflicts/BPPC_8_4_7.txt 	 167 	 205 	 0.720907 	 26 	 3698717.000000
-instancesConflicts/BPPC_8_4_8.txt 	 167 	 201 	 0.748332 	 27 	 4191103.000000
-instancesConflicts/BPPC_8_4_9.txt 	 167 	 199 	 0.759201 	 29 	 4456696.000000
-instancesConflicts/BPPC_8_4_10.txt 	 167 	 212 	 0.677350 	 26 	 3300753.000000
-instancesConflicts/BPPC_8_5_1.txt 	 167 	 254 	 0.544523 	 42 	 5983519.000000
-instancesConflicts/BPPC_8_5_2.txt 	 167 	 271 	 0.487810 	 35 	 5319817.000000
-instancesConflicts/BPPC_8_5_3.txt 	 167 	 236 	 0.608532 	 49 	 6768137.000000
-instancesConflicts/BPPC_8_5_4.txt 	 167 	 253 	 0.544398 	 42 	 5854809.000000
-instancesConflicts/BPPC_8_5_5.txt 	 167 	 260 	 0.517209 	 29 	 4242561.000000
-instancesConflicts/BPPC_8_5_6.txt 	 167 	 266 	 0.477559 	 26 	 3851296.000000
-instancesConflicts/BPPC_8_5_7.txt 	 167 	 257 	 0.524335 	 29 	 4261552.000000
-instancesConflicts/BPPC_8_5_8.txt 	 167 	 260 	 0.512384 	 28 	 4273734.000000
-instancesConflicts/BPPC_8_5_9.txt 	 167 	 247 	 0.566869 	 52 	 7155240.000000
-instancesConflicts/BPPC_8_5_10.txt 	 167 	 260 	 0.527053 	 39 	 5503859.000000
-instancesConflicts/BPPC_8_6_1.txt 	 167 	 302 	 0.404006 	 31 	 5070510.000000
-instancesConflicts/BPPC_8_6_2.txt 	 167 	 313 	 0.369133 	 30 	 5287232.000000
-instancesConflicts/BPPC_8_6_3.txt 	 167 	 286 	 0.442681 	 34 	 5521102.000000
-instancesConflicts/BPPC_8_6_4.txt 	 167 	 305 	 0.397348 	 40 	 6528136.000000
-instancesConflicts/BPPC_8_6_5.txt 	 167 	 304 	 0.396348 	 33 	 5539639.000000
-instancesConflicts/BPPC_8_6_6.txt 	 167 	 315 	 0.371092 	 30 	 5103818.000000
-instancesConflicts/BPPC_8_6_7.txt 	 167 	 314 	 0.365437 	 27 	 4614374.000000
-instancesConflicts/BPPC_8_6_8.txt 	 167 	 309 	 0.386755 	 31 	 5332881.000000
-instancesConflicts/BPPC_8_6_9.txt 	 167 	 303 	 0.398824 	 35 	 5807703.000000
-instancesConflicts/BPPC_8_6_10.txt 	 167 	 313 	 0.379928 	 35 	 5728740.000000
-instancesConflicts/BPPC_8_7_1.txt 	 167 	 351 	 0.304321 	 34 	 5958657.000000
-instancesConflicts/BPPC_8_7_2.txt 	 167 	 359 	 0.277150 	 26 	 4909200.000000
-instancesConflicts/BPPC_8_7_3.txt 	 167 	 339 	 0.322855 	 32 	 5683657.000000
-instancesConflicts/BPPC_8_7_4.txt 	 167 	 355 	 0.293311 	 29 	 5252975.000000
-instancesConflicts/BPPC_8_7_5.txt 	 167 	 358 	 0.286249 	 31 	 5575540.000000
-instancesConflicts/BPPC_8_7_6.txt 	 167 	 361 	 0.285213 	 33 	 5814908.000000
-instancesConflicts/BPPC_8_7_7.txt 	 167 	 367 	 0.271398 	 27 	 4893540.000000
-instancesConflicts/BPPC_8_7_8.txt 	 167 	 363 	 0.270601 	 26 	 4842172.000000
-instancesConflicts/BPPC_8_7_9.txt 	 167 	 352 	 0.299752 	 35 	 6259746.000000
-instancesConflicts/BPPC_8_7_10.txt 	 167 	 356 	 0.290508 	 34 	 5927151.000000
-instancesConflicts/BPPC_8_8_1.txt 	 167 	 404 	 0.220732 	 34 	 5995972.000000
-instancesConflicts/BPPC_8_8_2.txt 	 167 	 413 	 0.204681 	 26 	 4796910.000000
-instancesConflicts/BPPC_8_8_3.txt 	 167 	 384 	 0.243933 	 27 	 5131152.000000
-instancesConflicts/BPPC_8_8_4.txt 	 167 	 405 	 0.216233 	 29 	 5297964.000000
-instancesConflicts/BPPC_8_8_5.txt 	 167 	 407 	 0.215842 	 34 	 6083610.000000
-instancesConflicts/BPPC_8_8_6.txt 	 167 	 404 	 0.218460 	 28 	 5146987.000000
-instancesConflicts/BPPC_8_8_7.txt 	 167 	 419 	 0.198589 	 26 	 4764969.000000
-instancesConflicts/BPPC_8_8_8.txt 	 167 	 413 	 0.203119 	 26 	 4807478.000000
-instancesConflicts/BPPC_8_8_9.txt 	 167 	 406 	 0.216158 	 28 	 5111887.000000
-instancesConflicts/BPPC_8_8_10.txt 	 167 	 406 	 0.211909 	 26 	 4810843.000000
-instancesConflicts/BPPC_8_9_1.txt 	 167 	 451 	 0.164361 	 29 	 5133111.000000
-instancesConflicts/BPPC_8_9_2.txt 	 167 	 457 	 0.155649 	 26 	 4485078.000000
-instancesConflicts/BPPC_8_9_3.txt 	 167 	 445 	 0.169001 	 26 	 4577962.000000
-instancesConflicts/BPPC_8_9_4.txt 	 167 	 452 	 0.159868 	 26 	 4651858.000000
-instancesConflicts/BPPC_8_9_5.txt 	 167 	 459 	 0.153281 	 26 	 4603494.000000
-instancesConflicts/BPPC_8_9_6.txt 	 167 	 452 	 0.161829 	 26 	 4597373.000000
-instancesConflicts/BPPC_8_9_7.txt 	 167 	 469 	 0.145081 	 32 	 5148869.000000
-instancesConflicts/BPPC_8_9_8.txt 	 167 	 458 	 0.154549 	 26 	 4599927.000000
-instancesConflicts/BPPC_8_9_9.txt 	 167 	 448 	 0.165519 	 26 	 4682403.000000
-instancesConflicts/BPPC_8_9_10.txt 	 167 	 450 	 0.166640 	 49 	 7942295.000000
+Instancias 	 L2 	 Bins 	 FBPP 	 Gen 	 Time 	 BinsFirstGeneration 	 ItensCom100deConflito
+instancesConflicts/BPPC_1_0_1.txt 	 48 	 48 	 0.967706 	 26 	 152.466995 	 49 	 0
+instancesConflicts/BPPC_1_0_2.txt 	 49 	 49 	 0.964068 	 26 	 133.904999 	 50 	 0
+instancesConflicts/BPPC_1_0_3.txt 	 46 	 46 	 0.970632 	 26 	 139.850006 	 47 	 0
+instancesConflicts/BPPC_1_0_4.txt 	 49 	 49 	 0.982662 	 26 	 164.229996 	 51 	 0
+instancesConflicts/BPPC_1_0_5.txt 	 50 	 50 	 0.962190 	 26 	 154.733994 	 51 	 0
+instancesConflicts/BPPC_1_0_6.txt 	 48 	 48 	 0.979031 	 26 	 142.481995 	 49 	 0
+instancesConflicts/BPPC_1_0_7.txt 	 48 	 48 	 0.983195 	 27 	 151.531006 	 50 	 0
+instancesConflicts/BPPC_1_0_8.txt 	 49 	 49 	 0.985458 	 26 	 145.190994 	 51 	 0
+instancesConflicts/BPPC_1_0_9.txt 	 50 	 50 	 0.994174 	 30 	 176.916000 	 52 	 0
+instancesConflicts/BPPC_1_0_10.txt 	 46 	 46 	 0.991414 	 27 	 162.839005 	 48 	 0
+instancesConflicts/BPPC_1_1_1.txt 	 48 	 48 	 0.967480 	 26 	 154.908005 	 50 	 0
+instancesConflicts/BPPC_1_1_2.txt 	 49 	 49 	 0.961639 	 26 	 138.542007 	 50 	 0
+instancesConflicts/BPPC_1_1_3.txt 	 46 	 46 	 0.970786 	 26 	 146.791000 	 47 	 0
+instancesConflicts/BPPC_1_1_4.txt 	 49 	 49 	 0.982996 	 26 	 153.457001 	 51 	 0
+instancesConflicts/BPPC_1_1_5.txt 	 50 	 50 	 0.962215 	 26 	 148.065994 	 51 	 0
+instancesConflicts/BPPC_1_1_6.txt 	 48 	 48 	 0.979396 	 26 	 136.707001 	 49 	 0
+instancesConflicts/BPPC_1_1_7.txt 	 48 	 48 	 0.983268 	 27 	 154.770004 	 50 	 0
+instancesConflicts/BPPC_1_1_8.txt 	 49 	 49 	 0.985583 	 27 	 151.335007 	 51 	 0
+instancesConflicts/BPPC_1_1_9.txt 	 50 	 50 	 0.994171 	 30 	 180.382004 	 52 	 0
+instancesConflicts/BPPC_1_1_10.txt 	 46 	 46 	 0.991496 	 27 	 156.617004 	 48 	 0
+instancesConflicts/BPPC_1_2_1.txt 	 48 	 48 	 0.966819 	 27 	 163.710007 	 49 	 0
+instancesConflicts/BPPC_1_2_2.txt 	 49 	 49 	 0.961775 	 27 	 150.565002 	 51 	 0
+instancesConflicts/BPPC_1_2_3.txt 	 46 	 46 	 0.970427 	 28 	 145.957001 	 48 	 0
+instancesConflicts/BPPC_1_2_4.txt 	 49 	 49 	 0.982764 	 27 	 161.369003 	 51 	 0
+instancesConflicts/BPPC_1_2_5.txt 	 50 	 50 	 0.965012 	 26 	 153.468002 	 51 	 0
+instancesConflicts/BPPC_1_2_6.txt 	 48 	 48 	 0.979120 	 27 	 153.813995 	 50 	 0
+instancesConflicts/BPPC_1_2_7.txt 	 48 	 48 	 0.983125 	 28 	 145.960999 	 50 	 0
+instancesConflicts/BPPC_1_2_8.txt 	 49 	 49 	 0.985338 	 37 	 187.039993 	 51 	 0
+instancesConflicts/BPPC_1_2_9.txt 	 50 	 50 	 0.994188 	 33 	 200.597000 	 52 	 0
+instancesConflicts/BPPC_1_2_10.txt 	 46 	 46 	 0.991440 	 35 	 194.082001 	 48 	 0
+instancesConflicts/BPPC_1_3_1.txt 	 48 	 48 	 0.966978 	 31 	 183.516006 	 50 	 0
+instancesConflicts/BPPC_1_3_2.txt 	 49 	 49 	 0.962024 	 40 	 225.061005 	 51 	 0
+instancesConflicts/BPPC_1_3_3.txt 	 46 	 47 	 0.938270 	 55 	 280.424011 	 49 	 0
+instancesConflicts/BPPC_1_3_4.txt 	 49 	 49 	 0.982731 	 37 	 212.102005 	 51 	 0
+instancesConflicts/BPPC_1_3_5.txt 	 50 	 50 	 0.962028 	 27 	 164.360992 	 51 	 0
+instancesConflicts/BPPC_1_3_6.txt 	 48 	 48 	 0.978861 	 35 	 183.748001 	 50 	 0
+instancesConflicts/BPPC_1_3_7.txt 	 48 	 48 	 0.983068 	 51 	 254.001007 	 51 	 0
+instancesConflicts/BPPC_1_3_8.txt 	 49 	 51 	 0.924771 	 40 	 216.313995 	 54 	 0
+instancesConflicts/BPPC_1_3_9.txt 	 50 	 51 	 0.956404 	 30 	 173.276993 	 53 	 0
+instancesConflicts/BPPC_1_3_10.txt 	 46 	 47 	 0.950710 	 36 	 195.024994 	 49 	 0
+instancesConflicts/BPPC_1_4_1.txt 	 48 	 49 	 0.935657 	 58 	 340.114990 	 52 	 0
+instancesConflicts/BPPC_1_4_2.txt 	 49 	 54 	 0.833278 	 43 	 262.790009 	 55 	 0
+instancesConflicts/BPPC_1_4_3.txt 	 46 	 55 	 0.751856 	 30 	 176.949997 	 56 	 0
+instancesConflicts/BPPC_1_4_4.txt 	 49 	 51 	 0.911811 	 32 	 183.925995 	 52 	 0
+instancesConflicts/BPPC_1_4_5.txt 	 50 	 50 	 0.962844 	 51 	 295.265015 	 52 	 0
+instancesConflicts/BPPC_1_4_6.txt 	 48 	 52 	 0.866135 	 33 	 199.938004 	 53 	 0
+instancesConflicts/BPPC_1_4_7.txt 	 48 	 56 	 0.796366 	 45 	 254.354004 	 57 	 0
+instancesConflicts/BPPC_1_4_8.txt 	 49 	 61 	 0.721408 	 30 	 179.503998 	 62 	 0
+instancesConflicts/BPPC_1_4_9.txt 	 50 	 56 	 0.823832 	 26 	 175.335007 	 56 	 0
+instancesConflicts/BPPC_1_4_10.txt 	 46 	 54 	 0.792584 	 42 	 251.350006 	 56 	 0
+instancesConflicts/BPPC_1_5_1.txt 	 48 	 65 	 0.599737 	 26 	 159.766998 	 65 	 1
+instancesConflicts/BPPC_1_5_2.txt 	 49 	 67 	 0.617147 	 27 	 171.026993 	 68 	 0
+instancesConflicts/BPPC_1_5_3.txt 	 46 	 65 	 0.589752 	 31 	 202.225006 	 66 	 6
+instancesConflicts/BPPC_1_5_4.txt 	 49 	 59 	 0.741766 	 29 	 190.350998 	 60 	 1
+instancesConflicts/BPPC_1_5_5.txt 	 50 	 58 	 0.782058 	 43 	 264.388000 	 59 	 2
+instancesConflicts/BPPC_1_5_6.txt 	 48 	 65 	 0.639374 	 29 	 179.955002 	 66 	 2
+instancesConflicts/BPPC_1_5_7.txt 	 48 	 65 	 0.611220 	 26 	 161.699005 	 65 	 0
+instancesConflicts/BPPC_1_5_8.txt 	 49 	 71 	 0.546766 	 26 	 173.675003 	 71 	 6
+instancesConflicts/BPPC_1_5_9.txt 	 50 	 66 	 0.647162 	 26 	 166.835999 	 67 	 0
+instancesConflicts/BPPC_1_5_10.txt 	 46 	 65 	 0.585374 	 26 	 170.947006 	 65 	 4
+instancesConflicts/BPPC_1_6_1.txt 	 48 	 76 	 0.459433 	 26 	 195.330002 	 76 	 22
+instancesConflicts/BPPC_1_6_2.txt 	 49 	 80 	 0.442734 	 26 	 198.457993 	 80 	 30
+instancesConflicts/BPPC_1_6_3.txt 	 46 	 76 	 0.440954 	 26 	 203.192993 	 76 	 34
+instancesConflicts/BPPC_1_6_4.txt 	 49 	 71 	 0.544839 	 26 	 186.098999 	 71 	 20
+instancesConflicts/BPPC_1_6_5.txt 	 50 	 73 	 0.526854 	 26 	 180.608002 	 73 	 17
+instancesConflicts/BPPC_1_6_6.txt 	 48 	 78 	 0.477409 	 34 	 246.408005 	 79 	 20
+instancesConflicts/BPPC_1_6_7.txt 	 48 	 75 	 0.502375 	 26 	 192.682999 	 75 	 24
+instancesConflicts/BPPC_1_6_8.txt 	 49 	 81 	 0.439990 	 26 	 197.820007 	 81 	 36
+instancesConflicts/BPPC_1_6_9.txt 	 50 	 79 	 0.473862 	 26 	 192.240997 	 79 	 28
+instancesConflicts/BPPC_1_6_10.txt 	 46 	 74 	 0.482436 	 26 	 194.966995 	 75 	 29
+instancesConflicts/BPPC_1_7_1.txt 	 48 	 88 	 0.348433 	 26 	 220.865005 	 88 	 49
+instancesConflicts/BPPC_1_7_2.txt 	 49 	 91 	 0.339744 	 26 	 215.951004 	 91 	 49
+instancesConflicts/BPPC_1_7_3.txt 	 46 	 88 	 0.343756 	 26 	 220.371994 	 88 	 55
+instancesConflicts/BPPC_1_7_4.txt 	 49 	 82 	 0.431691 	 29 	 229.442001 	 83 	 49
+instancesConflicts/BPPC_1_7_5.txt 	 50 	 86 	 0.393737 	 26 	 211.022003 	 86 	 43
+instancesConflicts/BPPC_1_7_6.txt 	 48 	 90 	 0.345912 	 26 	 218.634003 	 90 	 50
+instancesConflicts/BPPC_1_7_7.txt 	 48 	 86 	 0.378290 	 26 	 212.667007 	 86 	 52
+instancesConflicts/BPPC_1_7_8.txt 	 49 	 89 	 0.361472 	 26 	 211.604996 	 89 	 59
+instancesConflicts/BPPC_1_7_9.txt 	 50 	 93 	 0.347246 	 26 	 216.253998 	 93 	 53
+instancesConflicts/BPPC_1_7_10.txt 	 46 	 85 	 0.369533 	 26 	 218.981003 	 85 	 54
+instancesConflicts/BPPC_1_8_1.txt 	 48 	 98 	 0.285726 	 26 	 237.162994 	 98 	 79
+instancesConflicts/BPPC_1_8_2.txt 	 49 	 99 	 0.291121 	 26 	 236.201996 	 99 	 79
+instancesConflicts/BPPC_1_8_3.txt 	 46 	 99 	 0.263095 	 26 	 241.634995 	 99 	 75
+instancesConflicts/BPPC_1_8_4.txt 	 49 	 94 	 0.324432 	 26 	 227.832993 	 94 	 62
+instancesConflicts/BPPC_1_8_5.txt 	 50 	 99 	 0.302098 	 26 	 229.837006 	 99 	 71
+instancesConflicts/BPPC_1_8_6.txt 	 48 	 100 	 0.277095 	 26 	 244.222000 	 100 	 79
+instancesConflicts/BPPC_1_8_7.txt 	 48 	 95 	 0.305453 	 26 	 231.919006 	 95 	 72
+instancesConflicts/BPPC_1_8_8.txt 	 49 	 99 	 0.288961 	 26 	 240.569000 	 99 	 81
+instancesConflicts/BPPC_1_8_9.txt 	 50 	 105 	 0.276179 	 26 	 229.761002 	 105 	 76
+instancesConflicts/BPPC_1_8_10.txt 	 46 	 97 	 0.287201 	 26 	 230.787003 	 97 	 73
+instancesConflicts/BPPC_1_9_1.txt 	 48 	 110 	 0.221385 	 26 	 240.697998 	 110 	 98
+instancesConflicts/BPPC_1_9_2.txt 	 49 	 107 	 0.245763 	 26 	 244.656998 	 107 	 97
+instancesConflicts/BPPC_1_9_3.txt 	 46 	 114 	 0.190379 	 26 	 246.826996 	 114 	 98
+instancesConflicts/BPPC_1_9_4.txt 	 49 	 110 	 0.231274 	 26 	 247.020996 	 110 	 93
+instancesConflicts/BPPC_1_9_5.txt 	 50 	 111 	 0.233679 	 26 	 240.464005 	 111 	 97
+instancesConflicts/BPPC_1_9_6.txt 	 48 	 110 	 0.227044 	 26 	 241.212006 	 110 	 100
+instancesConflicts/BPPC_1_9_7.txt 	 48 	 107 	 0.240159 	 26 	 242.572006 	 107 	 94
+instancesConflicts/BPPC_1_9_8.txt 	 49 	 110 	 0.226234 	 26 	 251.393997 	 110 	 98
+instancesConflicts/BPPC_1_9_9.txt 	 50 	 112 	 0.235508 	 26 	 240.529007 	 112 	 103
+instancesConflicts/BPPC_1_9_10.txt 	 46 	 107 	 0.229119 	 26 	 243.837997 	 107 	 97
+instancesConflicts/BPPC_2_0_1.txt 	 99 	 99 	 0.991111 	 27 	 410.101990 	 102 	 0
+instancesConflicts/BPPC_2_0_2.txt 	 100 	 100 	 0.981212 	 26 	 342.398987 	 103 	 0
+instancesConflicts/BPPC_2_0_3.txt 	 102 	 102 	 0.988927 	 26 	 386.458008 	 105 	 0
+instancesConflicts/BPPC_2_0_4.txt 	 100 	 100 	 0.989099 	 26 	 380.080994 	 103 	 0
+instancesConflicts/BPPC_2_0_5.txt 	 101 	 101 	 0.992583 	 27 	 405.463989 	 104 	 0
+instancesConflicts/BPPC_2_0_6.txt 	 101 	 101 	 0.996614 	 31 	 421.131012 	 105 	 0
+instancesConflicts/BPPC_2_0_7.txt 	 102 	 102 	 0.982058 	 26 	 344.737000 	 105 	 0
+instancesConflicts/BPPC_2_0_8.txt 	 103 	 103 	 0.995901 	 39 	 673.405029 	 106 	 0
+instancesConflicts/BPPC_2_0_9.txt 	 105 	 105 	 0.998361 	 36 	 460.686005 	 109 	 0
+instancesConflicts/BPPC_2_0_10.txt 	 101 	 101 	 0.986293 	 27 	 389.338989 	 104 	 0
+instancesConflicts/BPPC_2_1_1.txt 	 99 	 99 	 0.991481 	 27 	 430.128998 	 102 	 0
+instancesConflicts/BPPC_2_1_2.txt 	 100 	 100 	 0.981236 	 26 	 394.880005 	 103 	 0
+instancesConflicts/BPPC_2_1_3.txt 	 102 	 102 	 0.989032 	 27 	 457.382996 	 105 	 0
+instancesConflicts/BPPC_2_1_4.txt 	 100 	 100 	 0.988858 	 27 	 408.292999 	 103 	 0
+instancesConflicts/BPPC_2_1_5.txt 	 101 	 101 	 0.992560 	 27 	 405.450989 	 105 	 0
+instancesConflicts/BPPC_2_1_6.txt 	 101 	 101 	 0.996632 	 33 	 477.031006 	 105 	 0
+instancesConflicts/BPPC_2_1_7.txt 	 102 	 102 	 0.981836 	 26 	 361.613007 	 105 	 0
+instancesConflicts/BPPC_2_1_8.txt 	 103 	 103 	 0.995897 	 38 	 677.257019 	 107 	 0
+instancesConflicts/BPPC_2_1_9.txt 	 105 	 105 	 0.998358 	 38 	 514.687012 	 109 	 0
+instancesConflicts/BPPC_2_1_10.txt 	 101 	 101 	 0.984751 	 27 	 446.209015 	 104 	 0
+instancesConflicts/BPPC_2_2_1.txt 	 99 	 99 	 0.991231 	 28 	 460.809998 	 102 	 0
+instancesConflicts/BPPC_2_2_2.txt 	 100 	 100 	 0.981099 	 29 	 438.335999 	 103 	 0
+instancesConflicts/BPPC_2_2_3.txt 	 102 	 102 	 0.988993 	 30 	 489.843994 	 106 	 0
+instancesConflicts/BPPC_2_2_4.txt 	 100 	 100 	 0.988778 	 31 	 422.279999 	 103 	 0
+instancesConflicts/BPPC_2_2_5.txt 	 101 	 101 	 0.992462 	 29 	 444.015991 	 105 	 0
+instancesConflicts/BPPC_2_2_6.txt 	 101 	 102 	 0.977617 	 30 	 457.514008 	 105 	 0
+instancesConflicts/BPPC_2_2_7.txt 	 102 	 102 	 0.981743 	 29 	 398.708008 	 105 	 0
+instancesConflicts/BPPC_2_2_8.txt 	 103 	 103 	 0.995895 	 41 	 779.338989 	 107 	 0
+instancesConflicts/BPPC_2_2_9.txt 	 105 	 106 	 0.980486 	 33 	 490.914001 	 110 	 0
+instancesConflicts/BPPC_2_2_10.txt 	 101 	 101 	 0.984637 	 28 	 512.731995 	 104 	 0
+instancesConflicts/BPPC_2_3_1.txt 	 99 	 99 	 0.991180 	 53 	 851.762024 	 103 	 0
+instancesConflicts/BPPC_2_3_2.txt 	 100 	 101 	 0.964712 	 49 	 772.836975 	 104 	 0
+instancesConflicts/BPPC_2_3_3.txt 	 102 	 103 	 0.970265 	 29 	 514.630005 	 106 	 0
+instancesConflicts/BPPC_2_3_4.txt 	 100 	 101 	 0.972535 	 35 	 520.625000 	 105 	 0
+instancesConflicts/BPPC_2_3_5.txt 	 101 	 102 	 0.974749 	 37 	 528.684021 	 106 	 0
+instancesConflicts/BPPC_2_3_6.txt 	 101 	 102 	 0.978454 	 67 	 1041.811035 	 106 	 0
+instancesConflicts/BPPC_2_3_7.txt 	 102 	 102 	 0.981744 	 51 	 733.171997 	 106 	 0
+instancesConflicts/BPPC_2_3_8.txt 	 103 	 104 	 0.978998 	 36 	 694.809998 	 108 	 0
+instancesConflicts/BPPC_2_3_9.txt 	 105 	 107 	 0.966891 	 49 	 915.317017 	 112 	 0
+instancesConflicts/BPPC_2_3_10.txt 	 101 	 102 	 0.966854 	 29 	 522.406006 	 105 	 0
+instancesConflicts/BPPC_2_4_1.txt 	 99 	 100 	 0.977354 	 71 	 1232.572021 	 104 	 0
+instancesConflicts/BPPC_2_4_2.txt 	 100 	 109 	 0.864466 	 50 	 1148.713013 	 111 	 0
+instancesConflicts/BPPC_2_4_3.txt 	 102 	 104 	 0.957989 	 90 	 1648.238037 	 109 	 0
+instancesConflicts/BPPC_2_4_4.txt 	 100 	 109 	 0.871236 	 52 	 1141.297974 	 111 	 0
+instancesConflicts/BPPC_2_4_5.txt 	 101 	 106 	 0.927696 	 70 	 1367.915039 	 110 	 0
+instancesConflicts/BPPC_2_4_6.txt 	 101 	 111 	 0.865043 	 49 	 1167.129028 	 113 	 0
+instancesConflicts/BPPC_2_4_7.txt 	 102 	 106 	 0.928185 	 58 	 1105.899048 	 109 	 0
+instancesConflicts/BPPC_2_4_8.txt 	 103 	 105 	 0.965169 	 73 	 1421.938965 	 108 	 0
+instancesConflicts/BPPC_2_4_9.txt 	 105 	 121 	 0.806937 	 26 	 706.106995 	 121 	 0
+instancesConflicts/BPPC_2_4_10.txt 	 101 	 106 	 0.915831 	 49 	 1092.086060 	 109 	 0
+instancesConflicts/BPPC_2_5_1.txt 	 99 	 117 	 0.751817 	 26 	 750.231995 	 117 	 1
+instancesConflicts/BPPC_2_5_2.txt 	 100 	 132 	 0.640632 	 26 	 711.210022 	 132 	 0
+instancesConflicts/BPPC_2_5_3.txt 	 102 	 120 	 0.767863 	 26 	 783.380981 	 122 	 0
+instancesConflicts/BPPC_2_5_4.txt 	 100 	 133 	 0.642421 	 26 	 723.375977 	 133 	 0
+instancesConflicts/BPPC_2_5_5.txt 	 101 	 130 	 0.668330 	 26 	 724.293030 	 130 	 1
+instancesConflicts/BPPC_2_5_6.txt 	 101 	 130 	 0.668846 	 26 	 732.484009 	 130 	 1
+instancesConflicts/BPPC_2_5_7.txt 	 102 	 128 	 0.695821 	 26 	 702.370972 	 128 	 2
+instancesConflicts/BPPC_2_5_8.txt 	 103 	 120 	 0.777087 	 26 	 741.362976 	 120 	 3
+instancesConflicts/BPPC_2_5_9.txt 	 105 	 144 	 0.621589 	 26 	 732.328003 	 144 	 0
+instancesConflicts/BPPC_2_5_10.txt 	 101 	 130 	 0.660836 	 26 	 728.354004 	 130 	 0
+instancesConflicts/BPPC_2_6_1.txt 	 99 	 147 	 0.531946 	 26 	 795.086975 	 147 	 41
+instancesConflicts/BPPC_2_6_2.txt 	 100 	 158 	 0.486401 	 26 	 845.119019 	 158 	 57
+instancesConflicts/BPPC_2_6_3.txt 	 102 	 149 	 0.546711 	 26 	 769.978027 	 149 	 41
+instancesConflicts/BPPC_2_6_4.txt 	 100 	 158 	 0.483693 	 26 	 835.273010 	 158 	 55
+instancesConflicts/BPPC_2_6_5.txt 	 101 	 154 	 0.525223 	 46 	 1403.411011 	 156 	 46
+instancesConflicts/BPPC_2_6_6.txt 	 101 	 155 	 0.518348 	 29 	 917.715027 	 156 	 57
+instancesConflicts/BPPC_2_6_7.txt 	 102 	 151 	 0.527422 	 26 	 832.541992 	 151 	 56
+instancesConflicts/BPPC_2_6_8.txt 	 103 	 144 	 0.589696 	 26 	 803.031006 	 144 	 43
+instancesConflicts/BPPC_2_6_9.txt 	 105 	 168 	 0.469602 	 26 	 832.341980 	 168 	 64
+instancesConflicts/BPPC_2_6_10.txt 	 101 	 156 	 0.493746 	 26 	 845.857971 	 156 	 53
+instancesConflicts/BPPC_2_7_1.txt 	 99 	 176 	 0.396936 	 26 	 915.533997 	 176 	 83
+instancesConflicts/BPPC_2_7_2.txt 	 100 	 181 	 0.387127 	 39 	 1338.392944 	 182 	 105
+instancesConflicts/BPPC_2_7_3.txt 	 102 	 175 	 0.424997 	 28 	 930.840027 	 176 	 91
+instancesConflicts/BPPC_2_7_4.txt 	 100 	 182 	 0.372097 	 26 	 931.544006 	 182 	 98
+instancesConflicts/BPPC_2_7_5.txt 	 101 	 181 	 0.390497 	 35 	 1204.784058 	 183 	 102
+instancesConflicts/BPPC_2_7_6.txt 	 101 	 178 	 0.408210 	 29 	 1014.643982 	 179 	 109
+instancesConflicts/BPPC_2_7_7.txt 	 102 	 172 	 0.430420 	 32 	 1127.177002 	 174 	 105
+instancesConflicts/BPPC_2_7_8.txt 	 103 	 166 	 0.473688 	 45 	 1492.927002 	 168 	 94
+instancesConflicts/BPPC_2_7_9.txt 	 105 	 189 	 0.373312 	 26 	 904.453003 	 189 	 114
+instancesConflicts/BPPC_2_7_10.txt 	 101 	 183 	 0.373270 	 26 	 942.617981 	 183 	 103
+instancesConflicts/BPPC_2_8_1.txt 	 99 	 198 	 0.308231 	 26 	 981.466003 	 198 	 146
+instancesConflicts/BPPC_2_8_2.txt 	 100 	 208 	 0.286594 	 27 	 1013.932007 	 209 	 155
+instancesConflicts/BPPC_2_8_3.txt 	 102 	 205 	 0.308935 	 26 	 914.922974 	 205 	 148
+instancesConflicts/BPPC_2_8_4.txt 	 100 	 210 	 0.277128 	 26 	 963.314026 	 210 	 153
+instancesConflicts/BPPC_2_8_5.txt 	 101 	 206 	 0.292127 	 26 	 1016.013977 	 206 	 155
+instancesConflicts/BPPC_2_8_6.txt 	 101 	 203 	 0.311069 	 26 	 935.762024 	 203 	 151
+instancesConflicts/BPPC_2_8_7.txt 	 102 	 195 	 0.339874 	 28 	 1033.404053 	 196 	 150
+instancesConflicts/BPPC_2_8_8.txt 	 103 	 191 	 0.357495 	 26 	 947.809021 	 191 	 131
+instancesConflicts/BPPC_2_8_9.txt 	 105 	 209 	 0.302872 	 26 	 978.348999 	 209 	 162
+instancesConflicts/BPPC_2_8_10.txt 	 101 	 207 	 0.292077 	 26 	 1005.432983 	 207 	 157
+instancesConflicts/BPPC_2_9_1.txt 	 99 	 218 	 0.256553 	 26 	 983.189026 	 219 	 193
+instancesConflicts/BPPC_2_9_2.txt 	 100 	 225 	 0.238121 	 31 	 1168.069946 	 226 	 206
+instancesConflicts/BPPC_2_9_3.txt 	 102 	 226 	 0.246606 	 26 	 960.952026 	 226 	 203
+instancesConflicts/BPPC_2_9_4.txt 	 100 	 229 	 0.228679 	 26 	 977.317993 	 229 	 210
+instancesConflicts/BPPC_2_9_5.txt 	 101 	 233 	 0.217723 	 26 	 989.908020 	 233 	 207
+instancesConflicts/BPPC_2_9_6.txt 	 101 	 229 	 0.231327 	 26 	 968.380981 	 229 	 203
+instancesConflicts/BPPC_2_9_7.txt 	 102 	 226 	 0.241720 	 26 	 981.836975 	 226 	 192
+instancesConflicts/BPPC_2_9_8.txt 	 103 	 221 	 0.262863 	 35 	 1330.746948 	 222 	 193
+instancesConflicts/BPPC_2_9_9.txt 	 105 	 234 	 0.232271 	 26 	 960.002991 	 234 	 207
+instancesConflicts/BPPC_2_9_10.txt 	 101 	 227 	 0.238282 	 34 	 1271.465942 	 228 	 209
+instancesConflicts/BPPC_3_0_1.txt 	 198 	 198 	 0.995872 	 29 	 1102.751953 	 204 	 0
+instancesConflicts/BPPC_3_0_2.txt 	 201 	 201 	 0.998510 	 30 	 1172.475952 	 207 	 0
+instancesConflicts/BPPC_3_0_3.txt 	 202 	 202 	 0.994634 	 27 	 1076.583984 	 208 	 0
+instancesConflicts/BPPC_3_0_4.txt 	 204 	 204 	 0.998185 	 29 	 1105.828003 	 210 	 0
+instancesConflicts/BPPC_3_0_5.txt 	 206 	 206 	 0.991688 	 27 	 1035.494995 	 212 	 0
+instancesConflicts/BPPC_3_0_6.txt 	 206 	 206 	 0.991523 	 27 	 1072.509033 	 212 	 0
+instancesConflicts/BPPC_3_0_7.txt 	 207 	 207 	 0.998918 	 34 	 1116.379028 	 214 	 0
+instancesConflicts/BPPC_3_0_8.txt 	 204 	 204 	 0.999805 	 42 	 1500.394043 	 210 	 0
+instancesConflicts/BPPC_3_0_9.txt 	 196 	 196 	 0.996809 	 29 	 1160.490967 	 202 	 0
+instancesConflicts/BPPC_3_0_10.txt 	 202 	 202 	 0.990990 	 27 	 1063.177002 	 208 	 0
+instancesConflicts/BPPC_3_1_1.txt 	 198 	 198 	 0.995947 	 30 	 1159.178955 	 205 	 0
+instancesConflicts/BPPC_3_1_2.txt 	 201 	 201 	 0.998512 	 29 	 1179.883057 	 208 	 0
+instancesConflicts/BPPC_3_1_3.txt 	 202 	 202 	 0.994722 	 28 	 1084.270996 	 209 	 0
+instancesConflicts/BPPC_3_1_4.txt 	 204 	 204 	 0.998184 	 33 	 1282.772949 	 211 	 0
+instancesConflicts/BPPC_3_1_5.txt 	 206 	 206 	 0.992065 	 27 	 1045.821045 	 213 	 0
+instancesConflicts/BPPC_3_1_6.txt 	 206 	 206 	 0.992134 	 28 	 1101.031006 	 212 	 0
+instancesConflicts/BPPC_3_1_7.txt 	 207 	 207 	 0.998916 	 37 	 1278.562012 	 214 	 0
+instancesConflicts/BPPC_3_1_8.txt 	 204 	 204 	 0.999805 	 42 	 1561.564941 	 211 	 0
+instancesConflicts/BPPC_3_1_9.txt 	 196 	 196 	 0.996810 	 30 	 1211.387939 	 202 	 0
+instancesConflicts/BPPC_3_1_10.txt 	 202 	 202 	 0.991332 	 27 	 1085.723022 	 208 	 0
+instancesConflicts/BPPC_3_2_1.txt 	 198 	 199 	 0.986165 	 33 	 1539.676025 	 205 	 0
+instancesConflicts/BPPC_3_2_2.txt 	 201 	 202 	 0.988971 	 31 	 1230.089966 	 208 	 0
+instancesConflicts/BPPC_3_2_3.txt 	 202 	 202 	 0.994728 	 56 	 2431.031006 	 209 	 0
+instancesConflicts/BPPC_3_2_4.txt 	 204 	 204 	 0.998190 	 39 	 1497.823975 	 211 	 0
+instancesConflicts/BPPC_3_2_5.txt 	 206 	 206 	 0.991604 	 33 	 1399.859985 	 213 	 0
+instancesConflicts/BPPC_3_2_6.txt 	 206 	 206 	 0.991448 	 40 	 1884.457031 	 214 	 0
+instancesConflicts/BPPC_3_2_7.txt 	 207 	 207 	 0.998919 	 55 	 1810.743042 	 215 	 0
+instancesConflicts/BPPC_3_2_8.txt 	 204 	 205 	 0.990318 	 30 	 1436.421997 	 212 	 0
+instancesConflicts/BPPC_3_2_9.txt 	 196 	 196 	 0.996847 	 45 	 1514.870972 	 204 	 0
+instancesConflicts/BPPC_3_2_10.txt 	 202 	 202 	 0.991556 	 31 	 1355.512939 	 208 	 0
+instancesConflicts/BPPC_3_3_1.txt 	 198 	 202 	 0.958565 	 29 	 1697.515015 	 206 	 0
+instancesConflicts/BPPC_3_3_2.txt 	 201 	 202 	 0.989116 	 87 	 3496.632080 	 210 	 0
+instancesConflicts/BPPC_3_3_3.txt 	 202 	 205 	 0.972454 	 38 	 1961.779053 	 212 	 0
+instancesConflicts/BPPC_3_3_4.txt 	 204 	 206 	 0.979468 	 34 	 1845.673950 	 212 	 0
+instancesConflicts/BPPC_3_3_5.txt 	 206 	 208 	 0.973487 	 34 	 1693.506958 	 214 	 0
+instancesConflicts/BPPC_3_3_6.txt 	 206 	 208 	 0.976116 	 45 	 2485.687988 	 216 	 0
+instancesConflicts/BPPC_3_3_7.txt 	 207 	 209 	 0.980947 	 55 	 2703.918945 	 216 	 0
+instancesConflicts/BPPC_3_3_8.txt 	 204 	 205 	 0.990362 	 68 	 3480.063965 	 212 	 0
+instancesConflicts/BPPC_3_3_9.txt 	 196 	 198 	 0.981077 	 53 	 2316.916992 	 204 	 0
+instancesConflicts/BPPC_3_3_10.txt 	 202 	 203 	 0.982464 	 78 	 4084.049072 	 210 	 0
+instancesConflicts/BPPC_3_4_1.txt 	 198 	 220 	 0.861855 	 51 	 4300.102051 	 224 	 0
+instancesConflicts/BPPC_3_4_2.txt 	 201 	 215 	 0.910021 	 116 	 8460.296875 	 224 	 0
+instancesConflicts/BPPC_3_4_3.txt 	 202 	 220 	 0.884836 	 106 	 7956.005859 	 227 	 0
+instancesConflicts/BPPC_3_4_4.txt 	 204 	 208 	 0.968213 	 124 	 8780.126953 	 220 	 0
+instancesConflicts/BPPC_3_4_5.txt 	 206 	 210 	 0.963820 	 80 	 5344.917969 	 221 	 0
+instancesConflicts/BPPC_3_4_6.txt 	 206 	 226 	 0.869804 	 52 	 4836.247070 	 231 	 0
+instancesConflicts/BPPC_3_4_7.txt 	 207 	 214 	 0.951846 	 102 	 7233.121094 	 226 	 0
+instancesConflicts/BPPC_3_4_8.txt 	 204 	 209 	 0.961908 	 72 	 4807.872070 	 215 	 0
+instancesConflicts/BPPC_3_4_9.txt 	 196 	 206 	 0.926368 	 96 	 6827.395020 	 214 	 0
+instancesConflicts/BPPC_3_4_10.txt 	 202 	 216 	 0.907577 	 128 	 9921.637695 	 227 	 0
+instancesConflicts/BPPC_3_5_1.txt 	 198 	 260 	 0.655242 	 26 	 3234.569092 	 260 	 0
+instancesConflicts/BPPC_3_5_2.txt 	 201 	 260 	 0.694774 	 45 	 5490.369141 	 262 	 1
+instancesConflicts/BPPC_3_5_3.txt 	 202 	 263 	 0.688056 	 47 	 5424.824219 	 265 	 1
+instancesConflicts/BPPC_3_5_4.txt 	 204 	 252 	 0.712939 	 26 	 3275.923096 	 252 	 1
+instancesConflicts/BPPC_3_5_5.txt 	 206 	 246 	 0.777533 	 54 	 6037.537109 	 249 	 2
+instancesConflicts/BPPC_3_5_6.txt 	 206 	 269 	 0.673827 	 28 	 3435.614014 	 270 	 0
+instancesConflicts/BPPC_3_5_7.txt 	 207 	 258 	 0.723612 	 29 	 3526.831055 	 259 	 0
+instancesConflicts/BPPC_3_5_8.txt 	 204 	 245 	 0.772746 	 56 	 5973.392090 	 249 	 4
+instancesConflicts/BPPC_3_5_9.txt 	 196 	 247 	 0.725572 	 50 	 5674.273926 	 249 	 2
+instancesConflicts/BPPC_3_5_10.txt 	 202 	 264 	 0.683648 	 47 	 5530.586914 	 265 	 0
+instancesConflicts/BPPC_3_6_1.txt 	 198 	 303 	 0.510327 	 26 	 3934.769043 	 303 	 111
+instancesConflicts/BPPC_3_6_2.txt 	 201 	 309 	 0.507396 	 26 	 3889.124023 	 309 	 108
+instancesConflicts/BPPC_3_6_3.txt 	 202 	 314 	 0.494865 	 26 	 3750.811035 	 314 	 108
+instancesConflicts/BPPC_3_6_4.txt 	 204 	 307 	 0.527202 	 26 	 3681.729980 	 307 	 92
+instancesConflicts/BPPC_3_6_5.txt 	 206 	 295 	 0.583382 	 34 	 4631.493164 	 296 	 101
+instancesConflicts/BPPC_3_6_6.txt 	 206 	 316 	 0.507293 	 26 	 3755.397949 	 316 	 116
+instancesConflicts/BPPC_3_6_7.txt 	 207 	 312 	 0.523874 	 26 	 3650.252930 	 312 	 90
+instancesConflicts/BPPC_3_6_8.txt 	 204 	 297 	 0.577419 	 44 	 5922.209961 	 298 	 87
+instancesConflicts/BPPC_3_6_9.txt 	 196 	 299 	 0.515729 	 26 	 3889.087891 	 299 	 101
+instancesConflicts/BPPC_3_6_10.txt 	 202 	 314 	 0.500068 	 26 	 3837.710938 	 314 	 105
+instancesConflicts/BPPC_3_7_1.txt 	 198 	 344 	 0.418793 	 37 	 6061.829102 	 345 	 212
+instancesConflicts/BPPC_3_7_2.txt 	 201 	 361 	 0.391399 	 26 	 4172.776855 	 361 	 207
+instancesConflicts/BPPC_3_7_3.txt 	 202 	 356 	 0.407205 	 29 	 4517.066895 	 357 	 219
+instancesConflicts/BPPC_3_7_4.txt 	 204 	 359 	 0.399011 	 26 	 4027.322021 	 359 	 200
+instancesConflicts/BPPC_3_7_5.txt 	 206 	 347 	 0.429627 	 26 	 4062.205078 	 347 	 190
+instancesConflicts/BPPC_3_7_6.txt 	 206 	 361 	 0.409027 	 46 	 6890.592773 	 363 	 211
+instancesConflicts/BPPC_3_7_7.txt 	 207 	 359 	 0.418231 	 28 	 4312.001953 	 360 	 203
+instancesConflicts/BPPC_3_7_8.txt 	 204 	 346 	 0.438210 	 40 	 6154.796875 	 347 	 198
+instancesConflicts/BPPC_3_7_9.txt 	 196 	 341 	 0.423655 	 53 	 8163.929199 	 344 	 196
+instancesConflicts/BPPC_3_7_10.txt 	 202 	 361 	 0.389933 	 26 	 4128.570801 	 361 	 212
+instancesConflicts/BPPC_3_8_1.txt 	 198 	 391 	 0.325770 	 54 	 8685.133789 	 393 	 299
+instancesConflicts/BPPC_3_8_2.txt 	 201 	 408 	 0.302529 	 26 	 4303.920898 	 408 	 296
+instancesConflicts/BPPC_3_8_3.txt 	 202 	 401 	 0.321524 	 36 	 5526.797852 	 403 	 310
+instancesConflicts/BPPC_3_8_4.txt 	 204 	 404 	 0.323110 	 43 	 6492.850098 	 405 	 307
+instancesConflicts/BPPC_3_8_5.txt 	 206 	 398 	 0.330068 	 26 	 4144.431152 	 398 	 294
+instancesConflicts/BPPC_3_8_6.txt 	 206 	 404 	 0.323045 	 37 	 5728.458984 	 406 	 307
+instancesConflicts/BPPC_3_8_7.txt 	 207 	 410 	 0.312909 	 26 	 4012.510986 	 410 	 311
+instancesConflicts/BPPC_3_8_8.txt 	 204 	 396 	 0.330498 	 26 	 4302.050781 	 396 	 297
+instancesConflicts/BPPC_3_8_9.txt 	 196 	 395 	 0.313564 	 36 	 5872.094238 	 396 	 297
+instancesConflicts/BPPC_3_8_10.txt 	 202 	 403 	 0.313934 	 26 	 4222.351074 	 403 	 309
+instancesConflicts/BPPC_3_9_1.txt 	 198 	 445 	 0.244116 	 29 	 4573.251953 	 446 	 384
+instancesConflicts/BPPC_3_9_2.txt 	 201 	 459 	 0.230882 	 26 	 4034.669922 	 459 	 403
+instancesConflicts/BPPC_3_9_3.txt 	 202 	 451 	 0.243482 	 26 	 4056.072021 	 451 	 397
+instancesConflicts/BPPC_3_9_4.txt 	 204 	 452 	 0.249027 	 27 	 4056.884033 	 453 	 396
+instancesConflicts/BPPC_3_9_5.txt 	 206 	 446 	 0.254989 	 26 	 4211.703125 	 446 	 396
+instancesConflicts/BPPC_3_9_6.txt 	 206 	 467 	 0.230833 	 26 	 3834.802002 	 467 	 402
+instancesConflicts/BPPC_3_9_7.txt 	 207 	 458 	 0.243192 	 26 	 3941.597900 	 458 	 409
+instancesConflicts/BPPC_3_9_8.txt 	 204 	 450 	 0.250039 	 26 	 3999.341064 	 450 	 393
+instancesConflicts/BPPC_3_9_9.txt 	 196 	 454 	 0.225668 	 26 	 4087.281006 	 454 	 395
+instancesConflicts/BPPC_3_9_10.txt 	 202 	 450 	 0.241771 	 26 	 4036.383057 	 450 	 396
+instancesConflicts/BPPC_4_0_1.txt 	 399 	 399 	 0.997226 	 28 	 3190.632080 	 411 	 0
+instancesConflicts/BPPC_4_0_2.txt 	 406 	 406 	 0.996516 	 28 	 3031.857910 	 418 	 0
+instancesConflicts/BPPC_4_0_3.txt 	 411 	 411 	 0.996273 	 28 	 2916.599121 	 422 	 0
+instancesConflicts/BPPC_4_0_4.txt 	 411 	 411 	 0.999357 	 35 	 3676.549072 	 424 	 0
+instancesConflicts/BPPC_4_0_5.txt 	 397 	 397 	 0.998726 	 31 	 3529.881104 	 409 	 0
+instancesConflicts/BPPC_4_0_6.txt 	 399 	 399 	 0.997559 	 30 	 3301.732910 	 411 	 0
+instancesConflicts/BPPC_4_0_7.txt 	 395 	 395 	 0.996168 	 28 	 3246.492920 	 406 	 0
+instancesConflicts/BPPC_4_0_8.txt 	 404 	 404 	 0.996005 	 29 	 3316.794922 	 416 	 0
+instancesConflicts/BPPC_4_0_9.txt 	 399 	 399 	 0.997218 	 29 	 3519.181885 	 411 	 0
+instancesConflicts/BPPC_4_0_10.txt 	 397 	 397 	 0.999634 	 33 	 3665.014893 	 410 	 0
+instancesConflicts/BPPC_4_1_1.txt 	 399 	 399 	 0.997227 	 29 	 3317.406982 	 412 	 0
+instancesConflicts/BPPC_4_1_2.txt 	 406 	 406 	 0.996442 	 28 	 3033.548096 	 418 	 0
+instancesConflicts/BPPC_4_1_3.txt 	 411 	 411 	 0.996227 	 29 	 3020.740967 	 424 	 0
+instancesConflicts/BPPC_4_1_4.txt 	 411 	 411 	 0.999359 	 36 	 3706.972900 	 425 	 0
+instancesConflicts/BPPC_4_1_5.txt 	 397 	 397 	 0.998712 	 30 	 3450.986084 	 411 	 0
+instancesConflicts/BPPC_4_1_6.txt 	 399 	 399 	 0.997538 	 30 	 3138.290039 	 411 	 0
+instancesConflicts/BPPC_4_1_7.txt 	 395 	 395 	 0.996109 	 29 	 2980.989990 	 407 	 0
+instancesConflicts/BPPC_4_1_8.txt 	 404 	 404 	 0.995978 	 29 	 3254.520020 	 416 	 0
+instancesConflicts/BPPC_4_1_9.txt 	 399 	 399 	 0.997219 	 30 	 3488.395996 	 411 	 0
+instancesConflicts/BPPC_4_1_10.txt 	 397 	 397 	 0.999642 	 35 	 3444.769043 	 410 	 0
+instancesConflicts/BPPC_4_2_1.txt 	 399 	 399 	 0.997251 	 50 	 5334.399902 	 413 	 0
+instancesConflicts/BPPC_4_2_2.txt 	 406 	 406 	 0.996449 	 39 	 3894.785889 	 418 	 0
+instancesConflicts/BPPC_4_2_3.txt 	 411 	 411 	 0.996537 	 42 	 4692.234863 	 425 	 0
+instancesConflicts/BPPC_4_2_4.txt 	 411 	 412 	 0.994701 	 36 	 4675.057129 	 424 	 0
+instancesConflicts/BPPC_4_2_5.txt 	 397 	 397 	 0.998761 	 58 	 5594.582031 	 411 	 0
+instancesConflicts/BPPC_4_2_6.txt 	 399 	 399 	 0.997644 	 54 	 5663.299805 	 412 	 0
+instancesConflicts/BPPC_4_2_7.txt 	 395 	 396 	 0.991238 	 43 	 6636.972168 	 408 	 0
+instancesConflicts/BPPC_4_2_8.txt 	 404 	 404 	 0.995955 	 37 	 4781.519043 	 417 	 0
+instancesConflicts/BPPC_4_2_9.txt 	 399 	 399 	 0.997272 	 59 	 7828.896973 	 412 	 0
+instancesConflicts/BPPC_4_2_10.txt 	 397 	 399 	 0.990062 	 31 	 3818.210938 	 410 	 0
+instancesConflicts/BPPC_4_3_1.txt 	 399 	 402 	 0.983268 	 53 	 9115.273438 	 414 	 0
+instancesConflicts/BPPC_4_3_2.txt 	 406 	 410 	 0.981098 	 39 	 5965.536133 	 420 	 0
+instancesConflicts/BPPC_4_3_3.txt 	 411 	 417 	 0.975050 	 42 	 7059.902832 	 428 	 0
+instancesConflicts/BPPC_4_3_4.txt 	 411 	 415 	 0.982508 	 67 	 13215.268555 	 427 	 0
+instancesConflicts/BPPC_4_3_5.txt 	 397 	 401 	 0.982842 	 89 	 12881.432617 	 413 	 0
+instancesConflicts/BPPC_4_3_6.txt 	 399 	 403 	 0.981450 	 51 	 7677.898926 	 413 	 0
+instancesConflicts/BPPC_4_3_7.txt 	 395 	 402 	 0.970881 	 42 	 6038.102051 	 410 	 0
+instancesConflicts/BPPC_4_3_8.txt 	 404 	 408 	 0.981807 	 62 	 10959.346680 	 419 	 0
+instancesConflicts/BPPC_4_3_9.txt 	 399 	 405 	 0.973733 	 44 	 7494.743164 	 416 	 0
+instancesConflicts/BPPC_4_3_10.txt 	 397 	 401 	 0.982828 	 87 	 13909.871094 	 412 	 0
+instancesConflicts/BPPC_4_4_1.txt 	 399 	 429 	 0.907149 	 126 	 37914.250000 	 441 	 0
+instancesConflicts/BPPC_4_4_2.txt 	 406 	 416 	 0.962308 	 88 	 22359.691406 	 434 	 0
+instancesConflicts/BPPC_4_4_3.txt 	 411 	 430 	 0.937227 	 153 	 41400.441406 	 447 	 0
+instancesConflicts/BPPC_4_4_4.txt 	 411 	 428 	 0.945184 	 147 	 39162.390625 	 452 	 0
+instancesConflicts/BPPC_4_4_5.txt 	 397 	 422 	 0.924255 	 143 	 34166.449219 	 440 	 0
+instancesConflicts/BPPC_4_4_6.txt 	 399 	 403 	 0.982154 	 210 	 44412.042969 	 427 	 0
+instancesConflicts/BPPC_4_4_7.txt 	 395 	 425 	 0.907077 	 105 	 28840.785156 	 442 	 0
+instancesConflicts/BPPC_4_4_8.txt 	 404 	 414 	 0.961525 	 163 	 46155.601562 	 443 	 0
+instancesConflicts/BPPC_4_4_9.txt 	 399 	 429 	 0.910111 	 133 	 38978.210938 	 449 	 0
+instancesConflicts/BPPC_4_4_10.txt 	 397 	 415 	 0.942317 	 157 	 44421.656250 	 434 	 0
+instancesConflicts/BPPC_4_5_1.txt 	 399 	 530 	 0.668165 	 28 	 17214.052734 	 532 	 1
+instancesConflicts/BPPC_4_5_2.txt 	 406 	 494 	 0.736573 	 26 	 15372.290039 	 494 	 1
+instancesConflicts/BPPC_4_5_3.txt 	 411 	 515 	 0.695537 	 26 	 15890.909180 	 515 	 0
+instancesConflicts/BPPC_4_5_4.txt 	 411 	 522 	 0.688401 	 26 	 15484.981445 	 522 	 2
+instancesConflicts/BPPC_4_5_5.txt 	 397 	 513 	 0.674348 	 26 	 15521.043945 	 513 	 0
+instancesConflicts/BPPC_4_5_6.txt 	 399 	 489 	 0.729419 	 26 	 14943.965820 	 489 	 0
+instancesConflicts/BPPC_4_5_7.txt 	 395 	 515 	 0.684049 	 28 	 17223.332031 	 517 	 0
+instancesConflicts/BPPC_4_5_8.txt 	 404 	 511 	 0.688278 	 26 	 15778.122070 	 511 	 1
+instancesConflicts/BPPC_4_5_9.txt 	 399 	 517 	 0.695930 	 48 	 28346.193359 	 519 	 5
+instancesConflicts/BPPC_4_5_10.txt 	 397 	 506 	 0.717381 	 51 	 29380.240234 	 507 	 0
+instancesConflicts/BPPC_4_6_1.txt 	 399 	 637 	 0.481173 	 26 	 19266.857422 	 637 	 200
+instancesConflicts/BPPC_4_6_2.txt 	 406 	 587 	 0.580239 	 63 	 42165.265625 	 590 	 197
+instancesConflicts/BPPC_4_6_3.txt 	 411 	 614 	 0.529447 	 26 	 19022.417969 	 614 	 215
+instancesConflicts/BPPC_4_6_4.txt 	 411 	 618 	 0.526927 	 26 	 18770.953125 	 618 	 208
+instancesConflicts/BPPC_4_6_5.txt 	 397 	 610 	 0.514539 	 26 	 19153.064453 	 610 	 196
+instancesConflicts/BPPC_4_6_6.txt 	 399 	 588 	 0.549136 	 26 	 18532.140625 	 588 	 181
+instancesConflicts/BPPC_4_6_7.txt 	 395 	 615 	 0.505624 	 26 	 18920.085938 	 615 	 215
+instancesConflicts/BPPC_4_6_8.txt 	 404 	 620 	 0.524777 	 29 	 20250.158203 	 621 	 209
+instancesConflicts/BPPC_4_6_9.txt 	 399 	 629 	 0.487728 	 26 	 19379.828125 	 629 	 223
+instancesConflicts/BPPC_4_6_10.txt 	 397 	 610 	 0.516692 	 26 	 19342.859375 	 610 	 205
+instancesConflicts/BPPC_4_7_1.txt 	 399 	 731 	 0.385638 	 52 	 37850.996094 	 732 	 422
+instancesConflicts/BPPC_4_7_2.txt 	 406 	 685 	 0.445729 	 73 	 52133.347656 	 688 	 387
+instancesConflicts/BPPC_4_7_3.txt 	 411 	 717 	 0.404174 	 26 	 20050.945312 	 717 	 411
+instancesConflicts/BPPC_4_7_4.txt 	 411 	 710 	 0.415726 	 26 	 19830.726562 	 710 	 413
+instancesConflicts/BPPC_4_7_5.txt 	 397 	 702 	 0.414987 	 81 	 57737.777344 	 706 	 407
+instancesConflicts/BPPC_4_7_6.txt 	 399 	 699 	 0.408888 	 26 	 20142.902344 	 699 	 378
+instancesConflicts/BPPC_4_7_7.txt 	 395 	 707 	 0.392552 	 26 	 20736.765625 	 707 	 410
+instancesConflicts/BPPC_4_7_8.txt 	 404 	 714 	 0.398991 	 26 	 19622.724609 	 714 	 393
+instancesConflicts/BPPC_4_7_9.txt 	 399 	 733 	 0.371547 	 26 	 20012.529297 	 733 	 420
+instancesConflicts/BPPC_4_7_10.txt 	 397 	 713 	 0.391615 	 26 	 20616.902344 	 713 	 392
+instancesConflicts/BPPC_4_8_1.txt 	 399 	 821 	 0.301272 	 32 	 23711.769531 	 822 	 633
+instancesConflicts/BPPC_4_8_2.txt 	 406 	 794 	 0.324195 	 26 	 19902.201172 	 794 	 575
+instancesConflicts/BPPC_4_8_3.txt 	 411 	 813 	 0.315427 	 26 	 19094.296875 	 813 	 605
+instancesConflicts/BPPC_4_8_4.txt 	 411 	 805 	 0.324221 	 26 	 19257.482422 	 805 	 611
+instancesConflicts/BPPC_4_8_5.txt 	 397 	 802 	 0.316250 	 66 	 45905.449219 	 805 	 604
+instancesConflicts/BPPC_4_8_6.txt 	 399 	 810 	 0.305956 	 26 	 18970.974609 	 810 	 579
+instancesConflicts/BPPC_4_8_7.txt 	 395 	 807 	 0.302524 	 26 	 20394.791016 	 807 	 612
+instancesConflicts/BPPC_4_8_8.txt 	 404 	 811 	 0.315146 	 37 	 26454.244141 	 812 	 615
+instancesConflicts/BPPC_4_8_9.txt 	 399 	 823 	 0.300528 	 28 	 20739.845703 	 825 	 629
+instancesConflicts/BPPC_4_8_10.txt 	 397 	 811 	 0.307593 	 42 	 30773.839844 	 812 	 600
+instancesConflicts/BPPC_4_9_1.txt 	 399 	 916 	 0.231742 	 32 	 20719.376953 	 917 	 819
+instancesConflicts/BPPC_4_9_2.txt 	 406 	 900 	 0.246867 	 26 	 17962.935547 	 900 	 791
+instancesConflicts/BPPC_4_9_3.txt 	 411 	 904 	 0.251734 	 38 	 23801.453125 	 905 	 808
+instancesConflicts/BPPC_4_9_4.txt 	 411 	 899 	 0.255548 	 46 	 28418.781250 	 900 	 804
+instancesConflicts/BPPC_4_9_5.txt 	 397 	 909 	 0.233182 	 26 	 17135.480469 	 909 	 795
+instancesConflicts/BPPC_4_9_6.txt 	 399 	 908 	 0.238559 	 31 	 20310.349609 	 910 	 804
+instancesConflicts/BPPC_4_9_7.txt 	 395 	 900 	 0.236368 	 26 	 18376.197266 	 900 	 800
+instancesConflicts/BPPC_4_9_8.txt 	 404 	 904 	 0.241718 	 26 	 17884.910156 	 904 	 805
+instancesConflicts/BPPC_4_9_9.txt 	 399 	 920 	 0.228584 	 26 	 17077.414062 	 920 	 820
+instancesConflicts/BPPC_4_9_10.txt 	 397 	 912 	 0.230494 	 26 	 18046.767578 	 912 	 807
+instancesConflicts/BPPC_5_0_1.txt 	 20 	 20 	 1.000000 	 35 	 86.112000 	 22 	 0
+instancesConflicts/BPPC_5_0_2.txt 	 20 	 20 	 1.000000 	 42 	 99.353996 	 22 	 0
+instancesConflicts/BPPC_5_0_3.txt 	 20 	 20 	 1.000000 	 40 	 106.078003 	 22 	 0
+instancesConflicts/BPPC_5_0_4.txt 	 20 	 20 	 1.000000 	 42 	 104.639000 	 22 	 0
+instancesConflicts/BPPC_5_0_5.txt 	 20 	 20 	 1.000000 	 35 	 87.487000 	 22 	 0
+instancesConflicts/BPPC_5_0_6.txt 	 20 	 20 	 1.000000 	 49 	 116.422997 	 22 	 0
+instancesConflicts/BPPC_5_0_7.txt 	 20 	 20 	 1.000000 	 35 	 89.301003 	 22 	 0
+instancesConflicts/BPPC_5_0_8.txt 	 20 	 20 	 1.000000 	 42 	 98.907997 	 22 	 0
+instancesConflicts/BPPC_5_0_9.txt 	 20 	 20 	 1.000000 	 41 	 98.919998 	 22 	 0
+instancesConflicts/BPPC_5_0_10.txt 	 20 	 20 	 1.000000 	 40 	 96.990997 	 22 	 0
+instancesConflicts/BPPC_5_1_1.txt 	 20 	 20 	 1.000000 	 36 	 93.844002 	 22 	 0
+instancesConflicts/BPPC_5_1_2.txt 	 20 	 20 	 1.000000 	 41 	 103.529999 	 22 	 0
+instancesConflicts/BPPC_5_1_3.txt 	 20 	 20 	 1.000000 	 37 	 99.102997 	 22 	 0
+instancesConflicts/BPPC_5_1_4.txt 	 20 	 20 	 1.000000 	 39 	 99.156998 	 22 	 0
+instancesConflicts/BPPC_5_1_5.txt 	 20 	 20 	 1.000000 	 36 	 92.823997 	 22 	 0
+instancesConflicts/BPPC_5_1_6.txt 	 20 	 20 	 1.000000 	 45 	 111.457001 	 22 	 0
+instancesConflicts/BPPC_5_1_7.txt 	 20 	 20 	 1.000000 	 48 	 114.028999 	 22 	 0
+instancesConflicts/BPPC_5_1_8.txt 	 20 	 20 	 1.000000 	 38 	 93.277000 	 22 	 0
+instancesConflicts/BPPC_5_1_9.txt 	 20 	 21 	 0.911960 	 26 	 77.396004 	 22 	 0
+instancesConflicts/BPPC_5_1_10.txt 	 20 	 21 	 0.911237 	 26 	 71.476997 	 22 	 0
+instancesConflicts/BPPC_5_2_1.txt 	 20 	 21 	 0.918656 	 26 	 83.195999 	 22 	 0
+instancesConflicts/BPPC_5_2_2.txt 	 20 	 21 	 0.912202 	 26 	 80.355003 	 22 	 0
+instancesConflicts/BPPC_5_2_3.txt 	 20 	 21 	 0.911802 	 26 	 90.510002 	 22 	 0
+instancesConflicts/BPPC_5_2_4.txt 	 20 	 21 	 0.914015 	 26 	 76.794998 	 22 	 0
+instancesConflicts/BPPC_5_2_5.txt 	 20 	 20 	 1.000000 	 40 	 99.314003 	 22 	 0
+instancesConflicts/BPPC_5_2_6.txt 	 20 	 21 	 0.910579 	 29 	 80.261002 	 22 	 0
+instancesConflicts/BPPC_5_2_7.txt 	 20 	 21 	 0.911298 	 26 	 71.482002 	 22 	 0
+instancesConflicts/BPPC_5_2_8.txt 	 20 	 21 	 0.912438 	 26 	 81.251999 	 22 	 0
+instancesConflicts/BPPC_5_2_9.txt 	 20 	 21 	 0.911648 	 26 	 79.472000 	 22 	 0
+instancesConflicts/BPPC_5_2_10.txt 	 20 	 21 	 0.911062 	 26 	 85.517998 	 22 	 0
+instancesConflicts/BPPC_5_3_1.txt 	 20 	 21 	 0.910115 	 26 	 78.127998 	 22 	 0
+instancesConflicts/BPPC_5_3_2.txt 	 20 	 23 	 0.806975 	 30 	 80.261002 	 24 	 0
+instancesConflicts/BPPC_5_3_3.txt 	 20 	 21 	 0.910897 	 28 	 83.584000 	 22 	 0
+instancesConflicts/BPPC_5_3_4.txt 	 20 	 21 	 0.910858 	 27 	 81.240997 	 22 	 0
+instancesConflicts/BPPC_5_3_5.txt 	 20 	 21 	 0.909699 	 27 	 79.639999 	 22 	 0
+instancesConflicts/BPPC_5_3_6.txt 	 20 	 25 	 0.680485 	 26 	 67.789001 	 25 	 0
+instancesConflicts/BPPC_5_3_7.txt 	 20 	 21 	 0.911233 	 26 	 78.041000 	 22 	 0
+instancesConflicts/BPPC_5_3_8.txt 	 20 	 21 	 0.910596 	 30 	 83.401001 	 22 	 0
+instancesConflicts/BPPC_5_3_9.txt 	 20 	 22 	 0.838090 	 26 	 72.752998 	 22 	 0
+instancesConflicts/BPPC_5_3_10.txt 	 20 	 21 	 0.909624 	 27 	 81.797997 	 22 	 0
+instancesConflicts/BPPC_5_4_1.txt 	 20 	 21 	 0.911774 	 37 	 101.736000 	 23 	 0
+instancesConflicts/BPPC_5_4_2.txt 	 20 	 30 	 0.538011 	 26 	 69.692001 	 30 	 0
+instancesConflicts/BPPC_5_4_3.txt 	 20 	 23 	 0.763079 	 26 	 71.681000 	 23 	 0
+instancesConflicts/BPPC_5_4_4.txt 	 20 	 23 	 0.763226 	 26 	 70.987999 	 23 	 0
+instancesConflicts/BPPC_5_4_5.txt 	 20 	 22 	 0.838414 	 27 	 80.374001 	 23 	 0
+instancesConflicts/BPPC_5_4_6.txt 	 20 	 32 	 0.479151 	 26 	 68.182999 	 32 	 0
+instancesConflicts/BPPC_5_4_7.txt 	 20 	 22 	 0.851814 	 27 	 77.367996 	 23 	 0
+instancesConflicts/BPPC_5_4_8.txt 	 20 	 28 	 0.572964 	 26 	 63.853001 	 28 	 0
+instancesConflicts/BPPC_5_4_9.txt 	 20 	 24 	 0.742734 	 29 	 79.516998 	 25 	 0
+instancesConflicts/BPPC_5_4_10.txt 	 20 	 25 	 0.680464 	 26 	 72.886002 	 25 	 0
+instancesConflicts/BPPC_5_5_1.txt 	 20 	 26 	 0.674197 	 28 	 72.598999 	 27 	 0
+instancesConflicts/BPPC_5_5_2.txt 	 20 	 36 	 0.390743 	 26 	 71.763000 	 36 	 0
+instancesConflicts/BPPC_5_5_3.txt 	 20 	 28 	 0.582093 	 26 	 67.945999 	 28 	 1
+instancesConflicts/BPPC_5_5_4.txt 	 20 	 27 	 0.629911 	 27 	 69.019997 	 28 	 0
+instancesConflicts/BPPC_5_5_5.txt 	 20 	 29 	 0.538889 	 26 	 63.693001 	 29 	 0
+instancesConflicts/BPPC_5_5_6.txt 	 20 	 40 	 0.320074 	 26 	 74.273003 	 40 	 0
+instancesConflicts/BPPC_5_5_7.txt 	 20 	 27 	 0.619065 	 26 	 66.976997 	 28 	 0
+instancesConflicts/BPPC_5_5_8.txt 	 20 	 35 	 0.396442 	 26 	 70.116997 	 35 	 2
+instancesConflicts/BPPC_5_5_9.txt 	 20 	 29 	 0.584027 	 32 	 77.124001 	 30 	 3
+instancesConflicts/BPPC_5_5_10.txt 	 20 	 32 	 0.467225 	 26 	 72.172997 	 32 	 0
+instancesConflicts/BPPC_5_6_1.txt 	 20 	 33 	 0.438442 	 26 	 72.031998 	 33 	 11
+instancesConflicts/BPPC_5_6_2.txt 	 20 	 39 	 0.329090 	 26 	 80.060997 	 40 	 16
+instancesConflicts/BPPC_5_6_3.txt 	 20 	 33 	 0.437528 	 26 	 72.516998 	 33 	 15
+instancesConflicts/BPPC_5_6_4.txt 	 20 	 34 	 0.418250 	 26 	 72.467003 	 34 	 7
+instancesConflicts/BPPC_5_6_5.txt 	 20 	 35 	 0.407436 	 26 	 71.561996 	 35 	 11
+instancesConflicts/BPPC_5_6_6.txt 	 20 	 43 	 0.274041 	 26 	 81.031998 	 43 	 19
+instancesConflicts/BPPC_5_6_7.txt 	 20 	 34 	 0.430095 	 26 	 72.148003 	 34 	 9
+instancesConflicts/BPPC_5_6_8.txt 	 20 	 40 	 0.314153 	 26 	 78.320999 	 40 	 11
+instancesConflicts/BPPC_5_6_9.txt 	 20 	 35 	 0.414300 	 26 	 71.240997 	 35 	 14
+instancesConflicts/BPPC_5_6_10.txt 	 20 	 39 	 0.332223 	 26 	 77.704002 	 39 	 15
+instancesConflicts/BPPC_5_7_1.txt 	 20 	 41 	 0.303101 	 26 	 77.695000 	 41 	 18
+instancesConflicts/BPPC_5_7_2.txt 	 20 	 44 	 0.256102 	 26 	 83.522003 	 44 	 30
+instancesConflicts/BPPC_5_7_3.txt 	 20 	 41 	 0.300304 	 26 	 79.836998 	 41 	 23
+instancesConflicts/BPPC_5_7_4.txt 	 20 	 40 	 0.321529 	 27 	 81.642998 	 41 	 22
+instancesConflicts/BPPC_5_7_5.txt 	 20 	 40 	 0.308864 	 26 	 77.158997 	 40 	 19
+instancesConflicts/BPPC_5_7_6.txt 	 20 	 47 	 0.226751 	 26 	 85.792999 	 47 	 31
+instancesConflicts/BPPC_5_7_7.txt 	 20 	 43 	 0.276715 	 26 	 79.536003 	 43 	 21
+instancesConflicts/BPPC_5_7_8.txt 	 20 	 45 	 0.244661 	 26 	 86.012001 	 45 	 30
+instancesConflicts/BPPC_5_7_9.txt 	 20 	 41 	 0.315788 	 26 	 77.512001 	 41 	 23
+instancesConflicts/BPPC_5_7_10.txt 	 20 	 44 	 0.253477 	 26 	 83.445999 	 44 	 25
+instancesConflicts/BPPC_5_8_1.txt 	 20 	 45 	 0.251955 	 26 	 84.231003 	 45 	 33
+instancesConflicts/BPPC_5_8_2.txt 	 20 	 51 	 0.188310 	 26 	 90.665001 	 51 	 38
+instancesConflicts/BPPC_5_8_3.txt 	 20 	 48 	 0.218219 	 26 	 89.594002 	 48 	 34
+instancesConflicts/BPPC_5_8_4.txt 	 20 	 47 	 0.233742 	 26 	 85.667999 	 47 	 33
+instancesConflicts/BPPC_5_8_5.txt 	 20 	 46 	 0.240190 	 26 	 83.109001 	 46 	 35
+instancesConflicts/BPPC_5_8_6.txt 	 20 	 52 	 0.178147 	 26 	 88.848000 	 52 	 42
+instancesConflicts/BPPC_5_8_7.txt 	 20 	 49 	 0.206820 	 26 	 85.592003 	 49 	 34
+instancesConflicts/BPPC_5_8_8.txt 	 20 	 53 	 0.168413 	 26 	 89.504997 	 53 	 40
+instancesConflicts/BPPC_5_8_9.txt 	 20 	 49 	 0.210003 	 26 	 85.097000 	 49 	 34
+instancesConflicts/BPPC_5_8_10.txt 	 20 	 51 	 0.183721 	 26 	 89.116997 	 51 	 39
+instancesConflicts/BPPC_5_9_1.txt 	 20 	 50 	 0.190604 	 26 	 90.111000 	 50 	 44
+instancesConflicts/BPPC_5_9_2.txt 	 20 	 56 	 0.145068 	 26 	 89.031998 	 56 	 52
+instancesConflicts/BPPC_5_9_3.txt 	 20 	 54 	 0.166238 	 26 	 87.523003 	 54 	 49
+instancesConflicts/BPPC_5_9_4.txt 	 20 	 54 	 0.163096 	 26 	 88.087997 	 54 	 46
+instancesConflicts/BPPC_5_9_5.txt 	 20 	 52 	 0.175646 	 26 	 87.384003 	 52 	 46
+instancesConflicts/BPPC_5_9_6.txt 	 20 	 56 	 0.141946 	 26 	 89.950996 	 56 	 52
+instancesConflicts/BPPC_5_9_7.txt 	 20 	 54 	 0.156507 	 26 	 90.719002 	 54 	 49
+instancesConflicts/BPPC_5_9_8.txt 	 20 	 57 	 0.133813 	 26 	 92.160004 	 57 	 53
+instancesConflicts/BPPC_5_9_9.txt 	 20 	 55 	 0.151766 	 26 	 91.372002 	 55 	 49
+instancesConflicts/BPPC_5_9_10.txt 	 20 	 56 	 0.143526 	 26 	 88.445000 	 56 	 52
+instancesConflicts/BPPC_6_0_1.txt 	 40 	 41 	 0.955372 	 27 	 171.863998 	 44 	 0
+instancesConflicts/BPPC_6_0_2.txt 	 40 	 40 	 1.000000 	 51 	 265.605988 	 43 	 0
+instancesConflicts/BPPC_6_0_3.txt 	 40 	 41 	 0.954562 	 27 	 174.919998 	 44 	 0
+instancesConflicts/BPPC_6_0_4.txt 	 40 	 41 	 0.958235 	 27 	 174.873993 	 44 	 0
+instancesConflicts/BPPC_6_0_5.txt 	 40 	 40 	 1.000000 	 52 	 290.274994 	 44 	 0
+instancesConflicts/BPPC_6_0_6.txt 	 40 	 40 	 1.000000 	 52 	 269.014008 	 44 	 0
+instancesConflicts/BPPC_6_0_7.txt 	 40 	 40 	 1.000000 	 45 	 237.936005 	 43 	 0
+instancesConflicts/BPPC_6_0_8.txt 	 40 	 40 	 1.000000 	 40 	 223.350998 	 43 	 0
+instancesConflicts/BPPC_6_0_9.txt 	 40 	 41 	 0.955776 	 27 	 172.656006 	 44 	 0
+instancesConflicts/BPPC_6_0_10.txt 	 40 	 41 	 0.954227 	 26 	 172.580994 	 44 	 0
+instancesConflicts/BPPC_6_1_1.txt 	 40 	 40 	 1.000000 	 52 	 282.407013 	 44 	 0
+instancesConflicts/BPPC_6_1_2.txt 	 40 	 40 	 1.000000 	 51 	 281.244995 	 43 	 0
+instancesConflicts/BPPC_6_1_3.txt 	 40 	 40 	 1.000000 	 51 	 273.032990 	 44 	 0
+instancesConflicts/BPPC_6_1_4.txt 	 40 	 41 	 0.955045 	 27 	 171.044998 	 44 	 0
+instancesConflicts/BPPC_6_1_5.txt 	 40 	 40 	 1.000000 	 49 	 275.022003 	 44 	 0
+instancesConflicts/BPPC_6_1_6.txt 	 40 	 41 	 0.955704 	 27 	 180.042999 	 44 	 0
+instancesConflicts/BPPC_6_1_7.txt 	 40 	 40 	 1.000000 	 40 	 232.320999 	 44 	 0
+instancesConflicts/BPPC_6_1_8.txt 	 40 	 41 	 0.954639 	 27 	 178.977997 	 44 	 0
+instancesConflicts/BPPC_6_1_9.txt 	 40 	 40 	 1.000000 	 48 	 268.617004 	 44 	 0
+instancesConflicts/BPPC_6_1_10.txt 	 40 	 40 	 1.000000 	 46 	 268.067993 	 44 	 0
+instancesConflicts/BPPC_6_2_1.txt 	 40 	 41 	 0.954677 	 31 	 212.386993 	 44 	 0
+instancesConflicts/BPPC_6_2_2.txt 	 40 	 41 	 0.955047 	 26 	 171.944000 	 44 	 0
+instancesConflicts/BPPC_6_2_3.txt 	 40 	 41 	 0.955675 	 27 	 202.731995 	 44 	 0
+instancesConflicts/BPPC_6_2_4.txt 	 40 	 41 	 0.965275 	 28 	 203.871002 	 44 	 0
+instancesConflicts/BPPC_6_2_5.txt 	 40 	 41 	 0.953994 	 27 	 194.479004 	 44 	 0
+instancesConflicts/BPPC_6_2_6.txt 	 40 	 41 	 0.955153 	 27 	 193.565002 	 44 	 0
+instancesConflicts/BPPC_6_2_7.txt 	 40 	 41 	 0.959171 	 27 	 199.906006 	 44 	 0
+instancesConflicts/BPPC_6_2_8.txt 	 40 	 41 	 0.956979 	 27 	 183.569000 	 44 	 0
+instancesConflicts/BPPC_6_2_9.txt 	 40 	 40 	 1.000000 	 52 	 288.252014 	 44 	 0
+instancesConflicts/BPPC_6_2_10.txt 	 40 	 41 	 0.954183 	 26 	 181.979996 	 44 	 0
+instancesConflicts/BPPC_6_3_1.txt 	 40 	 44 	 0.858637 	 37 	 277.721985 	 45 	 0
+instancesConflicts/BPPC_6_3_2.txt 	 40 	 41 	 0.955639 	 52 	 352.559998 	 43 	 0
+instancesConflicts/BPPC_6_3_3.txt 	 40 	 41 	 0.954238 	 36 	 300.252991 	 44 	 0
+instancesConflicts/BPPC_6_3_4.txt 	 40 	 41 	 0.954784 	 53 	 377.899994 	 44 	 0
+instancesConflicts/BPPC_6_3_5.txt 	 40 	 41 	 0.955603 	 40 	 269.660004 	 44 	 0
+instancesConflicts/BPPC_6_3_6.txt 	 40 	 41 	 0.955490 	 52 	 355.138000 	 44 	 0
+instancesConflicts/BPPC_6_3_7.txt 	 40 	 41 	 0.953872 	 60 	 436.342987 	 44 	 0
+instancesConflicts/BPPC_6_3_8.txt 	 40 	 42 	 0.920367 	 32 	 226.074005 	 44 	 0
+instancesConflicts/BPPC_6_3_9.txt 	 40 	 41 	 0.955164 	 48 	 309.476013 	 44 	 0
+instancesConflicts/BPPC_6_3_10.txt 	 40 	 41 	 0.958018 	 36 	 234.917007 	 44 	 0
+instancesConflicts/BPPC_6_4_1.txt 	 40 	 54 	 0.618190 	 26 	 174.095993 	 54 	 0
+instancesConflicts/BPPC_6_4_2.txt 	 40 	 51 	 0.685616 	 26 	 186.487000 	 52 	 0
+instancesConflicts/BPPC_6_4_3.txt 	 40 	 49 	 0.730166 	 26 	 221.919998 	 50 	 0
+instancesConflicts/BPPC_6_4_4.txt 	 40 	 51 	 0.688715 	 26 	 183.108994 	 52 	 0
+instancesConflicts/BPPC_6_4_5.txt 	 40 	 46 	 0.805626 	 28 	 227.878006 	 47 	 0
+instancesConflicts/BPPC_6_4_6.txt 	 40 	 46 	 0.804795 	 36 	 297.342987 	 48 	 0
+instancesConflicts/BPPC_6_4_7.txt 	 40 	 50 	 0.706489 	 34 	 259.709015 	 51 	 0
+instancesConflicts/BPPC_6_4_8.txt 	 40 	 48 	 0.770695 	 42 	 299.977997 	 50 	 0
+instancesConflicts/BPPC_6_4_9.txt 	 40 	 50 	 0.725152 	 41 	 285.477997 	 51 	 0
+instancesConflicts/BPPC_6_4_10.txt 	 40 	 45 	 0.825827 	 30 	 253.556000 	 46 	 0
+instancesConflicts/BPPC_6_5_1.txt 	 40 	 64 	 0.490425 	 27 	 202.524994 	 65 	 0
+instancesConflicts/BPPC_6_5_2.txt 	 40 	 66 	 0.457260 	 26 	 195.214996 	 66 	 0
+instancesConflicts/BPPC_6_5_3.txt 	 40 	 64 	 0.486722 	 30 	 228.203995 	 65 	 0
+instancesConflicts/BPPC_6_5_4.txt 	 40 	 60 	 0.547952 	 34 	 242.750000 	 61 	 3
+instancesConflicts/BPPC_6_5_5.txt 	 40 	 59 	 0.560488 	 29 	 200.612000 	 60 	 1
+instancesConflicts/BPPC_6_5_6.txt 	 40 	 59 	 0.532531 	 26 	 188.664993 	 59 	 0
+instancesConflicts/BPPC_6_5_7.txt 	 40 	 64 	 0.467778 	 26 	 200.046997 	 64 	 3
+instancesConflicts/BPPC_6_5_8.txt 	 40 	 59 	 0.554677 	 26 	 187.091995 	 61 	 2
+instancesConflicts/BPPC_6_5_9.txt 	 40 	 64 	 0.470466 	 26 	 196.266006 	 64 	 0
+instancesConflicts/BPPC_6_5_10.txt 	 40 	 56 	 0.592328 	 27 	 187.093002 	 57 	 1
+instancesConflicts/BPPC_6_6_1.txt 	 40 	 74 	 0.378411 	 26 	 218.001007 	 75 	 30
+instancesConflicts/BPPC_6_6_2.txt 	 40 	 74 	 0.374077 	 26 	 215.649002 	 74 	 20
+instancesConflicts/BPPC_6_6_3.txt 	 40 	 80 	 0.320092 	 26 	 244.979996 	 80 	 19
+instancesConflicts/BPPC_6_6_4.txt 	 40 	 73 	 0.369681 	 26 	 220.709000 	 73 	 26
+instancesConflicts/BPPC_6_6_5.txt 	 40 	 73 	 0.377608 	 26 	 210.565994 	 73 	 22
+instancesConflicts/BPPC_6_6_6.txt 	 40 	 73 	 0.390907 	 27 	 224.268997 	 74 	 24
+instancesConflicts/BPPC_6_6_7.txt 	 40 	 74 	 0.383056 	 37 	 303.299011 	 76 	 29
+instancesConflicts/BPPC_6_6_8.txt 	 40 	 76 	 0.343957 	 26 	 222.735992 	 76 	 22
+instancesConflicts/BPPC_6_6_9.txt 	 40 	 77 	 0.353155 	 26 	 225.300995 	 77 	 17
+instancesConflicts/BPPC_6_6_10.txt 	 40 	 71 	 0.395415 	 26 	 213.119003 	 71 	 23
+instancesConflicts/BPPC_6_7_1.txt 	 40 	 83 	 0.307970 	 33 	 290.321991 	 84 	 53
+instancesConflicts/BPPC_6_7_2.txt 	 40 	 83 	 0.301623 	 26 	 236.779999 	 84 	 48
+instancesConflicts/BPPC_6_7_3.txt 	 40 	 90 	 0.245547 	 26 	 260.334015 	 90 	 45
+instancesConflicts/BPPC_6_7_4.txt 	 40 	 83 	 0.293313 	 26 	 243.613998 	 83 	 51
+instancesConflicts/BPPC_6_7_5.txt 	 40 	 84 	 0.293047 	 26 	 235.981003 	 84 	 47
+instancesConflicts/BPPC_6_7_6.txt 	 40 	 85 	 0.289087 	 26 	 237.727005 	 85 	 44
+instancesConflicts/BPPC_6_7_7.txt 	 40 	 90 	 0.254529 	 26 	 245.996994 	 90 	 53
+instancesConflicts/BPPC_6_7_8.txt 	 40 	 84 	 0.285069 	 26 	 241.772003 	 84 	 49
+instancesConflicts/BPPC_6_7_9.txt 	 40 	 87 	 0.278424 	 26 	 247.738998 	 88 	 49
+instancesConflicts/BPPC_6_7_10.txt 	 40 	 83 	 0.297351 	 26 	 235.322006 	 83 	 42
+instancesConflicts/BPPC_6_8_1.txt 	 40 	 96 	 0.216414 	 26 	 250.899994 	 96 	 74
+instancesConflicts/BPPC_6_8_2.txt 	 40 	 95 	 0.224681 	 26 	 244.500000 	 95 	 73
+instancesConflicts/BPPC_6_8_3.txt 	 40 	 102 	 0.184926 	 26 	 270.069000 	 102 	 80
+instancesConflicts/BPPC_6_8_4.txt 	 40 	 94 	 0.225430 	 26 	 265.550995 	 94 	 73
+instancesConflicts/BPPC_6_8_5.txt 	 40 	 97 	 0.214893 	 26 	 249.675003 	 97 	 73
+instancesConflicts/BPPC_6_8_6.txt 	 40 	 95 	 0.223918 	 32 	 300.576996 	 96 	 72
+instancesConflicts/BPPC_6_8_7.txt 	 40 	 102 	 0.185539 	 26 	 259.289001 	 102 	 77
+instancesConflicts/BPPC_6_8_8.txt 	 40 	 94 	 0.232784 	 26 	 257.309998 	 94 	 76
+instancesConflicts/BPPC_6_8_9.txt 	 40 	 97 	 0.215705 	 26 	 266.266998 	 97 	 76
+instancesConflicts/BPPC_6_8_10.txt 	 40 	 95 	 0.222454 	 26 	 253.042999 	 95 	 70
+instancesConflicts/BPPC_6_9_1.txt 	 40 	 105 	 0.176403 	 26 	 259.118988 	 105 	 96
+instancesConflicts/BPPC_6_9_2.txt 	 40 	 109 	 0.157202 	 26 	 259.959991 	 109 	 95
+instancesConflicts/BPPC_6_9_3.txt 	 40 	 110 	 0.150527 	 26 	 278.438995 	 110 	 102
+instancesConflicts/BPPC_6_9_4.txt 	 40 	 110 	 0.154927 	 26 	 264.385010 	 110 	 95
+instancesConflicts/BPPC_6_9_5.txt 	 40 	 109 	 0.158535 	 26 	 258.816986 	 109 	 98
+instancesConflicts/BPPC_6_9_6.txt 	 40 	 111 	 0.149186 	 26 	 263.078003 	 111 	 93
+instancesConflicts/BPPC_6_9_7.txt 	 40 	 111 	 0.148959 	 26 	 268.717010 	 111 	 106
+instancesConflicts/BPPC_6_9_8.txt 	 40 	 109 	 0.156427 	 26 	 265.985992 	 109 	 92
+instancesConflicts/BPPC_6_9_9.txt 	 40 	 108 	 0.162774 	 26 	 266.408997 	 108 	 97
+instancesConflicts/BPPC_6_9_10.txt 	 40 	 108 	 0.161642 	 26 	 260.683014 	 108 	 94
+instancesConflicts/BPPC_7_0_1.txt 	 83 	 83 	 1.000000 	 47 	 672.786987 	 92 	 0
+instancesConflicts/BPPC_7_0_2.txt 	 83 	 83 	 1.000000 	 50 	 663.750977 	 91 	 0
+instancesConflicts/BPPC_7_0_3.txt 	 83 	 83 	 1.000000 	 42 	 549.060974 	 91 	 0
+instancesConflicts/BPPC_7_0_4.txt 	 83 	 83 	 1.000000 	 54 	 729.359985 	 92 	 0
+instancesConflicts/BPPC_7_0_5.txt 	 83 	 83 	 1.000000 	 45 	 644.023987 	 92 	 0
+instancesConflicts/BPPC_7_0_6.txt 	 83 	 83 	 1.000000 	 40 	 574.747986 	 91 	 0
+instancesConflicts/BPPC_7_0_7.txt 	 83 	 83 	 1.000000 	 49 	 663.297974 	 91 	 0
+instancesConflicts/BPPC_7_0_8.txt 	 83 	 83 	 1.000000 	 55 	 741.028992 	 91 	 0
+instancesConflicts/BPPC_7_0_9.txt 	 83 	 83 	 1.000000 	 44 	 617.593994 	 91 	 0
+instancesConflicts/BPPC_7_0_10.txt 	 83 	 83 	 1.000000 	 42 	 565.010010 	 91 	 0
+instancesConflicts/BPPC_7_1_1.txt 	 83 	 84 	 0.977396 	 30 	 551.885010 	 92 	 0
+instancesConflicts/BPPC_7_1_2.txt 	 83 	 83 	 1.000000 	 45 	 616.752991 	 92 	 0
+instancesConflicts/BPPC_7_1_3.txt 	 83 	 83 	 1.000000 	 44 	 581.200012 	 91 	 0
+instancesConflicts/BPPC_7_1_4.txt 	 83 	 84 	 0.977721 	 30 	 535.619019 	 91 	 0
+instancesConflicts/BPPC_7_1_5.txt 	 83 	 83 	 1.000000 	 52 	 758.242004 	 92 	 0
+instancesConflicts/BPPC_7_1_6.txt 	 83 	 83 	 1.000000 	 50 	 659.851990 	 91 	 0
+instancesConflicts/BPPC_7_1_7.txt 	 83 	 84 	 0.977606 	 30 	 526.190002 	 91 	 0
+instancesConflicts/BPPC_7_1_8.txt 	 83 	 84 	 0.977780 	 30 	 537.002991 	 91 	 0
+instancesConflicts/BPPC_7_1_9.txt 	 83 	 83 	 1.000000 	 56 	 736.065979 	 91 	 0
+instancesConflicts/BPPC_7_1_10.txt 	 83 	 83 	 1.000000 	 55 	 698.901001 	 91 	 0
+instancesConflicts/BPPC_7_2_1.txt 	 83 	 84 	 0.979361 	 38 	 661.840027 	 92 	 0
+instancesConflicts/BPPC_7_2_2.txt 	 83 	 84 	 0.979180 	 39 	 681.169006 	 91 	 0
+instancesConflicts/BPPC_7_2_3.txt 	 83 	 84 	 0.978210 	 29 	 463.863007 	 91 	 0
+instancesConflicts/BPPC_7_2_4.txt 	 83 	 84 	 0.977774 	 38 	 699.409973 	 92 	 0
+instancesConflicts/BPPC_7_2_5.txt 	 83 	 84 	 0.978169 	 33 	 621.734009 	 92 	 0
+instancesConflicts/BPPC_7_2_6.txt 	 83 	 84 	 0.977829 	 28 	 516.705017 	 91 	 0
+instancesConflicts/BPPC_7_2_7.txt 	 83 	 84 	 0.978226 	 30 	 490.100006 	 91 	 0
+instancesConflicts/BPPC_7_2_8.txt 	 83 	 84 	 0.977881 	 29 	 538.833984 	 92 	 0
+instancesConflicts/BPPC_7_2_9.txt 	 83 	 84 	 0.978821 	 32 	 504.450989 	 91 	 0
+instancesConflicts/BPPC_7_2_10.txt 	 83 	 84 	 0.979109 	 34 	 690.312012 	 91 	 0
+instancesConflicts/BPPC_7_3_1.txt 	 83 	 87 	 0.925433 	 50 	 1193.437988 	 92 	 0
+instancesConflicts/BPPC_7_3_2.txt 	 83 	 85 	 0.956508 	 64 	 1420.572021 	 91 	 0
+instancesConflicts/BPPC_7_3_3.txt 	 83 	 86 	 0.937031 	 38 	 823.237000 	 91 	 0
+instancesConflicts/BPPC_7_3_4.txt 	 83 	 85 	 0.956288 	 75 	 1627.447021 	 92 	 0
+instancesConflicts/BPPC_7_3_5.txt 	 83 	 86 	 0.937252 	 39 	 935.296997 	 91 	 0
+instancesConflicts/BPPC_7_3_6.txt 	 83 	 86 	 0.936263 	 53 	 1168.439941 	 92 	 0
+instancesConflicts/BPPC_7_3_7.txt 	 83 	 85 	 0.956532 	 56 	 1272.579956 	 91 	 0
+instancesConflicts/BPPC_7_3_8.txt 	 83 	 86 	 0.936437 	 35 	 740.648987 	 91 	 0
+instancesConflicts/BPPC_7_3_9.txt 	 83 	 85 	 0.956865 	 66 	 1442.926025 	 91 	 0
+instancesConflicts/BPPC_7_3_10.txt 	 83 	 87 	 0.925450 	 66 	 1563.817993 	 92 	 0
+instancesConflicts/BPPC_7_4_1.txt 	 83 	 114 	 0.598396 	 26 	 728.705017 	 114 	 0
+instancesConflicts/BPPC_7_4_2.txt 	 83 	 101 	 0.746754 	 37 	 1150.277954 	 102 	 0
+instancesConflicts/BPPC_7_4_3.txt 	 83 	 101 	 0.747490 	 33 	 1036.150024 	 103 	 0
+instancesConflicts/BPPC_7_4_4.txt 	 83 	 101 	 0.731778 	 29 	 926.942017 	 103 	 0
+instancesConflicts/BPPC_7_4_5.txt 	 83 	 97 	 0.789416 	 34 	 1191.338013 	 99 	 0
+instancesConflicts/BPPC_7_4_6.txt 	 83 	 100 	 0.750809 	 28 	 889.713013 	 102 	 0
+instancesConflicts/BPPC_7_4_7.txt 	 83 	 91 	 0.860813 	 39 	 1225.568970 	 94 	 0
+instancesConflicts/BPPC_7_4_8.txt 	 83 	 92 	 0.857945 	 56 	 1763.548950 	 95 	 0
+instancesConflicts/BPPC_7_4_9.txt 	 83 	 100 	 0.761681 	 42 	 1206.995972 	 102 	 0
+instancesConflicts/BPPC_7_4_10.txt 	 83 	 108 	 0.667705 	 27 	 775.414001 	 109 	 0
+instancesConflicts/BPPC_7_5_1.txt 	 83 	 138 	 0.443524 	 26 	 864.676025 	 138 	 0
+instancesConflicts/BPPC_7_5_2.txt 	 83 	 128 	 0.518825 	 26 	 836.236023 	 128 	 1
+instancesConflicts/BPPC_7_5_3.txt 	 83 	 128 	 0.506440 	 26 	 841.674988 	 128 	 0
+instancesConflicts/BPPC_7_5_4.txt 	 83 	 122 	 0.561932 	 32 	 1007.250000 	 124 	 4
+instancesConflicts/BPPC_7_5_5.txt 	 83 	 123 	 0.555484 	 27 	 820.885986 	 124 	 0
+instancesConflicts/BPPC_7_5_6.txt 	 83 	 127 	 0.532944 	 33 	 976.138977 	 128 	 1
+instancesConflicts/BPPC_7_5_7.txt 	 83 	 118 	 0.592002 	 32 	 947.831970 	 120 	 1
+instancesConflicts/BPPC_7_5_8.txt 	 83 	 115 	 0.616454 	 29 	 869.065979 	 117 	 0
+instancesConflicts/BPPC_7_5_9.txt 	 83 	 124 	 0.545276 	 30 	 918.856995 	 125 	 0
+instancesConflicts/BPPC_7_5_10.txt 	 83 	 134 	 0.479024 	 28 	 928.046021 	 135 	 1
+instancesConflicts/BPPC_7_6_1.txt 	 83 	 158 	 0.366106 	 30 	 1106.062012 	 159 	 54
+instancesConflicts/BPPC_7_6_2.txt 	 83 	 150 	 0.380076 	 26 	 934.309021 	 150 	 56
+instancesConflicts/BPPC_7_6_3.txt 	 83 	 155 	 0.379409 	 35 	 1250.489990 	 156 	 43
+instancesConflicts/BPPC_7_6_4.txt 	 83 	 146 	 0.411687 	 29 	 1078.444946 	 147 	 56
+instancesConflicts/BPPC_7_6_5.txt 	 83 	 150 	 0.397321 	 30 	 1074.782959 	 151 	 47
+instancesConflicts/BPPC_7_6_6.txt 	 83 	 150 	 0.380741 	 26 	 927.953979 	 150 	 46
+instancesConflicts/BPPC_7_6_7.txt 	 83 	 152 	 0.386896 	 26 	 970.408020 	 152 	 41
+instancesConflicts/BPPC_7_6_8.txt 	 83 	 140 	 0.450492 	 34 	 1211.272949 	 142 	 45
+instancesConflicts/BPPC_7_6_9.txt 	 83 	 155 	 0.359040 	 26 	 972.695984 	 155 	 47
+instancesConflicts/BPPC_7_6_10.txt 	 83 	 154 	 0.378350 	 29 	 1083.767944 	 155 	 57
+instancesConflicts/BPPC_7_7_1.txt 	 83 	 179 	 0.281658 	 26 	 1044.782959 	 180 	 113
+instancesConflicts/BPPC_7_7_2.txt 	 83 	 169 	 0.318781 	 30 	 1174.579956 	 171 	 97
+instancesConflicts/BPPC_7_7_3.txt 	 83 	 187 	 0.252445 	 26 	 1035.229004 	 187 	 101
+instancesConflicts/BPPC_7_7_4.txt 	 83 	 170 	 0.309819 	 26 	 1075.050049 	 171 	 99
+instancesConflicts/BPPC_7_7_5.txt 	 83 	 174 	 0.300917 	 27 	 1073.411011 	 175 	 94
+instancesConflicts/BPPC_7_7_6.txt 	 83 	 173 	 0.308211 	 34 	 1300.359009 	 174 	 97
+instancesConflicts/BPPC_7_7_7.txt 	 83 	 174 	 0.301862 	 33 	 1312.503052 	 175 	 87
+instancesConflicts/BPPC_7_7_8.txt 	 83 	 178 	 0.285268 	 26 	 1048.515015 	 179 	 89
+instancesConflicts/BPPC_7_7_9.txt 	 83 	 174 	 0.304867 	 41 	 1529.891968 	 176 	 99
+instancesConflicts/BPPC_7_7_10.txt 	 83 	 177 	 0.288469 	 28 	 1134.306030 	 178 	 105
+instancesConflicts/BPPC_7_8_1.txt 	 83 	 198 	 0.227348 	 30 	 1204.134033 	 199 	 158
+instancesConflicts/BPPC_7_8_2.txt 	 83 	 194 	 0.232538 	 26 	 1091.928955 	 194 	 148
+instancesConflicts/BPPC_7_8_3.txt 	 83 	 212 	 0.187826 	 26 	 1053.562988 	 212 	 153
+instancesConflicts/BPPC_7_8_4.txt 	 83 	 196 	 0.227178 	 26 	 1088.093018 	 196 	 148
+instancesConflicts/BPPC_7_8_5.txt 	 83 	 202 	 0.213006 	 26 	 1067.662964 	 202 	 148
+instancesConflicts/BPPC_7_8_6.txt 	 83 	 200 	 0.215697 	 26 	 1079.317993 	 200 	 147
+instancesConflicts/BPPC_7_8_7.txt 	 83 	 203 	 0.205206 	 26 	 1095.900024 	 203 	 152
+instancesConflicts/BPPC_7_8_8.txt 	 83 	 197 	 0.227776 	 31 	 1278.504028 	 198 	 137
+instancesConflicts/BPPC_7_8_9.txt 	 83 	 201 	 0.214559 	 26 	 1071.078003 	 201 	 155
+instancesConflicts/BPPC_7_8_10.txt 	 83 	 202 	 0.212322 	 26 	 1092.943970 	 202 	 153
+instancesConflicts/BPPC_7_9_1.txt 	 83 	 221 	 0.170516 	 26 	 1066.797974 	 221 	 198
+instancesConflicts/BPPC_7_9_2.txt 	 83 	 224 	 0.161292 	 26 	 1070.553955 	 224 	 193
+instancesConflicts/BPPC_7_9_3.txt 	 83 	 232 	 0.146013 	 26 	 1032.862061 	 232 	 210
+instancesConflicts/BPPC_7_9_4.txt 	 83 	 227 	 0.154416 	 26 	 1052.666016 	 227 	 200
+instancesConflicts/BPPC_7_9_5.txt 	 83 	 219 	 0.174782 	 41 	 1596.261963 	 220 	 202
+instancesConflicts/BPPC_7_9_6.txt 	 83 	 228 	 0.153721 	 26 	 1036.041992 	 228 	 200
+instancesConflicts/BPPC_7_9_7.txt 	 83 	 224 	 0.160573 	 26 	 1089.416992 	 224 	 203
+instancesConflicts/BPPC_7_9_8.txt 	 83 	 223 	 0.162035 	 26 	 1079.276001 	 223 	 195
+instancesConflicts/BPPC_7_9_9.txt 	 83 	 228 	 0.154019 	 26 	 1060.197998 	 228 	 197
+instancesConflicts/BPPC_7_9_10.txt 	 83 	 226 	 0.156921 	 26 	 1088.142944 	 226 	 201
+instancesConflicts/BPPC_8_0_1.txt 	 167 	 167 	 1.000000 	 52 	 2321.331055 	 185 	 0
+instancesConflicts/BPPC_8_0_2.txt 	 167 	 167 	 1.000000 	 54 	 2248.041992 	 184 	 0
+instancesConflicts/BPPC_8_0_3.txt 	 167 	 167 	 1.000000 	 49 	 1716.041016 	 184 	 0
+instancesConflicts/BPPC_8_0_4.txt 	 167 	 167 	 1.000000 	 56 	 2140.298096 	 183 	 0
+instancesConflicts/BPPC_8_0_5.txt 	 167 	 168 	 0.988894 	 32 	 1683.897949 	 184 	 0
+instancesConflicts/BPPC_8_0_6.txt 	 167 	 168 	 0.988790 	 34 	 1881.892944 	 185 	 0
+instancesConflicts/BPPC_8_0_7.txt 	 167 	 167 	 1.000000 	 52 	 2032.266968 	 184 	 0
+instancesConflicts/BPPC_8_0_8.txt 	 167 	 167 	 1.000000 	 48 	 2071.060059 	 184 	 0
+instancesConflicts/BPPC_8_0_9.txt 	 167 	 167 	 1.000000 	 53 	 2035.199951 	 184 	 0
+instancesConflicts/BPPC_8_0_10.txt 	 167 	 167 	 1.000000 	 55 	 2136.680908 	 185 	 0
+instancesConflicts/BPPC_8_1_1.txt 	 167 	 168 	 0.988942 	 35 	 1952.337036 	 185 	 0
+instancesConflicts/BPPC_8_1_2.txt 	 167 	 168 	 0.989483 	 33 	 1760.711060 	 185 	 0
+instancesConflicts/BPPC_8_1_3.txt 	 167 	 167 	 1.000000 	 49 	 1883.999023 	 184 	 0
+instancesConflicts/BPPC_8_1_4.txt 	 167 	 168 	 0.988810 	 32 	 1582.979980 	 184 	 0
+instancesConflicts/BPPC_8_1_5.txt 	 167 	 168 	 0.989147 	 35 	 1858.505005 	 184 	 0
+instancesConflicts/BPPC_8_1_6.txt 	 167 	 168 	 0.988936 	 37 	 2007.067993 	 184 	 0
+instancesConflicts/BPPC_8_1_7.txt 	 167 	 167 	 1.000000 	 57 	 2098.701904 	 184 	 0
+instancesConflicts/BPPC_8_1_8.txt 	 167 	 168 	 0.988868 	 33 	 1632.112061 	 185 	 0
+instancesConflicts/BPPC_8_1_9.txt 	 167 	 168 	 0.989699 	 34 	 1695.816040 	 184 	 0
+instancesConflicts/BPPC_8_1_10.txt 	 167 	 167 	 1.000000 	 54 	 2053.017090 	 184 	 0
+instancesConflicts/BPPC_8_2_1.txt 	 167 	 168 	 0.989189 	 51 	 3002.534912 	 185 	 0
+instancesConflicts/BPPC_8_2_2.txt 	 167 	 171 	 0.957305 	 44 	 4153.561035 	 184 	 0
+instancesConflicts/BPPC_8_2_3.txt 	 167 	 168 	 0.989057 	 35 	 1557.593018 	 183 	 0
+instancesConflicts/BPPC_8_2_4.txt 	 167 	 168 	 0.989312 	 40 	 1924.718018 	 184 	 0
+instancesConflicts/BPPC_8_2_5.txt 	 167 	 168 	 0.989050 	 46 	 2398.550049 	 184 	 0
+instancesConflicts/BPPC_8_2_6.txt 	 167 	 168 	 0.989502 	 43 	 2282.927002 	 183 	 0
+instancesConflicts/BPPC_8_2_7.txt 	 167 	 168 	 0.989327 	 41 	 1978.725952 	 183 	 0
+instancesConflicts/BPPC_8_2_8.txt 	 167 	 168 	 0.989043 	 37 	 2011.425049 	 184 	 0
+instancesConflicts/BPPC_8_2_9.txt 	 167 	 168 	 0.989982 	 50 	 2243.912109 	 184 	 0
+instancesConflicts/BPPC_8_2_10.txt 	 167 	 168 	 0.989012 	 40 	 1746.359985 	 183 	 0
+instancesConflicts/BPPC_8_3_1.txt 	 167 	 174 	 0.928507 	 47 	 3500.555908 	 184 	 0
+instancesConflicts/BPPC_8_3_2.txt 	 167 	 178 	 0.907935 	 70 	 6086.978027 	 185 	 0
+instancesConflicts/BPPC_8_3_3.txt 	 167 	 173 	 0.936798 	 51 	 3567.127930 	 184 	 0
+instancesConflicts/BPPC_8_3_4.txt 	 167 	 169 	 0.978161 	 161 	 10757.035156 	 184 	 0
+instancesConflicts/BPPC_8_3_5.txt 	 167 	 171 	 0.957879 	 89 	 5892.653809 	 184 	 0
+instancesConflicts/BPPC_8_3_6.txt 	 167 	 171 	 0.960400 	 101 	 6858.271973 	 185 	 0
+instancesConflicts/BPPC_8_3_7.txt 	 167 	 172 	 0.946672 	 70 	 4854.329102 	 184 	 0
+instancesConflicts/BPPC_8_3_8.txt 	 167 	 172 	 0.946520 	 76 	 5767.547852 	 184 	 0
+instancesConflicts/BPPC_8_3_9.txt 	 167 	 174 	 0.926328 	 42 	 3160.162109 	 183 	 0
+instancesConflicts/BPPC_8_3_10.txt 	 167 	 171 	 0.958002 	 87 	 5547.285156 	 182 	 0
+instancesConflicts/BPPC_8_4_1.txt 	 167 	 208 	 0.730481 	 51 	 5911.452148 	 209 	 0
+instancesConflicts/BPPC_8_4_2.txt 	 167 	 228 	 0.637797 	 38 	 4871.080078 	 229 	 0
+instancesConflicts/BPPC_8_4_3.txt 	 167 	 191 	 0.817249 	 51 	 6946.047852 	 193 	 0
+instancesConflicts/BPPC_8_4_4.txt 	 167 	 211 	 0.712054 	 33 	 4087.491943 	 212 	 0
+instancesConflicts/BPPC_8_4_5.txt 	 167 	 202 	 0.763974 	 40 	 5344.342773 	 206 	 0
+instancesConflicts/BPPC_8_4_6.txt 	 167 	 212 	 0.671064 	 26 	 3391.524902 	 212 	 0
+instancesConflicts/BPPC_8_4_7.txt 	 167 	 205 	 0.720907 	 26 	 3645.322021 	 205 	 0
+instancesConflicts/BPPC_8_4_8.txt 	 167 	 201 	 0.748332 	 27 	 4125.547852 	 203 	 0
+instancesConflicts/BPPC_8_4_9.txt 	 167 	 199 	 0.759201 	 29 	 4398.897949 	 202 	 0
+instancesConflicts/BPPC_8_4_10.txt 	 167 	 212 	 0.677350 	 26 	 3261.665039 	 212 	 0
+instancesConflicts/BPPC_8_5_1.txt 	 167 	 254 	 0.544523 	 42 	 5927.296875 	 256 	 0
+instancesConflicts/BPPC_8_5_2.txt 	 167 	 271 	 0.487810 	 35 	 5237.895996 	 273 	 1
+instancesConflicts/BPPC_8_5_3.txt 	 167 	 236 	 0.608532 	 49 	 6650.258789 	 238 	 1
+instancesConflicts/BPPC_8_5_4.txt 	 167 	 253 	 0.544398 	 42 	 5764.651855 	 255 	 2
+instancesConflicts/BPPC_8_5_5.txt 	 167 	 260 	 0.517209 	 29 	 4180.011230 	 262 	 0
+instancesConflicts/BPPC_8_5_6.txt 	 167 	 266 	 0.477559 	 26 	 3794.783936 	 266 	 1
+instancesConflicts/BPPC_8_5_7.txt 	 167 	 257 	 0.524335 	 29 	 4213.216797 	 258 	 0
+instancesConflicts/BPPC_8_5_8.txt 	 167 	 260 	 0.512384 	 28 	 4199.252930 	 261 	 3
+instancesConflicts/BPPC_8_5_9.txt 	 167 	 247 	 0.566869 	 52 	 7039.475098 	 249 	 3
+instancesConflicts/BPPC_8_5_10.txt 	 167 	 260 	 0.527053 	 39 	 5426.707031 	 261 	 0
+instancesConflicts/BPPC_8_6_1.txt 	 167 	 302 	 0.404006 	 31 	 4986.305176 	 304 	 102
+instancesConflicts/BPPC_8_6_2.txt 	 167 	 313 	 0.369133 	 30 	 5124.025879 	 315 	 117
+instancesConflicts/BPPC_8_6_3.txt 	 167 	 286 	 0.442681 	 34 	 5444.441895 	 288 	 94
+instancesConflicts/BPPC_8_6_4.txt 	 167 	 305 	 0.397348 	 40 	 6416.106934 	 306 	 106
+instancesConflicts/BPPC_8_6_5.txt 	 167 	 304 	 0.396348 	 33 	 5440.689941 	 305 	 102
+instancesConflicts/BPPC_8_6_6.txt 	 167 	 315 	 0.371092 	 30 	 5009.782227 	 317 	 110
+instancesConflicts/BPPC_8_6_7.txt 	 167 	 314 	 0.365437 	 27 	 4529.016113 	 315 	 96
+instancesConflicts/BPPC_8_6_8.txt 	 167 	 309 	 0.386755 	 31 	 5195.861816 	 311 	 96
+instancesConflicts/BPPC_8_6_9.txt 	 167 	 303 	 0.398824 	 35 	 5724.366211 	 305 	 97
+instancesConflicts/BPPC_8_6_10.txt 	 167 	 313 	 0.379928 	 35 	 5625.066895 	 314 	 88
+instancesConflicts/BPPC_8_7_1.txt 	 167 	 351 	 0.304321 	 34 	 5865.395996 	 353 	 206
+instancesConflicts/BPPC_8_7_2.txt 	 167 	 359 	 0.277150 	 26 	 4828.428223 	 359 	 227
+instancesConflicts/BPPC_8_7_3.txt 	 167 	 339 	 0.322855 	 32 	 5582.372070 	 340 	 188
+instancesConflicts/BPPC_8_7_4.txt 	 167 	 355 	 0.293311 	 29 	 5142.561035 	 356 	 211
+instancesConflicts/BPPC_8_7_5.txt 	 167 	 358 	 0.286249 	 31 	 5465.496094 	 359 	 201
+instancesConflicts/BPPC_8_7_6.txt 	 167 	 361 	 0.285213 	 33 	 5699.274902 	 363 	 207
+instancesConflicts/BPPC_8_7_7.txt 	 167 	 367 	 0.271398 	 27 	 4785.585938 	 368 	 200
+instancesConflicts/BPPC_8_7_8.txt 	 167 	 363 	 0.270601 	 26 	 4751.608887 	 363 	 199
+instancesConflicts/BPPC_8_7_9.txt 	 167 	 352 	 0.299752 	 35 	 6137.818848 	 353 	 194
+instancesConflicts/BPPC_8_7_10.txt 	 167 	 356 	 0.290508 	 34 	 5805.380859 	 358 	 207
+instancesConflicts/BPPC_8_8_1.txt 	 167 	 404 	 0.220732 	 34 	 5860.845215 	 405 	 299
+instancesConflicts/BPPC_8_8_2.txt 	 167 	 413 	 0.204681 	 26 	 4685.858887 	 413 	 311
+instancesConflicts/BPPC_8_8_3.txt 	 167 	 384 	 0.243933 	 27 	 5010.580078 	 385 	 285
+instancesConflicts/BPPC_8_8_4.txt 	 167 	 405 	 0.216233 	 29 	 5178.965820 	 406 	 303
+instancesConflicts/BPPC_8_8_5.txt 	 167 	 407 	 0.215842 	 34 	 5927.897949 	 408 	 301
+instancesConflicts/BPPC_8_8_6.txt 	 167 	 404 	 0.218460 	 28 	 4974.067871 	 405 	 313
+instancesConflicts/BPPC_8_8_7.txt 	 167 	 419 	 0.198589 	 26 	 4644.579102 	 419 	 312
+instancesConflicts/BPPC_8_8_8.txt 	 167 	 413 	 0.203119 	 26 	 4677.330078 	 413 	 307
+instancesConflicts/BPPC_8_8_9.txt 	 167 	 406 	 0.216158 	 28 	 4975.865234 	 407 	 305
+instancesConflicts/BPPC_8_8_10.txt 	 167 	 406 	 0.211909 	 26 	 4728.782227 	 406 	 312
+instancesConflicts/BPPC_8_9_1.txt 	 167 	 451 	 0.164361 	 29 	 4991.476074 	 452 	 402
+instancesConflicts/BPPC_8_9_2.txt 	 167 	 457 	 0.155649 	 26 	 4422.779785 	 457 	 413
+instancesConflicts/BPPC_8_9_3.txt 	 167 	 445 	 0.169001 	 26 	 4484.370117 	 445 	 380
+instancesConflicts/BPPC_8_9_4.txt 	 167 	 452 	 0.159868 	 26 	 4547.767090 	 452 	 404
+instancesConflicts/BPPC_8_9_5.txt 	 167 	 459 	 0.153281 	 26 	 4497.264160 	 459 	 405
+instancesConflicts/BPPC_8_9_6.txt 	 167 	 452 	 0.161829 	 26 	 4499.311035 	 452 	 402
+instancesConflicts/BPPC_8_9_7.txt 	 167 	 469 	 0.145081 	 32 	 5039.075195 	 470 	 415
+instancesConflicts/BPPC_8_9_8.txt 	 167 	 458 	 0.154549 	 26 	 4478.062012 	 458 	 415
+instancesConflicts/BPPC_8_9_9.txt 	 167 	 448 	 0.165519 	 26 	 4579.826172 	 448 	 406
+instancesConflicts/BPPC_8_9_10.txt 	 167 	 450 	 0.166640 	 49 	 7761.165039 	 451 	 406
