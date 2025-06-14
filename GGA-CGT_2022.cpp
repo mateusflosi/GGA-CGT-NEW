@@ -800,7 +800,7 @@ std::vector<int> Sort_Group(int lentgh, long *array, int tamanhoGrupo)
 	The position in the population of the new solution: individual 																		*
 ************************************************************************************************************************/
 // permutation
-void FF_n_(int individual)
+/*void FF_n_(int individual)
 {
 	long int
 		i,
@@ -836,7 +836,7 @@ void FF_n_(int individual)
 		FF(sortGroupRestantes[j], population[individual], total_bins, bin_i, 1);
 	}
 	SetNumberOfBins(population[individual], total_bins);
-}
+}*/
 
 // n_ordenado
 /*void FF_n_(int individual)
@@ -875,7 +875,7 @@ void FF_n_(int individual)
 }*/
 
 // classic
-/*void FF_n_(int individual)
+void FF_n_(int individual)
 {
 	long int
 		i,
@@ -908,7 +908,7 @@ void FF_n_(int individual)
 		FF(permutation[j], population[individual], total_bins, bin_i, 1);
 	}
 	SetNumberOfBins(population[individual], total_bins);
-}*/
+}
 
 bool BinInConflito(std::vector<int> conflitos, int bin)
 {
