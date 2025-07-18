@@ -127,7 +127,8 @@ SOLUTION global_best_solution[ATTRIBUTES],
 int seed_emptybin,
 	seed_permutation,
 	binsFirstGeneration,
-	itensComTodosConflitos;
+	itensComTodosConflitos,
+	numConflitos;
 
 // GA COMPONENTS
 long int Generate_Initial_Population();
@@ -200,7 +201,7 @@ int main()
 		fscanf(input_Configurations, "%d", &save_bestSolution);
 		fprintf(output, "CONF\t|P|\tmax_gen\tn_m\tn_c\tk1(non-cloned_solutions)\tk2(cloned_solutions)\t|B|\tlife_span\tseed");
 		fprintf(output, "\n%ld\t%d\t%d\t%f\t%f\t%f\t%f\t%f\t%d\t%d", conf, P_size, max_gen, p_m, p_c, k_ncs, k_cs, B_size, life_span, seed);
-		fprintf(output, "\nInstancias \t L2 \t Bins \t FBPP \t Gen \t Time \t BinsFirstGeneration \t ItensCom100deConflito");
+		fprintf(output, "\nInstancias \t L2 \t Bins \t FBPP \t Gen \t Time \t BinsFirstGeneration \t ItensCom100deConflito \t Itens \t TotalConflitos");
 		fclose(output);
 
 		// READING FILE "instances.txt" CONTAINING THE NAME OF BPP INSTANCES TO PROCESS
@@ -212,6 +213,7 @@ int main()
 		}
 		while (!feof(input_Instances))
 		{
+			numConflitos = 0;
 			itensComTodosConflitos = 0;
 			fscanf(input_Instances, "%s", file);
 			LoadData();
@@ -247,6 +249,9 @@ int main()
 			repeated_fitness = 0;
 			// procedure GGA-CGT
 			start = clock();
+			// Para rodar só o first fit adaptado
+			// Generate_Initial_Population();
+			// Find_Best_Solution();
 			if (!Generate_Initial_Population())
 			{
 				Find_Best_Solution();
@@ -1735,6 +1740,7 @@ long int LoadData()
 		SetWeight(&data[k], (long int)weight1[k]);
 		AddConflitos(&data[k], conflitos, array.size() - 2);
 
+		numConflitos += GetConflitosSize(&data[k]);
 		if (GetConflitosSize(&data[k]) == (int)number_items - 1)
 		{
 			itensComTodosConflitos++;
@@ -1785,7 +1791,7 @@ long int LoadData()
 void WriteOutput()
 {
 	output = fopen(nameC, "a");
-	fprintf(output, "\n%s \t %d \t %d \t %f \t %ld \t %f \t %d \t %d", file, (int)L2, (int)GetNumberOfBins(global_best_solution), GetFitness(global_best_solution), generation, TotalTime, binsFirstGeneration, itensComTodosConflitos);
+	fprintf(output, "\n%s \t %d \t %d \t %f \t %ld \t %f \t %d \t %d \t %ld \t %d", file, (int)L2, (int)GetNumberOfBins(global_best_solution), GetFitness(global_best_solution), generation, TotalTime, binsFirstGeneration, itensComTodosConflitos, number_items, numConflitos / 2);
 	if (save_bestSolution == 1)
 		sendtofile(global_best_solution);
 	fclose(output);
