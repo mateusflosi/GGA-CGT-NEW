@@ -135,7 +135,7 @@ long int Generate_Initial_Population();
 long int Generation();
 void Gene_Level_Crossover_FFD(long int, long int, long int);
 void Adaptive_Mutation_RP(long int, float, int);
-void FF_n_(int);									 // First Fit with � pre-allocated-items (FF-�)
+void FF_n_(int, int);								 // First Fit with � pre-allocated-items (FF-�)
 void RP(long int, long int &, long int[], long int); // Rearrangement by Pairs
 
 // BPP Procedures
@@ -312,7 +312,7 @@ void SetFitness(SOLUTION dest[], SOLUTION origem[])
 	solution[number_items].Bin_Fullness += numeroAleatorio;
 }*/
 
-void IncrementFitness(SOLUTION solution[], long int individual)
+/*void IncrementFitness(SOLUTION solution[], long int individual)
 {
 	double incrementFullness = pow((solution[individual].Bin_Fullness / bin_capacity), 2);
 
@@ -351,12 +351,12 @@ void IncrementFitness(SOLUTION solution[], long int individual)
 		solution[number_items].Bin_Fullness += incrementFullness;
 	else
 		solution[number_items].Bin_Fullness += incrementConflicts;
-}
+}*/
 
-// void IncrementFitness(SOLUTION solution[], long int individual)
-//{
-//	solution[number_items].Bin_Fullness += pow((solution[individual].Bin_Fullness / bin_capacity), 2);
-// }
+void IncrementFitness(SOLUTION solution[], long int individual)
+{
+	solution[number_items].Bin_Fullness += pow((solution[individual].Bin_Fullness / bin_capacity), 2);
+}
 
 double GetNumberOfBins(SOLUTION solution[])
 {
@@ -529,13 +529,28 @@ long int CheckOptimalSolution(SOLUTION solution[], int add)
 ************************************************************************************************************************/
 long int Generate_Initial_Population()
 {
-	for (i = 0; i < P_size; i++)
+	int i = 0;			   // índice da população
+	int num = 1;		   // número atual a ser passado
+	int count = 0;		   // quantas vezes já mandamos esse número
+	int limit = num * num; // quantas vezes devemos mandar esse número
+
+	while (i < P_size)
 	{
-		FF_n_(i);
+		FF_n_(i, num);
 		SetFitnessAndGeneration(population[i], 0);
-		// if (CheckOptimalSolution(population[i], 0))
-		//	return (1);
+
+		i++;
+		count++;
+
+		// quando atingir o limite de repetições, avançamos para o próximo número
+		if (count >= limit)
+		{
+			num++;
+			count = 0;
+			limit = num * num;
+		}
 	}
+
 	return 0;
 }
 
@@ -804,6 +819,42 @@ std::vector<int> Sort_Group(int lentgh, long *array, int tamanhoGrupo)
  Input:                                                                                       									*
 	The position in the population of the new solution: individual 																		*
 ************************************************************************************************************************/
+// ultima versao
+void FF_n_(int individual, int tamanhoGrupo)
+{
+	long int
+		i,
+		j = 0,
+		total_bins = 0;
+	bin_i = 0;
+	SetNumberOfFullBins(population[individual], 0.0);
+	SetHighestAvaliableCapacity(population[individual], bin_capacity);
+	if (n_ > 0)
+	{
+		for (i = 0; i < n_; i++)
+		{
+			population[individual][i].Bin_Fullness = GetWeight(&data[ordered_conflitos_size_n[i]]);
+			population[individual][i].L.insert(ordered_conflitos_size_n[i]);
+			total_bins++;
+			if (population[individual][i].Bin_Fullness < GetHighestAvaliableCapacity(population[individual]))
+				SetHighestAvaliableCapacity(population[individual], population[individual][i].Bin_Fullness);
+		}
+		i = number_items - i;
+		std::vector<int> sortGroupRestantes = Sort_Group(number_items - n_, ordered_conflitos_size_restante, tamanhoGrupo);
+		for (j = 0; j < i - 1; j++)
+			FF(sortGroupRestantes[j], population[individual], total_bins, bin_i, 0);
+		FF(sortGroupRestantes[j], population[individual], total_bins, bin_i, 1);
+	}
+	else
+	{
+		std::vector<int> sortGroupRestantes = Sort_Group(number_items - n_, ordered_conflitos_size_restante, tamanhoGrupo);
+		for (j = 0; j < number_items - 1; j++)
+			FF(sortGroupRestantes[j], population[individual], total_bins, bin_i, 0);
+		FF(sortGroupRestantes[j], population[individual], total_bins, bin_i, 1);
+	}
+	SetNumberOfBins(population[individual], total_bins);
+}
+
 // permutation
 /*void FF_n_(int individual)
 {
@@ -880,7 +931,7 @@ std::vector<int> Sort_Group(int lentgh, long *array, int tamanhoGrupo)
 }*/
 
 // classic
-void FF_n_(int individual)
+/*void FF_n_(int individual)
 {
 	long int
 		i,
@@ -913,7 +964,7 @@ void FF_n_(int individual)
 		FF(permutation[j], population[individual], total_bins, bin_i, 1);
 	}
 	SetNumberOfBins(population[individual], total_bins);
-}
+}*/
 
 bool BinInConflito(std::vector<int> conflitos, int bin)
 {
