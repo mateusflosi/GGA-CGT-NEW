@@ -1702,15 +1702,12 @@ long int LoadData()
 		return 0;
 	}
 	printf("\nThe file is %s\n", string);
-	fgets(string, 300, data_file);
-	fscanf(data_file, "%ld\n", &number_items);
+	fscanf(data_file, "%5000[^\n]\n", &line);
+	std::vector<int> array = splitLine(line);
 	bin_capacity = 0;
-	fgets(string, 300, data_file);
-	fscanf(data_file, "%Lf\n", &bin_capacity1);
+	bin_capacity1 = array[1];
+	number_items = array[0];
 	best_solution = 0;
-	fgets(string, 300, data_file);
-	fscanf(data_file, "%ld\n", &best_solution);
-	fgets(string, 300, data_file);
 	total_accumulated_weight = 0;
 	for (k = 0; k < number_items; k++)
 	{
