@@ -256,15 +256,16 @@ int main()
 			{
 				Find_Best_Solution();
 				binsFirstGeneration = GetNumberOfBins(global_best_solution);
+
 				// Generate_Initial_Population() returns 1 if an optimal solution was found
 				for (generation = 0; generation < max_gen; generation++)
 				{
+					if (GetNumberOfBins(global_best_solution) == L2)
+						break;
+
 					// printf("%ld %f %f\n", generation, GetNumberOfBins(global_best_solution), generation - GetGeneration(global_best_solution));
 					Generation();
 					Find_Best_Solution();
-					if (generation - 5 > GetGeneration(global_best_solution))
-						break;
-
 					// printf("\n %d", (int)global_best_solution[number_items + 1].Bin_Fullness);
 				}
 			}
@@ -1304,86 +1305,11 @@ void FF(long int item, SOLUTION individual[], long int &total_bins, long int beg
 ************************************************************************************************************************/
 void LowerBound()
 {
-	long int k, m, i, j, aux1, aux2;
-	long double sjx = 0, sj2 = 0, sj3 = 0;
-	long int jx = 0, cj12, jp = 0, jpp = 0, cj2;
-
-	while (GetWeight(&data[ordered_weight[jx]]) > bin_capacity / 2 && jx < number_items)
-		jx++;
-	n_ = jx;
-	if (jx == number_items)
-	{
-		L2 = jx;
-		return;
-	}
-	if (jx == 0)
-	{
-		if (fmod(total_accumulated_weight, bin_capacity) >= 1)
-			L2 = (long int)ceil(total_accumulated_weight / bin_capacity);
-		else
-			L2 = (long int)(total_accumulated_weight / bin_capacity);
-		return;
-	}
+	if (fmod(total_accumulated_weight, bin_capacity) >= 1)
+		L2 = (long int)ceil(total_accumulated_weight / bin_capacity);
 	else
-	{
-		cj12 = jx;
-		for (i = jx; i < number_items; i++)
-			sjx += GetWeight(&data[ordered_weight[i]]);
-		jp = jx;
-		for (i = 0; i < jx; i++)
-		{
-			if (GetWeight(&data[ordered_weight[i]]) <= bin_capacity - GetWeight(&data[ordered_weight[jx]]))
-			{
-				jp = i;
-				break;
-			}
-		}
-
-		cj2 = jx - jp;
-		for (i = jp; i <= jx - 1; i++)
-			sj2 += GetWeight(&data[ordered_weight[i]]);
-		jpp = jx;
-		sj3 = GetWeight(&data[ordered_weight[jpp]]);
-		ordered_weight[number_items] = number_items;
-		SetWeight(&data[number_items], 0);
-		while (GetWeight(&data[ordered_weight[jpp + 1]]) == GetWeight(&data[ordered_weight[jpp]]))
-		{
-			jpp++;
-			sj3 += GetWeight(&data[ordered_weight[jpp]]);
-		}
-		L2 = cj12;
-
-		do
-		{
-			if (fmod((sj3 + sj2), bin_capacity) >= 1)
-				aux1 = (long int)ceil((sj3 + sj2) / bin_capacity - cj2);
-			else
-				aux1 = (long int)((sj3 + sj2) / bin_capacity - cj2);
-
-			if (L2 < (cj12 + aux1))
-				L2 = cj12 + aux1;
-			jpp++;
-			if (jpp < number_items)
-			{
-				sj3 += GetWeight(&data[ordered_weight[jpp]]);
-				while (GetWeight(&data[ordered_weight[jpp + 1]]) == GetWeight(&data[ordered_weight[jpp]]))
-				{
-					jpp++;
-					sj3 += GetWeight(&data[ordered_weight[jpp]]);
-				}
-				while (jp > 0 && GetWeight(&data[ordered_weight[jp - 1]]) <= bin_capacity - GetWeight(&data[ordered_weight[jpp]]))
-				{
-					jp--;
-					cj2++;
-					sj2 += GetWeight(&data[ordered_weight[jp]]);
-				}
-			}
-			if (fmod((sjx + sj2), bin_capacity) >= 1)
-				aux2 = (long int)ceil((sjx + sj2) / bin_capacity - cj2);
-			else
-				aux2 = (long int)((sjx + sj2) / bin_capacity - cj2);
-		} while (jpp <= number_items || (cj12 + aux2) > L2);
-	}
+		L2 = (long int)(total_accumulated_weight / bin_capacity);
+	return;
 }
 
 /************************************************************************************************************************
