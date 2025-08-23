@@ -201,7 +201,7 @@ int main()
 		fscanf(input_Configurations, "%d", &save_bestSolution);
 		fprintf(output, "CONF\t|P|\tmax_gen\tn_m\tn_c\tk1(non-cloned_solutions)\tk2(cloned_solutions)\t|B|\tlife_span\tseed");
 		fprintf(output, "\n%ld\t%d\t%d\t%f\t%f\t%f\t%f\t%f\t%d\t%d", conf, P_size, max_gen, p_m, p_c, k_ncs, k_cs, B_size, life_span, seed);
-		fprintf(output, "\nInstancias \t L2 \t Bins \t FBPP \t Gen \t Time \t BinsFirstGeneration \t ItensCom100deConflito \t Itens \t TotalConflitos");
+		fprintf(output, "\nInstancias \t L2 \t Bins \t FBPP \t Gen \t Time \t BinsFirstGeneration \t ItensCom100deConflito \t Itens \tCapacidade \t TotalConflitos");
 		fclose(output);
 
 		// READING FILE "instances.txt" CONTAINING THE NAME OF BPP INSTANCES TO PROCESS
@@ -475,22 +475,35 @@ void AddConflitosSize(nodeData *data, int value)
 
 void AddConflitos(nodeData *data, int *value, int size)
 {
-	int l = 0;
-	int numberItensArray = data->conflitosSize + size;
-	int *array = (int *)malloc((numberItensArray) * sizeof(int));
+	int n1 = data->conflitosSize;
+	int n2 = size;
+	int total = n1 + n2;
 
-	for (l = 0; l < data->conflitosSize; l++)
+	int *merged = (int *)malloc(total * sizeof(int));
+	if (!merged)
+		return; // falha na alocação
+
+	int i = 0, j = 0, k = 0;
+
+	// merge: intercalar dois vetores ordenados
+	while (i < n1 && j < n2)
 	{
-		array[l] = data->conflitos[l];
+		if (data->conflitos[i] <= value[j])
+			merged[k++] = data->conflitos[i++];
+		else
+			merged[k++] = value[j++];
 	}
 
-	for (int m = 0; m < size; m++)
-	{
-		array[l + m] = value[m];
-	}
+	// copia o resto de data->conflitos
+	while (i < n1)
+		merged[k++] = data->conflitos[i++];
+
+	// copia o resto de value
+	while (j < n2)
+		merged[k++] = value[j++];
 
 	free(data->conflitos);
-	data->conflitos = array;
+	data->conflitos = merged;
 
 	AddConflitosSize(data, size);
 }
@@ -1668,14 +1681,22 @@ std::vector<int> splitLine(char line[])
 	return numbers;
 }
 
-int *getConflitos(std::vector<int> numbers)
+int *getConflitos(const std::vector<int> &numbers)
 {
-	int *array = (int *)malloc((numbers.size() - 2) * sizeof(int));
+	if (numbers.size() <= 2)
+		return nullptr; // não há elementos suficientes
 
-	for (i = 2; i < numbers.size(); i++)
+	int n = numbers.size() - 2;
+	int *array = (int *)malloc(n * sizeof(int));
+
+	for (int i = 2; i < numbers.size(); i++)
 	{
 		array[i - 2] = numbers[i];
 	}
+
+	// ordena usando qsort
+	std::qsort(array, n, sizeof(int), [](const void *a, const void *b)
+			   { return (*(int *)a - *(int *)b); });
 
 	return array;
 }
@@ -1772,7 +1793,7 @@ long int LoadData()
 void WriteOutput()
 {
 	output = fopen(nameC, "a");
-	fprintf(output, "\n%s \t %d \t %d \t %f \t %ld \t %f \t %d \t %d \t %ld \t %d", file, (int)L2, (int)GetNumberOfBins(global_best_solution), CalculaFitnessAjustado(global_best_solution), generation, TotalTime, binsFirstGeneration, itensComTodosConflitos, number_items, numConflitos / 2);
+	fprintf(output, "\n%s \t %d \t %d \t %f \t %ld \t %f \t %d \t %d \t %ld \t %ld \t %d", file, (int)L2, (int)GetNumberOfBins(global_best_solution), CalculaFitnessAjustado(global_best_solution), generation, TotalTime, binsFirstGeneration, itensComTodosConflitos, number_items, bin_capacity, numConflitos / 2);
 	if (save_bestSolution == 1)
 		sendtofile(global_best_solution);
 	fclose(output);
@@ -1868,9 +1889,9 @@ void sendtofile(SOLUTION best[])
 			if (BinInConflito(conflitosBin, GetIndex(&data[item])) || HaConflitoNoBin(GetConflitosVector(&data[item]), indexesBin))
 			{
 				printf("ERROR there is a conflict in the bin %ld", bin);
-				binError = bin;
-				getchar();
-				banError = 1;
+				// binError = bin;
+				// getchar();
+				// banError = 1;
 			}
 
 			indexesBin.push_back(GetIndex(&data[item]));
