@@ -1889,9 +1889,9 @@ void sendtofile(SOLUTION best[])
 			if (BinInConflito(conflitosBin, GetIndex(&data[item])) || HaConflitoNoBin(GetConflitosVector(&data[item]), indexesBin))
 			{
 				printf("ERROR there is a conflict in the bin %ld", bin);
-				// binError = bin;
-				// getchar();
-				// banError = 1;
+				binError = bin;
+				getchar();
+				banError = 1;
 			}
 
 			indexesBin.push_back(GetIndex(&data[item]));
