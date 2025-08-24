@@ -263,6 +263,9 @@ int main()
 					if (GetNumberOfBins(global_best_solution) == L2)
 						break;
 
+					if (generation - 25 > GetGeneration(global_best_solution))
+						break;
+
 					// printf("%ld %f %f\n", generation, GetNumberOfBins(global_best_solution), generation - GetGeneration(global_best_solution));
 					Generation();
 					Find_Best_Solution();
